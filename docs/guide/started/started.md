@@ -7,6 +7,8 @@ VuePress要求Node.js> = 8。
 ## 全局安装
 如果你只是想尝试一下 VuePress，你可以全局安装它：
 
+### aaaa
+aaaaa
 ```
 # 安装
 yarn global add vuepress # 或者：npm install -g vuepress
