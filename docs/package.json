@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@vuepress/theme-blog": "^2.2.0",
+    "vuepress-theme-reform": "^1.4.6"
+  }
+}
