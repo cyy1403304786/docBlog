@@ -13,18 +13,6 @@ aaaaa
 ### bbb
 bbbbb
 
-### bbb
-bbbbb
-
-### ccc
-cccc
-
-
-### ddd
-ddd
-
-### fff
-ffff
 ```
 # 安装
 yarn global add vuepress # 或者：npm install -g vuepress
