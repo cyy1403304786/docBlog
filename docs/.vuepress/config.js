@@ -28,6 +28,8 @@ module.exports = {
               ['./guide/started/webhook','webhook自动部署'],
               ['./guide/started/snipt', '自定义代码片段'],
               ['./guide/started/echarts', 'echarts图表'],
+              ['./guide/started/nginx', 'nginx'],
+              ['./guide/started/vuex', 'vuex'],
         ],
         sidebarDepth : 2,  //侧边栏自动显示当前激活页面中标题的链接，嵌套在页面本身的链接下。默认深度是1，提取h2标题；0禁用标题链接；最大值为2，同时提取h2和h3。
 
