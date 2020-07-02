@@ -1,12 +1,17 @@
 # pm2是什么?
-pm2是一个进程管理器，它能帮助你管理和保持应用在线。比如，服务器上需要开启多个node 端口，这时候你就可以通过pm2 来进行统一管理，管控各个端口。
+:::  warning
+  pm2是一个进程管理器，它能帮助你管理和保持应用在线。比如，服务器上需要开启多个node 端口，这时候你就可以通过pm2 来进行统一管理，管控各个端口。
+:::
+如下图所示:
 
-## pm2 的安装(linux下)
--  <font face="黑体" color= black  size= 12> 全局安装
+![solar](../../.vuepress/public/img/pm2.png)
+
+## pm2 的安装(linux环境下)
+- <font face="黑体" color= black  size= 5>全局安装</font>
 ```sh
   npm install pm2 -g
 ```
--  <font face="黑体" color= black  size= 12> 创建软连接
+- <font face="黑体" color= black  size= 5>创建软连接</font>
 ```sh
   ln -s /root/node-v10.14.2-linux-x64/bin/pm2 /usr/local/bin/
 ```
