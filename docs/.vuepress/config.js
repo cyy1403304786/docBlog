@@ -40,6 +40,7 @@ module.exports = {
                 [
                     {title:'前端工程自动化', path: './parcels/function/webAuto'},
                     {title:'公用类库使用', path: './parcels/function/submodule'},
+                    {title:'前端处理国际化', path: './parcels/function/i18n'},
                 ]
               }
         ],
