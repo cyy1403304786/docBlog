@@ -4,7 +4,7 @@
 那么，git submodule  就是一个很好的对于 <font face="黑体" color= red  size= 5>公共资源处理方式</font>  的解决办法。
 :::
 ## 概念
-git Submodule 是一个很好的多项目使用共同类库的工具，他允许类库项目作为repository,子项目作为一个单独的git项目存在父项目中，
+git Submodule 是一个很好的多项目使用共同库的工具，他允许项目作为repository,子项目作为一个单独的git项目存在父项目中，
 子项目可以有自己的独立的commit，push，pull。而父项目以Submodule的形式包含子项目。如下图:
 
 
