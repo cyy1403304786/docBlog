@@ -5,7 +5,7 @@
 
 
 :::
-## git submodule 的概念?
+## 概念
 git Submodule 是一个很好的多项目使用共同类库的工具，他允许类库项目作为repository,子项目作为一个单独的git项目存在父项目中，
 子项目可以有自己的独立的commit，push，pull。而父项目以Submodule的形式包含子项目。如下图:
 
@@ -14,7 +14,7 @@ git Submodule 是一个很好的多项目使用共同类库的工具，他允许
 
 ![solar](../../.vuepress/public/img/submodule2.png)
 
-## git submodule 的使用方法?
+## 使用方法?
  - <font face="黑体" color= red  size= 5>创建 submodule</font> 
  使用 git submodule add <submodule_url> 命令可以在项目中创建一个子模块。此时项目仓库中会多出两个文件：.gitmodules 和  submodule
  ```sh
@@ -35,6 +35,6 @@ git Submodule 是一个很好的多项目使用共同类库的工具，他允许
   git rm  submodule 
 ```
 
-## 总结:
+## 总结
 当项目比较复杂，部分代码希望独立为子模块进行版本控制的时候，可以使用 git submodule 功能。使用 git submodule 功能时，主项目仓库并不会包含子模块的文件，
 只会保留一份子模块的配置信息及版本信息，作为主项目版本管理的一部分。

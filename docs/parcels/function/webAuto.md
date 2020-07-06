@@ -7,7 +7,7 @@ require.context 是 Webpack 的一个 api,通过执行这个函数获取一个�
 
 ![solar](../../.vuepress/public/img/context1.png)
 
-## require.context 相关使用方法
+## 相关使用方法
 ::: warning
   以vuex 模块化管理为例(见上图),我们项目上对vuex的使用原则为一个页面对应一个js 文件,那么每次新增一个vuex 文件,就需要在index.js 中import一次
   不是很方便,为了实现自动化导入模块,因此,我们引入了 webpack 的 require.context方法
