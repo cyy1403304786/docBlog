@@ -24,8 +24,8 @@ module.exports = {
                 children: [{title:'测试aaa', path: './guide/install/install'}]
             },
             
-              ['./guide/install/install','介绍'],
-              ['./guide/started/started','快速上手'],
+            //   ['./guide/install/install','介绍'],
+            //   ['./guide/started/started','快速上手'],
               ['./guide/started/webhook','webhook自动部署'],
               ['./guide/started/snipt', '自定义代码片段'],
               ['./guide/started/echarts', 'echarts图表'],
@@ -37,11 +37,11 @@ module.exports = {
                 title: 'parcels技术点',
                 collapsable: true, //是否展开
                 children: 
-                [
+                [   {title:'parcels项目说明文档', path: './parcels/function/item'},   
                     {title:'公用库使用', path: './parcels/function/submodule'},
-                    {title:'前端工程自动化', path: './parcels/function/webAuto'},
                     {title:'前端处理国际化', path: './parcels/function/i18n'},
-                    {title:'全局方法及引用', path: './parcels/function/global'},
+                    // {title:'前端工程自动化', path: './parcels/function/webAuto'},
+                    // {title:'全局方法及引用', path: './parcels/function/global'},
                     {title:'前端实现页面重载不刷新', path: './parcels/function/reload'},
                 ]
               }
