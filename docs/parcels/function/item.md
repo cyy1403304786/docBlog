@@ -162,3 +162,251 @@ parcels-common 项目结构
     </template>
   </el-table-column>
 ```
+
+## parcels 系统打包及部署
+
+### 使用说明
+parcels 项目分为开发环境，测试环境和线上环境。
+- 开发环境: 开发人员本地开发的环境。
+- 测试环境: 模拟测试的环境(有独立的主机，但是不对外开放)
+- 线上环境: 真实线上供客户使用的环境（有独立的主机，对所有人开放，开发人员只读）
+
+parcels 项目测试环境下项目所属目录  (167服务器)  <font face="黑体" color= red  size= 5> /eship/code</font>  
+
+通过sh 脚本执行自动化打包(<font face="黑体" color= red  size= 5> 09-vue-pull-and-build.sh</font> )
+```sh
+  #!/bin/bash
+keyword=$1
+
+# 打包
+if [ -z $1 ] || [[ "vue-customer-center" =~ $keyword ]];then
+	echo 更新vue-customer-center.........................................................
+	cd /eship/code/vue-customer-center
+	git reset --hard
+	git pull
+	cd /eship/code/vue-customer-center/parcels-common
+	git reset --hard
+	git pull origin master
+
+	echo -e '\n\n'
+    echo 开始打包vue-customer-center...
+    cd /eship/code/vue-customer-center
+    rm -rf dist
+    cnpm run build
+fi
+
+
+if [ -z $1 ] || [[ "vue-finance-center" =~ $keyword ]];then
+	echo 更新vue-finance-center.........................................................
+	cd /eship/code/vue-finance-center
+	git reset --hard
+	git pull
+	cd /eship/code/vue-finance-center/parcels-common
+	git reset --hard
+	git pull origin master
+
+	echo -e '\n\n'
+
+    echo 开始打包vue-finance-center...
+    cd /eship/code/vue-finance-center
+    rm -rf dist
+    cnpm run build
+fi
+
+if [ -z $1 ] || [[ "vue-operation-center" =~ $keyword ]];then
+	echo 更新vue-operation-center.........................................................
+	cd /eship/code/vue-operation-center
+	git reset --hard
+	git pull
+	cd /eship/code/vue-operation-center/parcels-common
+	git reset --hard
+	git pull origin master
+
+	echo -e '\n\n'
+
+    echo 开始打包vue-operation-center...
+    cd /eship/code/vue-operation-center
+    rm -rf dist
+    cnpm run build
+fi
+
+if [ -z $1 ] || [[ "vue-product-center" =~ $keyword ]];then
+	echo 更新vue-product-center.........................................................
+	cd /eship/code/vue-product-center
+	git reset --hard
+	git pull
+	cd /eship/code/vue-product-center/parcels-common
+	git reset --hard
+	git pull origin master
+
+	echo -e '\n\n'
+
+    echo 开始打包vue-product-center...
+    cd /eship/code/vue-product-center
+    rm -rf dist
+    cnpm run build
+fi
+
+if [ -z $1 ] || [[ "vue-service-sales-center" =~ $keyword ]];then
+	echo 更新vue-service-sales-center.........................................................
+	cd /eship/code/vue-service-sales-center
+	git reset --hard
+	git pull
+	cd /eship/code/vue-service-sales-center/parcels-common
+	git reset --hard
+	git pull origin master
+
+	echo -e '\n\n'
+
+    echo 开始打包vue-service-sales-center...
+    cd /eship/code/vue-service-sales-center
+    rm -rf dist
+    cnpm run build
+fi
+
+
+if [ -z $1 ] || [[ "vue-author-center" =~ $keyword ]];then
+	echo 更新vue-author-center..........................................................
+	cd /eship/code/vue-author-center
+	git reset --hard
+	git pull
+	cd /eship/code/vue-finance-center/parcels-common
+	git reset --hard
+	git pull origin master
+	
+	echo -e '\n\n'
+
+    echo 开始打包vue-author-center...
+    cd /eship/code/vue-author-center
+    rm -rf dist
+    cnpm run build
+fi
+# 运行
+
+
+
+echo 打包完成...
+
+```
+parcels 项目线上环境下项目所属目录(211服务器) <font face="黑体" color= red  size= 5> /17feia/nfsOthersFiles/parcels/vue</font> 
+
+通过sh 脚本执行自动化打包( <font face="黑体" color= red  size= 5> 10-vue-pull-and-build.sh</font> ) 
+
+::: warning
+  为避免重复切换服务器，这里采用ssh 远程连接服务器，配合scp 进行不同主机间的文件复制(parcels 项目线上部署的思想主要是通过复制测试环境的打包文件到线上环境进行部署，故用到此功能)。
+:::
+
+```sh
+#!/bin/bash
+keyword=$1
+
+# 发布线上
+if [ -z $1 ] || [[ "vue-author-center" == *$keyword* ]];then
+	echo author更新到线上.....
+	ssh  root@index.17feia.com cp /17feia/nfsOthersFiles/parcels/vue/vue-author-center/index.html /17feia/nfsOthersFiles/parcels/vue/vue-author-center/index.html.back 
+	scp -r /eship/code/vue-author-center/dist/{favicon.ico,lib,static,index.html} root@index.17feia.com:/17feia/nfsOthersFiles/parcels/vue/vue-author-center/
+fi
+
+if [ -z $1 ] || [[ "vue-customer-center" == *$keyword* ]];then
+	echo vue-customer-center更新到线上.....
+	ssh  root@index.17feia.com cp /17feia/nfsOthersFiles/parcels/vue/vue-customer-center/index.html /17feia/nfsOthersFiles/parcels/vue/vue-customer-center/index.html.back 
+	scp -r /eship/code/vue-customer-center/dist/{favicon.ico,static,index.html} root@index.17feia.com:/17feia/nfsOthersFiles/parcels/vue/vue-customer-center/
+fi
+
+
+if [ -z $1 ] || [[ "vue-service-sales-center" == *$keyword* ]];then
+	echo vue-service-sales-center更新到线上.....
+	ssh  root@index.17feia.com cp /17feia/nfsOthersFiles/parcels/vue/vue-service-sales-center/index.html /17feia/nfsOthersFiles/parcels/vue/vue-service-sales-center/index.html.back 
+	scp -r /eship/code/vue-service-sales-center/dist/{favicon.ico,lib,static,index.html} root@index.17feia.com:/17feia/nfsOthersFiles/parcels/vue/vue-service-sales-center/
+fi
+
+if [ -z $1 ] || [[ "vue-product-center" == *$keyword* ]];then
+	echo vue-product-center更新到线上.....
+	ssh  root@index.17feia.com cp /17feia/nfsOthersFiles/parcels/vue/vue-product-center/index.html /17feia/nfsOthersFiles/parcels/vue/vue-product-center/index.html.back 
+	scp -r /eship/code/vue-product-center/dist/{favicon.ico,lib,static,index.html} root@index.17feia.com:/17feia/nfsOthersFiles/parcels/vue/vue-product-center/
+fi
+
+if [ -z $1 ] || [[ "vue-operation-center" == *$keyword* ]];then
+	echo vue-operation-center更新到线上.....
+	ssh  root@index.17feia.com cp /17feia/nfsOthersFiles/parcels/vue/vue-operation-center/index.html /17feia/nfsOthersFiles/parcels/vue/vue-operation-center/index.html.back 
+	scp -r /eship/code/vue-operation-center/dist/{favicon.ico,lib,static,index.html} root@index.17feia.com:/17feia/nfsOthersFiles/parcels/vue/vue-operation-center/
+fi
+
+if [ -z $1 ] || [[ "vue-finance-center" == *$keyword* ]];then
+	echo vue-finance-center更新到线上.....
+	ssh  root@index.17feia.com cp /17feia/nfsOthersFiles/parcels/vue/vue-finance-center/index.html /17feia/nfsOthersFiles/parcels/vue/vue-finance-center/index.html.back 
+	scp -r /eship/code/vue-finance-center/dist/{favicon.ico,lib,static,index.html} root@index.17feia.com:/17feia/nfsOthersFiles/parcels/vue/vue-finance-center/
+fi
+
+if [ -z $1 ] || [[ "vue-warning-center" == *$keyword* ]];then
+	echo vue-warning-center更新到线上.....
+	ssh  root@index.17feia.com cp /17feia/nfsOthersFiles/parcels/vue/vue-warning-center/index.html /17feia/nfsOthersFiles/parcels/vue/vue-warning-center/index.html.back 
+	scp -r /eship/code/vue-warning-center/dist/{favicon.ico,static,index.html} root@index.17feia.com:/17feia/nfsOthersFiles/parcels/vue/vue-warning-center/
+fi
+
+echo 发布到线上完成...
+
+
+```
+### 操作文档
+::: warning
+  下述操作均在 167 服务器下执行(部署脚本所在的服务器)
+:::
+- <font face="黑体" color= red  size= 5>parcels 打包部署测试环境</font> 
+
+1、进入脚本目录
+```sh
+  cd /eship
+```
+2、执行全部更新、打包操作
+```sh
+  sh 09-vue-pull-and-build.sh 
+```
+3、执行对应系统更新
+```sh
+  sh 09-vue-pull-and-build.sh author 后缀可用全称也可用模糊
+```
+- <font face="黑体" color= red  size= 5>parcels 打包部署线上环境</font> 
+
+1、进入脚本目录
+```sh
+  cd /eship
+```
+2、执行全部更新、打包操作
+```sh
+  sh 10-vue-upload-2-online.sh
+```
+3、执行对应系统更新
+```sh
+   sh 10-vue-upload-2-online.sh author 后缀可用全称也可用模糊
+```
+- <font face="黑体" color= red  size= 5>17feia 手机端官网及公众号 打包部署测试环境</font> 
+
+1、进入脚本目录
+```sh
+  cd /eship
+```
+2、执行全部更新、打包操作
+```sh
+  sh 25-nuxt-eship-home.sh
+```
+3、执行对应系统更新
+```sh
+   sh 25-nuxt-eship-home.sh nuxt-eship-home 后缀可用全称也可用模糊
+```
+
+- <font face="黑体" color= red  size= 5>17feia 手机端官网及公众号 打包部署线上环境</font> 
+
+1、进入脚本目录
+```sh
+  cd /eship
+```
+2、执行全部更新、打包操作
+```sh
+  sh 25-nuxt-eship-home.sh
+```
+3、执行对应系统更新
+```sh
+   sh 26-nuxt-eship-home.sh nuxt-eship-home 后缀可用全称也可用模糊
+```
+
