@@ -33,6 +33,7 @@ module.exports = {
               ['./guide/started/vuex', 'vuex'],
               ['./guide/started/pm2', 'pm2的相关使用'],
               ['./guide/started/nuxt', 'nuxt的相关使用'],
+              ['./guide/started/css3', 'css3的相关介绍'],
               {
                 title: 'parcels技术点',
                 collapsable: true, //是否展开
