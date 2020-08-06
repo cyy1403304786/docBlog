@@ -44,6 +44,7 @@ module.exports = {
                     // {title:'前端工程自动化', path: './parcels/function/webAuto'},
                     // {title:'全局方法及引用', path: './parcels/function/global'},
                     {title:'前端实现页面重载不刷新', path: './parcels/function/reload'},
+                    {title:'elementui表格合并的方法', path: './parcels/function/table'},
                 ]
               }
         ],
