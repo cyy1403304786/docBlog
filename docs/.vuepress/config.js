@@ -46,6 +46,14 @@ module.exports = {
                     {title:'前端实现页面重载不刷新', path: './parcels/function/reload'},
                     {title:'elementui表格合并的方法', path: './parcels/function/table'},
                 ]
+              },
+              {
+                title: 'toppgo技术点', 
+                collapsable: true, //是否展开
+                children: 
+                    [   {title:'toppgo项目说明文档', path: './toppgo/produce/introduce'},   
+
+                    ]
               }
         ],
         sidebarDepth : 2,  //侧边栏自动显示当前激活页面中标题的链接，嵌套在页面本身的链接下。默认深度是1，提取h2标题；0禁用标题链接；最大值为2，同时提取h2和h3。
