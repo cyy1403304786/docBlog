@@ -165,6 +165,82 @@ module.exports = {
       }
 
 ```
+### 4,首页登录记住密码
+::: warning
+  实现原理: 登录的时候，如果勾选了记住密码，则把账号密码相关信息存储到cookie中，并通过使用crypto-js加密，在登录的时候进行判断是否记住了密码，如果记住密码了
+  则从cookie 中读取相关账号信息。
+:::
+- 下载crypto-js 包
+```sh
+  npm install crypto-js --save-dev
+```
+- 在需要的文件中进行引入
+```sh
+  import CryptoJS from "crypto-js"
+```
+- 设置cookie，读取cookie 方法
+```sh
+    // 设置cookie
+    setCookie(state,data){
+      var cipherPsw = CryptoJS.AES.encrypt(data.password,'secretkey').toString();
+      var exdate = new Date(); //获取时间
+      exdate.setTime(exdate.getTime() + 24 * 60 * 60 * 1000 * data.setDate); //保存的天数
+      //字符串拼接cookie
+      window.document.cookie = "userName" + "=" + data.username + ";path=/;expires=" + exdate.toGMTString();
+      window.document.cookie = "userPwd" + "=" + cipherPsw + ";path=/;expires=" + exdate.toGMTString();
+  },
+
+    //读取cookie
+	  getCookie(state,data) {
+      if (document.cookie.length > 0) {
+        var arr = document.cookie.split('; '); //这里显示的格式需要切割一下自己可输出看下
+        for (var i = 0; i < arr.length; i++) {
+          var arr2 = arr[i].split('='); //再次切割
+          //判断查找相对应的值
+          if (arr2[0] == 'userName') {
+            state.loginForm.username = arr2[1]; //保存到保存数据的地方
+            state.loginForm.rememberMe=true
+          } else if (arr2[0] == 'userPwd') {
+            var bytes = CryptoJS.AES.decrypt(arr2[1],'secretkey');
+            state.loginForm.password = bytes.toString(CryptoJS.enc.Utf8);;
+          }
+        }
+      }
+  },
+
+    // 清除数据
+    clearUser(state,data){
+      state.loginForm.username=''
+      state.loginForm.password = ''
+      state.loginForm.captcha = ''
+    },
+
+```
+
+- 登录的时候处理记住密码的逻辑
+```sh
+    async userLoginA({ commit, state }, params) {
+        let res = await userLogin(state.loginForm)
+        if (res.flag) {
+          // 记住密码逻辑
+          if(state.loginForm.rememberMe == true){
+            commit('setCookie', state.loginForm)
+          }else{
+            commit('setCookie', {password: "",username: "",captcha:""})
+            commit('clearUser')
+          }
+        }else{
+          Notification.error({ title: '提示', message: res.msg });
+        }
+  },
+```
+- 登录页面加载获取cookie 方法
+```sh
+   created () {
+     this.getCookie()
+    },
+    
+```
 
 
 ## toppgo 项目部署说明
