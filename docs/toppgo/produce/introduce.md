@@ -12,7 +12,7 @@ toppgo 是一个提供给海外华人，留学生以及国内外采购商等仓�
 参照 parcels 结构构建而成。
 
 ## toppgo 重要项目点
-### nuxt 中关于引入svg 图标
+### 1,nuxt 中关于引入svg 图标
 - 项目全局安装svg-sprite-loader：
 ```sh
     npm i svg-sprite-loader --save-dev
@@ -120,12 +120,11 @@ module.exports = {
   <svg-icon icon-class="article" /> //其中 article 是图标文件的文件名（如本项目中的 toppgo）
 ```
 
-### nuxt 中全局动画过渡效果
+### 2,nuxt 中全局动画过渡效果
 ::: warning
   Nuxt.js 默认使用的过渡效果名称为 page. 如果想让每一个页面的切换都有淡出 (fade) 效果，我们需要创建一个所有路由共用的 CSS 文件。所以我们可以在 assets/scss 目录下创建全局样式表: reset.scss,
   并添加如下样式即可:
 :::
-
 ```sh
   /*************全局动画过渡*************/
   .page-enter-active,
@@ -136,6 +135,35 @@ module.exports = {
   .page-leave-active {
     opacity: 0;
   }
+```
+### 3,实现页面平滑滚动(锚点定位)
+::: warning
+  锚点定位:简单来讲就是让页面中某段文字在点击的时候快速定位到想要的位置，常用于高度较高的页面。
+:::
+
+效果如图下所示:
+
+![solar](../../.vuepress/public/img/scroll.gif)
+
+```sh
+    <a  @click="scroll" style="cursor: pointer;">
+         <span>拼邮规范</span>
+    </a>
+
+    <!-- 拼邮流程 -->
+    <div class="spellmailProcess" id="specification">
+      <div class=" w">
+        <spellSubTitle :title="title1"></spellSubTitle>
+        <div class="process_box">
+           <img src="../assets/image/speailMail/process.png" alt="" class="procee_img">
+        </div>
+      </div>
+    </div>
+
+     scroll(){
+        document.getElementById('specification').scrollIntoView({ block: 'start', behavior: 'smooth' })
+      }
+
 ```
 
 
