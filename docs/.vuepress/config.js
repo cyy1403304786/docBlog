@@ -27,6 +27,13 @@ module.exports = {
               ['./guide/started/nuxt', 'nuxt的相关使用'],
               ['./guide/started/css3', 'css3的相关介绍'],
               {
+                title: 'vue',
+                collapsable: true, //是否展开
+                children: 
+                [   {title:'vue自定义指令应vue用', path: './vue/function/directive'},   
+                ]
+              },
+              {
                 title: 'parcels技术点',
                 collapsable: true, //是否展开
                 children: 
@@ -55,7 +62,18 @@ module.exports = {
                     {title:'form 表单', path: './elementui/function/form'},
                     {title:'el-tooltip', path: './elementui/function/tooltip'},
                 ]
-              }
+              },
+              {
+                title: 'es6',
+                collapsable: true, //是否展开
+                children: 
+                [   
+                  {title:'es6数组的相关方法', path: './es6/arrayFuc'},   
+                  {title:'es6中关于map集合和set集合', path: './es6/map'},
+                  {title:'es6中的解构赋值', path: './es6/destructuring'},
+                  {title:'es6中的模块化', path: './es6/modules'},
+                ]
+              },
         ],
         sidebarDepth : 2,  //侧边栏自动显示当前激活页面中标题的链接，嵌套在页面本身的链接下。默认深度是1，提取h2标题；0禁用标题链接；最大值为2，同时提取h2和h3。
 
