@@ -50,8 +50,9 @@ module.exports = {
                 title: 'toppgo技术点', 
                 collapsable: true, //是否展开
                 children: 
-                    [   {title:'toppgo项目说明文档', path: './toppgo/produce/introduce'},   
-
+                    [   
+                      {title:'toppgo项目说明文档', path: './toppgo/produce/introduce'},   
+                      {title:'toppgo---app项目', path: './toppgo/produce/app'},   
                     ]
               },
               {
@@ -61,6 +62,7 @@ module.exports = {
                 [   {title:'el-popover 点击内容隐藏弹框', path: './elementui/function/popover'},   
                     {title:'form 表单', path: './elementui/function/form'},
                     {title:'el-tooltip', path: './elementui/function/tooltip'},
+                    {title:'tree 树组件的相关应用', path: './elementui/function/tree'},
                 ]
               },
               {
@@ -72,6 +74,7 @@ module.exports = {
                   {title:'es6中关于map集合和set集合', path: './es6/map'},
                   {title:'es6中的解构赋值', path: './es6/destructuring'},
                   {title:'es6中的模块化', path: './es6/modules'},
+                  {title:'es6中的promise', path: './es6/promise'},
                 ]
               },
         ],
