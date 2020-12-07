@@ -60,7 +60,7 @@ module.exports = {
                 collapsable: true, //是否展开
                 children:
                   [   
-                    {title:'17fea项目说明文档', path: './17feia/introduce'},   
+                    {title:'17fea项目说明文档', path: './17feia/produce'},   
                   ]
               },
               {
