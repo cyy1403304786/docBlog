@@ -11,6 +11,10 @@
 
 ## 项目重要技术点说明
 ### 1，移动端异形轮播图实现(UI部分)
+- 实现效果如下:
+
+![solar](../.vuepress/public/img/swaper.gif)
+
 - 采用swiper.js 实现轮播效果
 ```sh
   cnpm i swiper --save
