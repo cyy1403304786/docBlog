@@ -133,6 +133,10 @@
 
 ### 3，移动端详情页在 v-html 的时候实现图片预览（通过vantui）
 
+- 实现效果如下:
+
+![solar](../.vuepress/public/img/imgPreview.gif)
+
 - 引入 vant 里面的 ImagePreview 图片预览组件
 
 ```sh
@@ -162,4 +166,98 @@
       }
     
     },
+```
+
+### 4，移动端城市筛选匹配功能(参考vant IndexBar索引栏)
+
+- 实现效果如下:
+
+![solar](../.vuepress/public/img/selectAddress.gif)
+
+- 前台 html 结构
+
+```sh
+    <van-dialog v-model="show"  style=" margin-top:30px; ">
+      <div >
+         <van-sticky>
+            <van-nav-bar title="选择城市" />
+            <van-search v-model="search" placeholder="请输入关键词" @input="getVavle" />
+        </van-sticky>
+        <van-index-bar :sticky="false" style="height: 400px;overflow:auto;">
+            <van-index-anchor :index="name" v-for="(item,name) in cityes" :key="name">
+              <div>
+                {{name}}
+                <div v-for="(ele,idx) in item" :key="idx">
+                  <b @click="getName(ele.name,ele.code)">{{ele.name}}</b>
+                </div>
+              </div>
+            </van-index-anchor>
+        </van-index-bar>
+      </div>
+       
+    </van-dialog>
+
+
+    getVavle (value) {
+      this.dataFilter(value)
+    }
+```
+
+- 根据后台返回数组进行改造成所需要的数组
+
+```sh
+
+
+    const state = {
+      firstPin:["A","B","C","D","E","F","G","H","J","K","L","M","N","P","Q","R","S","T","W","X","Y","Z"]
+    },
+    const actions = {
+      async getDeparturesAndDestinationsListA ({ commit, state, dispatch }, param) {
+        let res = await getDeparturesAndDestinationsList();
+        if(res.flag){
+          commit('getDeparturesAndDestinationsListM', res.obj);
+        }else {
+          console.log('res', res);
+        }
+      },
+    }
+
+    const mutations = {
+      getDeparturesAndDestinationsListM(state,data) {
+              let arr2 = data.destinations['国际']
+              let arrList = arr2
+              let cityName = {}
+              state.firstPin.forEach(item => {
+                cityName[item] = []
+                arrList.forEach(el => {
+                  let first =el.quanPin.substring(0,1).toUpperCase()
+                  if(first == item) {
+                    cityName[item].push(el)
+                  }
+                })
+              })
+              state.cityes = cityName
+              state.cityesCopy = cityName  //复制一个新的
+            
+      },
+      dataFilter (state, data) {
+        if (data) {
+          let arr = []
+          let cityName = {}
+          state.destination.forEach((ele) => {
+            if( ele.name.indexOf(data) != -1 || ele.nameEn.indexOf(data) != -1 || ele.quanPin.indexOf(data) != -1) {
+              arr.push(ele)
+              cityName['查询内容'] = []
+              cityName['查询内容'].push(ele)
+            }
+          
+          })
+          state.cityes = cityName
+        } else {
+          state.cityes = state.cityesCopy
+        }
+      }       
+    }
+
+
 ```
