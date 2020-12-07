@@ -56,6 +56,14 @@ module.exports = {
                     ]
               },
               {
+                title: '17feia技术点', 
+                collapsable: true, //是否展开
+                children:
+                  [   
+                    {title:'17fea项目说明文档', path: './17feia/introduce'},   
+                  ]
+              },
+              {
                 title: 'elementui 相关功能点',
                 collapsable: true, //是否展开
                 children: 
