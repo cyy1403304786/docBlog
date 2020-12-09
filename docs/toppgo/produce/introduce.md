@@ -242,6 +242,51 @@ module.exports = {
     
 ```
 
+### 5,解决苹果浏览器windows.open()页面被拦截
+
+::: warning
+  业务需求: 当window.open为用户触发事件内部或者加载时，不会被拦截，比如： 在点击事件里面直接执行则不会被拦截；
+  一旦将弹出页面代码（windows.open()）移入ajax或者一段异步代码内部，浏览器就会出现被拦截提示。解决办法: 在异步调用执行前
+  声明弹出框事件，再进行命名跳转地址。如下:
+:::
+
+```sh
+
+  //定义一个打开新页面的参数
+  data() {
+    return {
+      newWindow:null
+    }
+  }
+  //点击事件
+  payFuc () {
+    // 先打开新标签
+    this.newWindow = window.open("_blank");
+    this.userRechargePayA()
+  },
+
+  async userRechargePayA() {
+      let res = await payCostSelectPay(this.rechargeForm);
+      if (res.flag) {
+        if (this.rechargeForm.payType == "WeChatPal") {
+          let routeData = router.resolve({
+            path: "/payWechat",
+            query: { id: this.rechargeForm.bizId },
+          });
+          // 解决苹果浏览器支付弹框被拦截
+          this.newWindow.location.href = routeData.href;
+          return;
+        }
+        // 打开新的支付宝支付界面
+        this.newWindow.document.write(res.obj);
+      } else {
+        this.$notify.error({ title: "提示", message: res.msg });
+      }
+  },
+  
+```
+
+
 
 ## toppgo 项目部署说明
 - 测试环境部署(192.168.8.167):
