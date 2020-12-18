@@ -1,5 +1,5 @@
 # el-table 表格合并的方法
-## 实现任意表格单元项的合并 (参考 elementui span-method 方法)
+## 实现任意表格单元项的合并
 实现如下图: 
 ![solar](../../.vuepress/public/img/table.png)
 实现方法:

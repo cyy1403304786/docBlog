@@ -44,7 +44,8 @@
 
 ```
 ## parcels 重要项目点
-### 引入公用库 parcels-common
+
+###  1,引入公用库 parcels-common
 ::: warning
   背景环境: 由于<font face="黑体" color= red  size= 3> parcels</font> 项目包括五个子系统，各个系统间使用统一样式，存在共用页面，为避免重复页面编写，更改样式问题，
   我们采用公用库方法，统一管理公共资源(如：全局样式，全局方法，全局页面，共用图片资源等)。
@@ -72,7 +73,49 @@ parcels-common 项目结构
 
 ```
 
-### 前端处理国际化 i18n 
+- Submodule 功能详解
+::: warning
+  使用场景:  当一个项目包括多个系统，且多个系统的风格保持统一的情况下，如果风格改动则要同步多个系统，且存在多个系统有公共页面的情况，我们不做复制粘贴
+那么，git submodule  就是一个很好的对于 <font face="黑体" color= red  size= 5>公共资源处理方式</font>  的解决办法。
+:::
+- 概念
+git Submodule 是一个很好的多项目使用共同库的工具，他允许项目作为repository,子项目作为一个单独的git项目存在父项目中，
+子项目可以有自己的独立的commit，push，pull。而父项目以Submodule的形式包含子项目。如下图:
+
+
+![solar](../../.vuepress/public/img/submodule1.png)
+
+![solar](../../.vuepress/public/img/submodule2.png)
+
+- 使用方法?
+ - <font face="黑体" color= red  size= 5>创建 submodule</font> 
+ 使用 git submodule add <submodule_url> 命令可以在项目中创建一个子模块。此时项目仓库中会多出两个文件：.gitmodules 和  submodule
+ ```sh
+  git submodule add http://192.168.8.169:8088/wangcong/parcels-common.git //子模块仓库地址
+ ```
+- <font face="黑体" color= red  size= 5>获取 submodule</font> 
+执行上述方法后，会自动将相关代码克隆到对应路径，但对于后续开发人员而言，对于主项目使用普通的 clone 操作并不会拉取到子模块中的实际代码，
+如果希望获取子模块数据，有两种方式:
+```sh
+   //克隆主项目的时候带上参数 --recurse-submodules
+  1, git clone https://github.com/username/project-main.git  --recurse-submodules 
+   // 在当前项目中执行,初始化子仓库模块
+  2, git submodule update --init --recursive 
+```
+- <font face="黑体" color= red  size= 5>删除 submodule</font> 
+```sh
+  git submodule deinit submodule  (子模块的名称)
+  git rm  submodule 
+```
+
+- 总结
+当项目比较复杂，部分代码希望独立为子模块进行版本控制的时候，可以使用 git submodule 功能。使用 git submodule 功能时，主项目仓库并不会包含子模块的文件，
+只会保留一份子模块的配置信息及版本信息，作为主项目版本管理的一部分。
+
+
+
+
+###  2,前端处理国际化 i18n 
 
 ::: warning
   背景环境: 由于<font face="黑体" color= red  size= 3> parcels</font> 项目需支持多国语言浏览，故需要进行页面的国际化操作。
@@ -81,7 +124,111 @@ parcels-common 项目结构
 
 ![solar](../../.vuepress/public/img/process.png)
 
-### 前端工程自动化 require.context 
+
+elementui 组件搭配 vue-i18n 实现多语言设置。结合项目需求，需进行三种语言的自由切换，并实现切换语言后在登陆默认有记忆功能，具体操作如下:
+
+- <font face="黑体" color= red  size= 5>全局安装i18n 组件</font> 
+```sh
+   cnpm i vue-i18n -s
+```
+- <font face="黑体" color= red  size= 5>引入i18n国际化插件(新建 i18n.js  文件)</font> 
+```sh
+  import Element from 'element-ui'
+  import VueI18n from 'vue-i18n'
+  Vue.use(VueI18n)
+```
+- <font face="黑体" color= red  size= 5>提取项目中所有的中文字段进行国际化操作</font> 
+
+结合vuex 文件管理办法，我们可以新建一个 locales 语言文件夹，包括中文、英文等语言，相应页面对应相应文件js 路径，如下图:
+
+![solar](../../.vuepress/public/img/i18n1.png)
+
+- <font face="黑体" color= red  size= 5>引入相关字段路径，进行国际化设置</font>
+
+::: warning
+  此处采取跟vuex 一样 用require.context 方法导出上下文，获取所有文字对象。
+:::
+
+```sh
+  //引入本地的文字对象
+  import zhmoduels from '../assets/locales/zh'
+  import enmoduels from '../assets/locales/en'
+
+  //导入elementui 自带组件的语言对象
+  import enLocale from 'element-ui/lib/locale/lang/en'
+  import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
+
+  //进行两个对象的合并操作(因页面上包含element组件文字及自己所定义的文字对象，所以需要进行合并操作)
+   const locales = {
+    zh: Object.assign(zhmoduels,zhLocale),
+    en: Object.assign(enmoduels,enLocale),
+  }
+  //实例化i18n 对象
+    const i18n = new VueI18n({
+    locale: 'zh', // 此处即为定义的文字对象的key 值（语言名称）
+    messages: locales,  // set locale messages
+  })
+
+    Vue.use(Element, {
+      i18n: (key, value) => i18n.t(key, value)
+    })
+
+    export default i18n
+
+``` 
+
+- <font face="黑体" color= red  size= 5>入口文件中全局注册 i18n</font>
+
+  在main.js  中引入 i18n.js 文件。
+```sh
+  import Vue from 'vue'
+  import i18n from './lib/i18n'
+  new Vue({
+      i18n,
+      router,
+      store,
+      render: h => h(App)
+  }).$mount('#app')
+
+```
+- <font face="黑体" color= red  size= 5>实现国际化语言切换</font>
+
+页面引入 i18n  文件，在对应切换语言方法中编码:
+
+```sh
+    languageChe(){
+        this.reload() //页面重载(见 页面不刷新实现 reload 方法)
+        i18n.locale = 'en'  //更改对应i18n 语言(此处可结合实际动态设置)
+      }
+```
+-  vue-i18n 各情形下定义文字的方法
+- vue 页面中渲染
+```sh
+    <h2>{{$t('home.最新文章')}}</h2>
+```
+- 组件中动态数据渲染
+```sh
+    <el-tab-pane :label="$t('home.问题标签列表')" name="1">
+      <ProblemLabel></ProblemLabel>
+    </el-tab-pane>
+```
+- sciprt中data 数据定义处
+```sh
+    data() {
+      return {
+        processName:[this.$t('home.待称重'),this.$t('home.待处理')],
+        active: 0
+      };
+  },
+```
+- js 文件中
+需先引入 i18n 文件
+```sh
+  import i18n from '../../lib/i18n'
+  Notification({type: 'success', title: i18n.t('home.提示'), message: i18n.t('home.成功')})
+```
+
+###  3,前端工程自动化 require.context 
 
 ::: warning
   背景环境: require.context 是 Webpack 的一个 api,通过执行这个函数获取一个特定的上下文,主要实现自动化导入模块,
@@ -112,7 +259,7 @@ parcels-common 项目结构
     })
 ```
 
-### 前端共用方法封装库
+### 4,前端共用方法封装库
 
 ::: warning
   背景环境: 在大型系统中，为实现代码可读性和复用性，常见功能,如：正则校验规则，过滤筛选保留位数，时间型转换等都会进行统一封装并统一管理，需要使用
@@ -162,6 +309,68 @@ parcels-common 项目结构
     </template>
   </el-table-column>
 ```
+
+
+### 5,前端实现页面重载但不刷新功能
+
+这里就需要引入一个 provide/inject 功能: 在父组件中通过provider来提供变量，然后在子组件中通过inject来 深层次 注入变量。（无论目标组件里父组件有多少间隔）
+
+app.vue(父页面)
+
+```sh
+  <router-view v-if="isRouterAlive" ></router-view>
+```
+
+```sh
+     export default {
+          name: '',
+          components: {
+          },
+          props: {},
+          provide() {
+            return{
+              reload: this.reload
+            }
+          },
+          data () {
+            return {
+              isRouterAlive:true  
+            }
+          },
+          computed: {},
+          created () {
+          },
+          mounted () {},
+          methods: {
+            reload() {
+              this.isRouterAlive = false
+              let that = this
+              this.$nextTick(() => {
+                that.isRouterAlive = true
+              })
+            }
+          }
+        }
+```
+
+vue页面中(子页面)
+
+```sh
+      export default {
+        inject:['reload'],
+        name: '',
+        components: {
+        },
+        props: {},
+        data(){
+            return{
+              username:""
+            }
+        },
+    }
+```
+然后就可以在方法中直接调用  this.reload() 了。
+
 
 ## parcels 系统打包及部署
 

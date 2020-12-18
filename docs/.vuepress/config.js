@@ -29,13 +29,7 @@ module.exports = {
                 title: 'parcels技术点',
                 collapsable: true, //是否展开
                 children: 
-                [   {title:'parcels项目说明文档', path: './parcels/function/item'},   
-                    {title:'公用库使用', path: './parcels/function/submodule'},
-                    {title:'前端处理国际化', path: './parcels/function/i18n'},
-                    // {title:'前端工程自动化', path: './parcels/function/webAuto'},
-                    // {title:'全局方法及引用', path: './parcels/function/global'},
-                    {title:'前端实现页面重载不刷新', path: './parcels/function/reload'},
-                    {title:'elementui表格合并的方法', path: './parcels/function/table'},
+                [   {title:'parcels项目说明文档', path: './parcels/function/item'},      
                 ]
               },
               {
@@ -63,6 +57,7 @@ module.exports = {
                     {title:'form 表单', path: './elementui/function/form'},
                     {title:'el-tooltip', path: './elementui/function/tooltip'},
                     {title:'tree 树组件的相关应用', path: './elementui/function/tree'},
+                    {title:'elementui表格合并的方法', path: './elementui/function/table'},
                 ]
               },
               {
