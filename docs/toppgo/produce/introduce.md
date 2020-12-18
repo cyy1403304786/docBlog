@@ -286,57 +286,7 @@ module.exports = {
   
 ```
 
-
-
-## toppgo 项目部署说明
-- 测试环境部署(192.168.8.167):
-```sh
-  cd /toppgo 
-  sh 01-nuxt-web.sh  //更新nuxt 系统页面
-  sh 02-vue-admin.sh //更新个人中心后台系统
-```
-- 线上环境部署(国内服务器 139.224.190.136  美国服务器 47.254.25.116  欧洲服务器  47.254.158.111 )
-
-前端更新线上:
-
-   1,toppgo前台页面 
-
-     ---------先本地打包nuxt 项目(npm run build)
-
-     ---------打包完成后复制(.nuxt nuxt.config.js package-lock.json package.json static )到对应项目目录
-
-     ---------pm2 restart mynuxt (在对应服务器上执行)
-
-   2,toppgo个人中心页面
-
-     ---------本地打包(npm run build)
-
-     ---------将本地生成的dist 文件 丢到对应线上前端项目目录
-
-### 关于nuxt 部署脚本
-```sh
-  #!/bin/bash
-  keyword=$1
-  # 打包
-  if [ -z $1 ] || [[ "nuxt-web" =~ $keyword ]];then
-    echo 更新 nuxt-web.........................................................
-    cd /toppgo/nuxt-toppgo-html
-    git reset --hard
-    git pull
-    cnpm i
-    echo -e '\n\n'
-      echo 开始打包nuxt-web...
-      cd /toppgo/nuxt-toppgo-html
-      rm -rf .nuxt
-      cnpm run build
-      pm2 restart nuxt-toppgo
-  fi
-  # 运行
-  echo 打包完成...
-```
-
-
-### vue 中关于引入svg 图标
+### 6,vue 中关于引入svg 图标
 
 - 安装svg-sprite-loader：npm i svg-sprite-loader --save-dev
 - 建立 svg 文件目录 (assets/icons/svg/exapmle.svg) 
@@ -430,3 +380,93 @@ module.exports = {
 ```sh
   <svg-icon icon-class="toppgo" />
 ```
+
+### 7,vuex 模块化用法 跨模块调用方法
+
+::: warning
+  使用场景: 当在vuex 的A模块中，需要调用 B模块中的 数据或者方法时，我们可以使用vuex 中的跨模块调用方法。跨模块调用数据使用 rootState,
+  跨模块使用方法可以使用  dispatch('moduleB/actionFn',{}, {root: true}。具体如下:
+:::
+
+```sh
+
+  //获取state 里面的数据
+  async unbundlingWechatA({commit,state, dispatch, rootState}, param) {
+    let res = await unbundlingWechat()
+    console.log(rootState.moduleA.a)   //获取模块A中的数据a
+  },
+ //获取 actions 里面的方法
+async unbundlingWechatA({commit,state, dispatch, rootState}, param) {
+    let res = await unbundlingWechat()
+     dispatch('moduleA/testFuc', {}, {root: true})  // 'moduleA' 模块A  'testFuc' 模块A 中的方法
+  },
+
+```
+
+
+
+
+
+## toppgo 项目部署说明
+- 测试环境部署(192.168.8.167):
+```sh
+  cd /toppgo 
+  sh 01-nuxt-web.sh  //更新nuxt 系统页面
+  sh 02-vue-admin.sh //更新个人中心后台系统
+```
+- 线上环境部署(国内服务器 139.224.190.136  美国服务器 47.254.25.116  欧洲服务器  47.254.158.111 )
+
+前端更新线上:
+
+   1,toppgo前台页面 
+
+     ---------先本地打包nuxt 项目(npm run build)
+
+     ---------打包完成后复制(.nuxt nuxt.config.js package-lock.json package.json static )到对应项目目录
+
+     ---------pm2 restart mynuxt (在对应服务器上执行)
+
+   2,toppgo个人中心页面
+
+     ---------本地打包(npm run build)
+
+     ---------将本地生成的dist 文件 丢到对应线上前端项目目录
+
+### 1,关于nuxt 部署脚本编写
+```sh
+  #!/bin/bash
+  keyword=$1
+  # 打包
+  if [ -z $1 ] || [[ "nuxt-web" =~ $keyword ]];then
+    echo 更新 nuxt-web.........................................................
+    cd /toppgo/nuxt-toppgo-html
+    git reset --hard
+    git pull
+    cnpm i
+    echo -e '\n\n'
+      echo 开始打包nuxt-web...
+      cd /toppgo/nuxt-toppgo-html
+      rm -rf .nuxt
+      cnpm run build
+      pm2 restart nuxt-toppgo
+  fi
+  # 运行
+  echo 打包完成...
+```
+
+### 2, toppgo 前端部署
+
+** 前端执行(测试环境)更新:  1,toppgo前台页面  
+                    -------- cd  /toppgo   
+                    -------- sh 01-nuxt-web.sh
+                              2,toppgo个人中心页面
+                    -------- cd  /toppgo   
+                    -------- sh 02-vue-admin.sh
+** 前端更新线上:   1,toppgo前台页面 
+		              -------- cd  /toppgo  
+		              -------- sh 09-online-cn-toppgo-nuxt.sh（更新 cn 服务器） 
+		              -------- sh 10-online-www-toppgo-nuxt.sh（更新 www服务器） 
+ 		              -------- sh 11-online-us-toppgo-nuxt.sh（更新 us 服务器） 
+	               2,toppgo个人中心页面
+                  -------- cd  /toppgo   
+                  -------- sh 08-online-vue-admin.sh (可以根据关键字更新对应服务器 cn,www,us)

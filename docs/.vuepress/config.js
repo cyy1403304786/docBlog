@@ -22,17 +22,9 @@ module.exports = {
               ['./guide/started/snipt', '自定义代码片段'],
               ['./guide/started/echarts', 'echarts图表'],
               ['./guide/started/nginx', 'nginx'],
-              ['./guide/started/vuex', 'vuex'],
               ['./guide/started/pm2', 'pm2的相关使用'],
               ['./guide/started/nuxt', 'nuxt的相关使用'],
               ['./guide/started/css3', 'css3的相关介绍'],
-              {
-                title: 'vue',
-                collapsable: true, //是否展开
-                children: 
-                [   {title:'vue自定义指令应vue用', path: './vue/function/directive'},   
-                ]
-              },
               {
                 title: 'parcels技术点',
                 collapsable: true, //是否展开
@@ -51,8 +43,8 @@ module.exports = {
                 collapsable: true, //是否展开
                 children: 
                     [   
-                      {title:'toppgo项目说明文档', path: './toppgo/produce/introduce'},   
-                      {title:'toppgo---app项目', path: './toppgo/produce/app'},   
+                      {title:'toppgo 项目说明文档', path: './toppgo/produce/introduce'},
+                      {title:'toppgo APP项目说明文档', path: './toppgo/produce/introduceApp'} 
                     ]
               },
               {
