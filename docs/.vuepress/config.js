@@ -72,6 +72,14 @@ module.exports = {
                   {title:'es6中的promise', path: './es6/promise'},
                 ]
               },
+              {
+                title: '前端性能优化',
+                collapsable: true, //是否展开
+                children: 
+                [   
+                  {title:'路由懒加载', path: './performance/route'},   
+                ]
+              },
         ],
         sidebarDepth : 2,  //侧边栏自动显示当前激活页面中标题的链接，嵌套在页面本身的链接下。默认深度是1，提取h2标题；0禁用标题链接；最大值为2，同时提取h2和h3。
 
