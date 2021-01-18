@@ -1,17 +1,127 @@
 # toppgo 项目说明文档
 
 ## 项目介绍
-toppgo 是一个提供给海外华人，留学生以及国内外采购商等仓库增值和国际转运服务的平台。其中包括首页网站(采用nuxt 框架搭建)，后台管理平台(采用vue框架)，手机app(采用uniapp技术搭建)等。
+toppgo 是一个向海外华人、留学生以及国内外采购商等提供国际转运与仓储增值服务的平台。其中包括官网首页(采用nuxt 框架搭建)，后台管理平台(采用vue框架)，手机app等三大工程。
+
+相关网站: 
+
+         cn.toppgo.com  (中国服务器)
+
+         us.toppgo.com  (美国服务器)
+
+         www.toppgo.com (欧洲服务器)
+
 
 ## 前端所用技术框架选型
-该项目后台管理系统采用 vue 搭配 vue-cli3.0 脚手架，配合vuex 状态管理器 结合webpack 打包工具，采用 scss 扩展语言构造而成。
-该项目前台展示页面采用 nuxt 技术搭建，配合 vue-i18n 进行相关国际化操作，支持三国语言(中文，韩文，英文)。
+该项目前台展示页面：采用 nuxt 技术搭建，配合 vue-i18n 进行相关国际化操作，支持三国语言(中文，韩文，英文)。
+
+该项目后台管理系统：采用 vue2.0 搭配 vue-cli3.0 脚手架，配合vuex 状态管理器 结合webpack 打包工具，采用 scss 扩展语言构造而成。
+
+该项目app端： 为混合APP开发，前端框架采用 mui + js 开发而成。
 
 
 ## 项目结构
 参照 parcels 结构构建而成。
 
 ## toppgo 重要项目点
+### 0,nuxt项目 + 后台vue项目共用登录登出页面
+::: warning 
+  业务场景:
+  公司可能有两套系统，但是分别放在不同的域名下，想要共用一个登入登出功能，实现让用户感觉仿佛在使用同一个系统。
+  实现逻辑：cookie下面有个设置域的属性,你把域设置成对应的域名（customer.toppgo.com）,然后只要在这个域名下面的都可以共用你的cookies了（后端操作配置）!
+:::
+- 在项目中区分开发环境和生产环境：
+
+ 1，根目录下创建两个文件。文件名分别为 .env.development （开发环境）和.env.production （生产环境）
+
+ 2，分别编辑这两个文件。在不同的环境下设置不同的环境变量
+ 
+   2.1 .env.development，这是开发环境下的URL
+```sh
+   VUE_APP_DOMAIN_BASE_URL = http://pc.toppgo.com:2020
+
+```
+
+   2.2 .env.production，这是生产环境下的URL
+
+```sh
+  VUE_APP_DOMAIN_BASE_URL =  /
+
+```
+
+3，设置不同环境下的打包指令 （package.json文件）
+
+```sh
+      {
+        "name": "vue-toppgo",
+        "version": "0.1.0",
+        "private": true,
+        "scripts": {
+          "dev": "vue-cli-service serve --mode development",
+          "build": "vue-cli-service build --mode production"
+        },
+        ....
+      }
+```
+
+4， 配置请求基本地址
+
+```sh
+   location.href = process.env.NODE_ENV === 'development' ? process.env.VUE_APP_DOMAIN_BASE_URL + '/login' : `${location.origin}/login`
+```
+
+- A 项目拥有登录页面，进行登录逻辑：
+
+```sh
+  // 登录
+  async userLoginA({ commit, state }, params) {
+    state.loginBtnButtonLoading = true
+
+    try {
+      let res = await userLogin(state.loginForm)
+      if (res.flag) {
+        let url = 'http://' + location.host + '/toppgo/home'
+        window.location.href = process.env.NODE_ENV == 'development' ? 'http://customer.toppgo.com:2021/toppgo' : url
+      }else{
+        Notification.error({ title: '提示', message: res.msg });
+      }
+      state.loginBtnButtonLoading = false
+    } catch(err) {
+      state.loginBtnButtonLoading = false
+    }
+  },
+
+```
+
+- B 项目公用A项目的登录页面和登出页面，在路由拦截页面进行配置：
+
+```sh
+
+  router.beforeEach(async(to, from, next) => {
+
+    if(/(\/login|\/regist|\/resetPassword|\/protocol)/.test(to.path)){
+      next(); // 未登录,不需拦截
+    }else{   // 校验是否登录(获取用户信息接口)
+      axios.get(apiUrlPrefix + "/subject/isLogin").then(response => {
+        if(response.data.flag){
+          store.commit('login/isLoginM', response.data)
+          if(to.path === "/"){
+            next({ path: "/" }) // 访问根目录，定向到首页
+          }else{
+            next(); // 已登录
+          }
+        }else{
+          location.href = process.env.NODE_ENV == 'development' ? `${store.state.common.VUE_APP_DOMAIN_BASE_URL}/login` :`${location.origin}/login`
+        }
+      }).catch(response =>{
+         location.href = process.env.NODE_ENV == 'development' ? `${store.state.common.VUE_APP_DOMAIN_BASE_URL}/login` :`${location.origin}/login`
+      });
+    }
+})
+
+```
+
+
 ### 1,nuxt 中关于引入svg 图标
 - 项目全局安装svg-sprite-loader：
 ```sh
