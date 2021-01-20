@@ -57,6 +57,38 @@
 ```sh
   // 页面可以直接使用
    <a-button type="primary">哈哈哈</a-button>
-   
+
 ```
 
+- 变化2： 生命周期不同
+::: tip
+  Vue2.0里常见的生命周期函数有8个,分别为.
+:::
+
+```sh
+  beforeCreate,
+  created,
+  beforMount,
+  mounted,
+  beforUpdate, 
+  updated,
+  beforDestroy,
+  desroyed
+
+```
+
+::: tip
+  Vue3.0的生命周期函数在2.0的基础上有了些修改
+:::
+
+1,beforCreate, created,这两个函数由setup()来代替
+
+```sh
+  beforMount => onBeforMount
+  mounted    => onMounted
+  beforUpdate => onBeforUpdate
+  updated     =>  onUpdate
+  beforDestroy => onBeforUnmount
+  desroyed => onUnmounted
+
+```
