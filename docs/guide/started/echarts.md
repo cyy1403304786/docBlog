@@ -188,7 +188,7 @@
 
 ```
 用window.onresize = myChart.resize; 可以完成自适应，就是把window的onresize事件赋值为echart的resize事件.(单个图表的情况)
-
+ 
 多个图表可以使用addEventListener
 ```sh
 
