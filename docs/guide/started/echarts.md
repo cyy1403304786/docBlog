@@ -171,3 +171,31 @@
            
    }]
 ```
+
+## echarts 图表自适应
+以echarts 折线图为例(新建一个vue页面)
+:::  warning
+  实现需求：当浏览器发生resize事件的时候，让其触发echart的resize事件，重绘canvas
+:::
+
+![solar](../../.vuepress/public/img/echartsView.gif)
+
+```sh
+    mounted() {
+      var myChart = echarts.init(document.getElementById('main'));
+      window.onresize = myChart.resize
+    },
+
+```
+用window.onresize = myChart.resize; 可以完成自适应，就是把window的onresize事件赋值为echart的resize事件.(单个图表的情况)
+
+多个图表可以使用addEventListener
+```sh
+
+  window.addEventListener("resize", () => { 
+      this.myChart.resize();  
+      this.myChart2.resize();  
+      this.myChart3.resize();
+  });
+
+```
