@@ -111,6 +111,31 @@
       data: ['收货量'],  //图标名称的数组，可为多个
   },
 ```
+
+
+- <font face="黑体" color= red  size= 5>formatter     -----饼图提示数量及占比显示</font>
+
+![solar](../../.vuepress/public/img/pieEchat.png)
+
+其中{b}表示各项名称，此项配置为默认显示项，{c}表示此项的数量显示，默认不显示，({d}%)表示此项占比，默认不显示。
+
+```sh
+  tooltip: {
+    trigger: 'item',
+    formatter: '{b}：{c}（{d}%）'
+  },
+   series: [
+            {
+                type: 'pie',
+                label: {
+                    formatter: '{b}：{c}（{d}%）'
+                },
+            }
+          ]
+```
+
+
+
 - <font face="黑体" color= red  size= 5>grid     -----调整折线图的位置(图标单元格)</font>
 ```sh
   grid: {

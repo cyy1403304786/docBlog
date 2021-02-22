@@ -50,6 +50,14 @@ module.exports = {
                   ]
               },
               {
+                title: 'balidrop技术点', 
+                collapsable: true, //是否展开
+                children:
+                  [   
+                    {title:'balidrop项目说明文档', path: './balidrop/produce'},   
+                  ]
+              },
+              {
                 title: 'elementui 相关功能点',
                 collapsable: true, //是否展开
                 children: 
