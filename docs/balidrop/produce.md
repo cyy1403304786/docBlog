@@ -17,6 +17,7 @@ balidrop 后台服务平台
 
 ## 前端所用技术框架选型
 该项目 PC官网         应用 nuxt框架构造而成。
+
 该项目 后台管理中心   采用 vue + element UI 框架构造。
 
 
@@ -42,3 +43,15 @@ balidrop 后台服务平台
       </transition>
     </div>
 ```
+
+### 2，商品放大镜效果(UI部分)
+- 实现效果如下:
+
+![solar](../.vuepress/public/img/balidrop/magnifier.png)
+
+- 实现思路: 鼠标移入移出事件
+
+```sh
+  
+```
+
