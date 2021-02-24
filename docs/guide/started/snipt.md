@@ -35,6 +35,51 @@
 		   }
 }
 ```
+
+vue 结构显示图
+```sh
+		<template>
+			<div class="listTest_wrap">
+			
+			</div>
+		</template>
+
+		<script>
+			import { mapState, mapActions, mapMutations } from 'vuex'
+			export default {
+				name: "",
+				components: {},
+				data() {
+					return {
+
+					}
+				},
+				computed: {
+						...mapState({
+								detailProductForm: state => state.home.detailProductForm,
+						})
+				},
+				created() {
+
+				},
+				mounted() {
+
+				},
+				methods: {
+					...mapActions('home', ['platformProductOneA']),
+					...mapMutations('home', ['findPrice']),
+				}
+			};
+		</script>
+		<style lang="scss">
+			.listTest_wrap {
+
+			}
+		</style>
+
+
+```
+
 - 制定vuex 的代码片段
 ```
 {
