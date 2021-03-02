@@ -4,7 +4,7 @@ heroImage: /test.jpg
 heroText: 莹莹的博客啊
 tagline: 做一个精致爱代码的姑娘伢
 actionText: 立即访问
-actionLink: /guide/install/install
+actionLink: /guide/started/started
 features:
 - title: 简明优先
   details: 对以 markdown 为中心的项目结构，做最简化的配置，帮助你专注于创作。
