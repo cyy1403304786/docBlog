@@ -13,9 +13,8 @@ module.exports = {
         lastUpdated: true,
         nav : [
             {text: 'home',  link: '/',},
-            { text: '接口定义',  link: 'https://www.baidu.com', target:'_self', rel:''},
-            { text: '接口字段定义', link: 'https://www.baidu.com', target:'_self', rel:'' },
-            { text: '附录：错误码', link: 'https://www.baidu.com', target:'_self', rel:'' }
+            { text: '个人网站',  link: 'http://nuxt.yysmile.cn', target:'_self', rel:''},
+            { text: 'github 地址', link: 'https://github.com/cyy1403304786', target:'_self', rel:'' },
         ],
         sidebar: [
               ['./guide/started/webhook','webhook自动部署'],
