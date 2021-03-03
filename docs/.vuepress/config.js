@@ -15,23 +15,9 @@ module.exports = {
             { text: '个人网站',  link: 'http://nuxt.yysmile.cn', target:'_blank', rel:''},
             { text: 'github 地址', link: 'https://github.com/cyy1403304786', target:'_blank', rel:'' },
         ],
-        // sidebar: {
-        //   '/guide/started/':[
-        //       {
-        //         title: '基础',  //组名
-        //         children: ['webhook','snipt','echarts','nginx'],   //该分组下要显示的文件的目录
-        //       },
-        //     ],
-        //     '/guide/project':[
-        //       {
-        //         title: '项目',  //组名
-        //         children: ['parcels','balidrop','17feia'],   //该分组下要显示的文件的目录
-        //       },
-        //     ]
-        // },
         sidebar: [
               {
-                title: '基础', 
+                title: '工具类', 
                 collapsable: true, //是否展开
                 children: 
                     [   
@@ -42,6 +28,14 @@ module.exports = {
                       {title:'pm2的相关使用', path: './guide/started/pm2'},
                       {title:'nuxt的相关使用', path: './guide/started/nuxt'},
                       {title:'css3的相关介绍', path: './guide/started/css3'},
+                    ]
+              },
+              {
+                title: 'ES6', 
+                collapsable: true, //是否展开
+                children: 
+                    [   
+                      {title:'export 和 export default 的区别', path: './guide/ES6/export'},
                     ]
               },
               {
@@ -97,6 +91,7 @@ module.exports = {
                   {title:'es6中的解构赋值', path: './es6/destructuring'},
                   {title:'es6中的模块化', path: './es6/modules'},
                   {title:'es6中的promise', path: './es6/promise'},
+                  
                 ]
               },
               {
