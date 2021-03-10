@@ -22,6 +22,7 @@ module.exports = {
                 children: 
                     [ 
                       {title:'css 重要知识点', path: './guide/started/css'},
+                      {title:'js 重要知识点', path: './guide/started/js'},
                       {title:'webhook自动部署', path: './guide/started/webhook'},
                       {title:'自定义代码片段', path: './guide/started/snipt'},
                       {title:'echarts图表', path: './guide/started/echarts'},
