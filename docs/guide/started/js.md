@@ -275,10 +275,72 @@
 
 - <font size= 5 color= red> bind ：</font>创建一个新的函数, 当被调用时，将其this关键字设置为提供的值。 
 
+```sh
+    var altwrite = document.write;
+    console.log(altwrite)  //为一个函数
+    altwrite.bind(document)('hello') //bind 会创建一个新的函数，调用的时候会将this 设置为新值
+    altwrite.call(document,'hello')
+```
 ## new, this
 ## promise
 ## async/await
+
 ## eventloop(事件循环)
+
+::: details 热门小贴士:
+    JavaScript 是一门单线程语言，异步，非阻塞。javascript 代码是从上至下执行的！
+:::
+
+- JavaScript的运行机制
+
+  javascript 是单线程的。执行任务需一个完成后接下一个，那么在网页元素加载过慢的时候，不能一直等待页面。因此引发了同步和异步的概念。JavaScript执行代码的时候将所有任务放到执行栈，那么执行栈会区分同步任务或异步任务。同步任务将进入主线程，一个接一个执行完。与此同时，异步任务会有一个事件列表，事件列表中会执行一个回调函数，将异步任务放到事件队列中。当主线程的同步任务执行完成后，就会从事件队列中读取一个个异步任务。以上过程不断循环操作就叫 事件循环。
+<div style="text-align:center;">
+    <img src="../../.vuepress/public/img/js/eventloop.png"  style="margin:0 auto;">
+</div>
+
+- 宏任务和微任务：
+
+    macro-task(宏任务)：包括整体代码script，setTimeout，setInterval
+
+    micro-task(微任务)：Promise，process.nextTick
+
+ 不同类型的任务会进入对应的Event Queue，比如setTimeout和setInterval会进入相同的Event Queue。
+
+ 事件循环的顺序，决定js代码的执行顺序。进入整体代码(宏任务)后，开始第一次循环。接着执行所有的微任务。然后再次从宏任务开始，找到其中一个任务队列执行完毕，再执行所有的微任务。听起来有点绕，我们用文章最开始的一段代码说明：
+
+ ```sh
+    setTimeout(function() {
+        console.log('setTimeout');
+    })
+
+    new Promise(function(resolve) {
+        console.log('promise');
+        resolve()
+    }).then(function() {
+        console.log('then');
+    })
+
+    console.log('console');
+
+    // 输出结果为：promise  console  then  setTimeout
+ ```
+
+
+ **1，这段代码作为宏任务，进入主线程**
+
+ **2，先遇到setTimeout，那么将其回调函数注册后分发到宏任务Event Queue。(注册过程与上同，下文不再描述)**
+
+ **3，接下来遇到了Promise，new Promise立即执行，then函数分发到微任务Event Queue**
+
+ **4， 遇到console.log()，立即执行,**
+
+ **5，好啦，整体代码script作为第一个宏任务执行结束，看看有哪些微任务？我们发现了then在微任务Event Queue里面，执行**
+  
+ **6，第一轮事件循环结束了，我们开始第二轮循环，当然要从宏任务Event Queue开始。我们发现了宏任务Event Queue中setTimeout对应的回调函数，立即执行。**
+
+ **7，结束。**
+
+
 ## 浏览器缓存机制
 ## 浏览器渲染原理
 ## es6
