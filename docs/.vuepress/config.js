@@ -12,7 +12,7 @@ module.exports = {
         lastUpdated: true,
         nav : [
             {text: 'home',  link: '/',},
-            { text: '个人网站',  link: 'http://nuxt.yysmile.cn', target:'_blank', rel:''},
+            { text: '个人网站',  link: 'http://www.yysmile.cn', target:'_blank', rel:''},
             { text: 'github 地址', link: 'https://github.com/cyy1403304786', target:'_blank', rel:'' },
         ],
         sidebar: [
