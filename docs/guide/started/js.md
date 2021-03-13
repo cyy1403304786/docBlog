@@ -237,6 +237,24 @@
 用 promise 或者 async/await 如何实现呢？请参考 <https://juejin.cn/post/6844903474212143117#heading-0>
 
 ## 原型
+::: details Prototype 
+   给其他对象提供共享属性的对象。prototype 描述的是两个对象之间的关系（其中一个，为另一个提供属性访问权限）。所有对象，都可以作为另一个对象的prototype 来使用。
+:::
+
+**<font size= 5> 1，所有的 object 对象都有一个隐式引用 </font>**
+
+所有对象，都有一个隐式引用，它被称之为这个对象的 prototype 原型。
+
+<div style="text-align:center;">
+    <img src="../../.vuepress/public/img/js/prototype.png"  style="margin:0 auto;">
+</div>
+
+
+
+
+
+
+
 ## 继承
 
 ## call/apply/bind
