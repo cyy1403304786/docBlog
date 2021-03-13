@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>tree 树形控件 | 学习笔记</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/img/test.ico">
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.47543788.css" as="style"><link rel="preload" href="/assets/js/app.e844382c.js" as="script"><link rel="preload" href="/assets/js/2.def6215b.js" as="script"><link rel="preload" href="/assets/js/3.f4d52b8e.js" as="script"><link rel="preload" href="/assets/js/8.a6d73c47.js" as="script"><link rel="prefetch" href="/assets/js/10.50a01628.js"><link rel="prefetch" href="/assets/js/11.42552db5.js"><link rel="prefetch" href="/assets/js/12.cbdb02fa.js"><link rel="prefetch" href="/assets/js/13.a0623ea7.js"><link rel="prefetch" href="/assets/js/14.65b4c7f2.js"><link rel="prefetch" href="/assets/js/15.594a5849.js"><link rel="prefetch" href="/assets/js/16.07d3711d.js"><link rel="prefetch" href="/assets/js/17.b7b18637.js"><link rel="prefetch" href="/assets/js/18.f1a2b96e.js"><link rel="prefetch" href="/assets/js/19.e561fffd.js"><link rel="prefetch" href="/assets/js/20.79457941.js"><link rel="prefetch" href="/assets/js/21.e88381ce.js"><link rel="prefetch" href="/assets/js/22.a54482d5.js"><link rel="prefetch" href="/assets/js/23.1d8ea74f.js"><link rel="prefetch" href="/assets/js/24.b9ba21dd.js"><link rel="prefetch" href="/assets/js/25.89f800d1.js"><link rel="prefetch" href="/assets/js/26.6736e07b.js"><link rel="prefetch" href="/assets/js/27.0905f68d.js"><link rel="prefetch" href="/assets/js/28.c49c2491.js"><link rel="prefetch" href="/assets/js/29.a1efb644.js"><link rel="prefetch" href="/assets/js/30.52ef7b66.js"><link rel="prefetch" href="/assets/js/31.3f7e9119.js"><link rel="prefetch" href="/assets/js/32.10f7af96.js"><link rel="prefetch" href="/assets/js/33.5b18032b.js"><link rel="prefetch" href="/assets/js/34.b6f892e9.js"><link rel="prefetch" href="/assets/js/4.28ef076a.js"><link rel="prefetch" href="/assets/js/5.a197b8e0.js"><link rel="prefetch" href="/assets/js/6.8d5a490f.js"><link rel="prefetch" href="/assets/js/7.02c09c41.js"><link rel="prefetch" href="/assets/js/9.2dcc13a8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.47543788.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">学习笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  home
+</a></div><div class="nav-item"><a href="http://nuxt.yysmile.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人网站
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/cyy1403304786" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github 地址
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  home
+</a></div><div class="nav-item"><a href="http://nuxt.yysmile.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人网站
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/cyy1403304786" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github 地址
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>工具类</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ES6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>parcels技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>toppgo技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>17feia技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>balidrop技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>elementui 相关功能点</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/elementui/function/popover.html" class="sidebar-link">el-popover 点击内容隐藏弹框</a></li><li><a href="/elementui/function/form.html" class="sidebar-link">form 表单</a></li><li><a href="/elementui/function/tooltip.html" class="sidebar-link">el-tooltip</a></li><li><a href="/elementui/function/tree.html" aria-current="page" class="active sidebar-link">tree 树组件的相关应用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/elementui/function/tree.html#_1-基础用法" class="sidebar-link">1，基础用法</a></li><li class="sidebar-sub-header"><a href="/elementui/function/tree.html#_2-实现同级部门拖拽功能" class="sidebar-link">2，实现同级部门拖拽功能</a></li><li class="sidebar-sub-header"><a href="/elementui/function/tree.html#_3-实现鼠标移入子节点-显示删除、修改、添加等功能按钮" class="sidebar-link">3，实现鼠标移入子节点，显示删除、修改、添加等功能按钮</a></li><li class="sidebar-sub-header"><a href="/elementui/function/tree.html#_4-el-tree-树形默认点击第一个node-并高亮" class="sidebar-link">4，el-tree 树形默认点击第一个node，并高亮</a></li></ul></li><li><a href="/elementui/function/table.html" class="sidebar-link">elementui表格合并的方法</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>es6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端性能优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>vue3.0学习</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="tree-树形控件"><a href="#tree-树形控件" class="header-anchor">#</a> tree 树形控件</h1> <h2 id="_1-基础用法"><a href="#_1-基础用法" class="header-anchor">#</a> 1，基础用法</h2> <ul><li>props 配置基础数据</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>
+ <span class="token operator">&lt;</span>el-tree :data<span class="token operator">=</span><span class="token string">&quot;treeData&quot;</span> :props<span class="token operator">=</span><span class="token string">&quot;defaultProps&quot;</span>  node-key<span class="token operator">=</span><span class="token string">&quot;id&quot;</span>
+  :default-expanded-keys<span class="token operator">=</span><span class="token string">&quot;defaultExpandedkeys&quot;</span> :expand-on-click-node<span class="token operator">=</span><span class="token string">&quot;false&quot;</span>
+   <span class="token assign-left variable">ref</span><span class="token operator">=</span><span class="token string">&quot;treeRef&quot;</span><span class="token operator">&gt;</span>
+ <span class="token operator">&lt;</span>/el-tree<span class="token operator">&gt;</span>
+
+  <span class="token builtin class-name">export</span> default <span class="token punctuation">{</span>
+    <span class="token function-name function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token builtin class-name">return</span> <span class="token punctuation">{</span>
+        defaultProps: <span class="token punctuation">{</span>
+            children: <span class="token string">'children'</span>,  //子节点数组
+            label: <span class="token string">'name'</span>  //显示节点名称
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+</code></pre></div><ul><li>更改tree 节点图标</li></ul> <p><img src="/assets/img/tree1.3de1536a.gif" alt="solar"></p> <div class="language-sh extra-class"><pre class="language-sh"><code>  
+    .el-tree /deep/ .el-tree-node__expand-icon.expanded<span class="token punctuation">{</span>
+      -webkit-transform: rotate<span class="token punctuation">(</span>0deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      transform: rotate<span class="token punctuation">(</span>0deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    //有子节点 且未展开
+    .el-tree /deep/ .el-icon-caret-right:before<span class="token punctuation">{</span>
+        background: url<span class="token punctuation">(</span><span class="token string">&quot;../assets/image/companyStart.png&quot;</span><span class="token punctuation">)</span> no-repeat <span class="token number">0</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        content: <span class="token string">''</span><span class="token punctuation">;</span>
+        display: block<span class="token punctuation">;</span>
+        width: 16px<span class="token punctuation">;</span>
+        height: 16px<span class="token punctuation">;</span>
+        font-size: 16px<span class="token punctuation">;</span>
+        background-size: 16px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    //有子节点 且已展开
+  .el-tree /deep/ .el-tree-node__expand-icon.expanded.el-icon-caret-right:before<span class="token punctuation">{</span>
+      background: url<span class="token punctuation">(</span><span class="token string">&quot;../assets/image/company.png&quot;</span><span class="token punctuation">)</span> no-repeat <span class="token number">0</span> 0px<span class="token punctuation">;</span>
+      content: <span class="token string">''</span><span class="token punctuation">;</span>
+      display: block<span class="token punctuation">;</span>
+      width: 16px<span class="token punctuation">;</span>
+      height: 16px<span class="token punctuation">;</span>
+      font-size: 16px<span class="token punctuation">;</span>
+      background-size: 16px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+    //没有子节点<span class="token punctuation">(</span>不显示图片<span class="token punctuation">)</span>
+    .el-tree /deep/.el-tree-node__expand-icon.is-leaf::before<span class="token punctuation">{</span>
+        background:  no-repeat <span class="token number">0</span> 0px<span class="token punctuation">;</span>
+        content: <span class="token string">''</span><span class="token punctuation">;</span>
+        display: block<span class="token punctuation">;</span>
+        width: 16px<span class="token punctuation">;</span>
+        height: 16px<span class="token punctuation">;</span>
+        font-size: 16px<span class="token punctuation">;</span>
+        background-size: 16px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="_2-实现同级部门拖拽功能"><a href="#_2-实现同级部门拖拽功能" class="header-anchor">#</a> 2，实现同级部门拖拽功能</h2> <p>实现场景：</p> <p><img src="/assets/img/tree2.0a0da4ab.gif" alt="solar"></p> <p>相关属性说明:</p> <ul><li>draggable  ----el-tree中启动拖拽功能</li> <li>allow-drag ----判断节点能否被拖拽</li> <li>allow-drop ----拖拽时判定目标节点能否被放置 (type 参数有三种情况：'prev'、'inner' 和 'next')</li> <li>node-drop  ----拖拽完成时触发的事件</li></ul> <p>实现逻辑：</p> <div class="language-sh extra-class"><pre class="language-sh"><code>   <span class="token operator">&lt;</span>el-tree :data<span class="token operator">=</span><span class="token string">&quot;treeData&quot;</span> 
+      :props<span class="token operator">=</span><span class="token string">&quot;defaultProps&quot;</span>
+      node-key<span class="token operator">=</span><span class="token string">&quot;id&quot;</span> 
+      :default-expanded-keys<span class="token operator">=</span><span class="token string">&quot;defaultExpandedkeys&quot;</span>
+      :expand-on-click-node<span class="token operator">=</span><span class="token string">&quot;false&quot;</span>
+      <span class="token assign-left variable">ref</span><span class="token operator">=</span><span class="token string">&quot;treeRef&quot;</span>
+      draggable
+      :allow-drag<span class="token operator">=</span><span class="token string">&quot;allowDrag&quot;</span>
+      :allow-drop<span class="token operator">=</span><span class="token string">&quot;allowDrop&quot;</span>
+      @node-click<span class="token operator">=</span><span class="token string">&quot;handleNodeClick&quot;</span>
+      @node-drop<span class="token operator">=</span><span class="token string">&quot;handleDrop&quot;</span>
+      :highlight-current<span class="token operator">=</span><span class="token string">&quot;true&quot;</span><span class="token operator">&gt;</span>
+   <span class="token operator">&lt;</span>/el-tree<span class="token operator">&gt;</span>
+
+
+  // 判断节点能否被拖拽
+  allowDrag<span class="token punctuation">(</span>draggingNode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    //根节点不能被拖拽，同级部门才能互相拖拽
+    <span class="token builtin class-name">return</span> draggingNode.data.parentId.indexOf<span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span> <span class="token operator">==</span><span class="token operator">=</span> -1<span class="token punctuation">;</span>
+
+  <span class="token punctuation">}</span>,
+  //同级部门拖动<span class="token punctuation">(</span>实现上下拖拽排序<span class="token punctuation">)</span>
+  allowDrop<span class="token punctuation">(</span>draggingNode, dropNode, <span class="token builtin class-name">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>draggingNode.level <span class="token operator">==</span><span class="token operator">=</span> dropNode.level<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>draggingNode.parent.id <span class="token operator">==</span><span class="token operator">=</span> dropNode.parent.id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          // 向上拖拽 <span class="token operator">||</span> 向下拖拽
+          this.sortId.departmentId <span class="token operator">=</span> draggingNode.data.id //拖拽元素传给后台
+          this.sortId.targetDepartmentId <span class="token operator">=</span> dropNode.data.id // 拖拽目标元素传给后台
+          <span class="token builtin class-name">return</span> <span class="token builtin class-name">type</span> <span class="token operator">==</span><span class="token operator">=</span> <span class="token string">&quot;prev&quot;</span> <span class="token operator">||</span> <span class="token builtin class-name">type</span> <span class="token operator">==</span><span class="token operator">=</span> <span class="token string">&quot;next&quot;</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        // 不同级进行处理
+        <span class="token builtin class-name">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  // 拖拽完成<span class="token punctuation">(</span>调用后台接口实现拖拽后刷新页面<span class="token punctuation">)</span>
+  <span class="token function-name function">handleDrop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      this.systDepartmentSortA<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>,
+
+</code></pre></div><h2 id="_3-实现鼠标移入子节点-显示删除、修改、添加等功能按钮"><a href="#_3-实现鼠标移入子节点-显示删除、修改、添加等功能按钮" class="header-anchor">#</a> 3，实现鼠标移入子节点，显示删除、修改、添加等功能按钮</h2> <p>实现场景：</p> <p><img src="/assets/img/tree3.2a1074a5.gif" alt="solar"></p> <p>相关属性说明:</p> <ul><li>Slot        ----使用插槽自定义树节点的内容</li> <li>mouseenter  ----鼠标移入事件</li> <li>mouseleave  ----鼠标移出事件</li></ul> <p>实现逻辑:</p> <p>利用 鼠标进入(mouseenter) 和 鼠标移出 (mouseenter) 动态改变新增的一个del字段就能控制隐藏显示了</p> <div class="language-sh extra-class"><pre class="language-sh"><code>   <span class="token operator">&lt;</span>el-tree :data<span class="token operator">=</span><span class="token string">&quot;treeData&quot;</span> 
+      :props<span class="token operator">=</span><span class="token string">&quot;defaultProps&quot;</span>
+      node-key<span class="token operator">=</span><span class="token string">&quot;id&quot;</span> 
+      :default-expanded-keys<span class="token operator">=</span><span class="token string">&quot;defaultExpandedkeys&quot;</span>
+      :expand-on-click-node<span class="token operator">=</span><span class="token string">&quot;false&quot;</span>
+      <span class="token assign-left variable">ref</span><span class="token operator">=</span><span class="token string">&quot;treeRef&quot;</span>
+      :highlight-current<span class="token operator">=</span><span class="token string">&quot;true&quot;</span><span class="token operator">&gt;</span>
+       <span class="token operator">&lt;</span>span <span class="token assign-left variable">class</span><span class="token operator">=</span><span class="token string">&quot;custom-tree-node&quot;</span> slot-scope<span class="token operator">=</span><span class="token string">&quot;{node,data}&quot;</span><span class="token operator">&gt;</span>
+         <span class="token operator">&lt;</span>span  @mouseenter<span class="token operator">=</span><span class="token string">&quot;mouseenter(data)&quot;</span>  @mouseleave<span class="token operator">=</span><span class="token string">&quot;mouseleave(data)&quot;</span> <span class="token assign-left variable">style</span><span class="token operator">=</span><span class="token string">&quot;display: flex; align-items: center; &quot;</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span> node.label <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>/span<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>span <span class="token assign-left variable">style</span><span class="token operator">=</span><span class="token string">&quot;margin-left: 10px;&quot;</span><span class="token operator">&gt;</span>
+              <span class="token operator">&lt;</span><span class="token operator">!</span>-- 新增 --<span class="token operator">&gt;</span>
+              <span class="token operator">&lt;</span>span v-if<span class="token operator">=</span><span class="token string">&quot;data.del&quot;</span> <span class="token assign-left variable">style</span><span class="token operator">=</span><span class="token string">&quot;&quot;</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>span v-if<span class="token operator">=</span><span class="token string">&quot;data.parentId == 'root' || data.nodeType == 'WAREHOUSE' &quot;</span> <span class="token assign-left variable">type</span><span class="token operator">=</span><span class="token string">&quot;text&quot;</span> <span class="token assign-left variable">size</span><span class="token operator">=</span><span class="token string">&quot;mini&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;addFormData(data,node)&quot;</span> <span class="token assign-left variable">style</span><span class="token operator">=</span><span class="token string">&quot;margin-right: 10px;&quot;</span><span class="token operator">&gt;</span>
+                  <span class="token operator">&lt;</span>img <span class="token assign-left variable">src</span><span class="token operator">=</span><span class="token string">&quot;../assets/image/addIcon.png&quot;</span> <span class="token assign-left variable">alt</span><span class="token operator">=</span><span class="token string">&quot;&quot;</span> <span class="token assign-left variable">style</span><span class="token operator">=</span><span class="token string">&quot;vertical-align: middle;&quot;</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>/span<span class="token operator">&gt;</span>
+              <span class="token operator">&lt;</span>/span<span class="token operator">&gt;</span>
+              <span class="token operator">&lt;</span><span class="token operator">!</span>-- 编辑 --<span class="token operator">&gt;</span>
+               <span class="token operator">&lt;</span>span  v-if<span class="token operator">=</span><span class="token string">&quot;data.parentId !== 'root'  &amp;&amp; data.del&quot;</span> <span class="token assign-left variable">type</span><span class="token operator">=</span><span class="token string">&quot;text&quot;</span> <span class="token assign-left variable">size</span><span class="token operator">=</span><span class="token string">&quot;mini&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;editFormData(data,node)&quot;</span> <span class="token assign-left variable">style</span><span class="token operator">=</span><span class="token string">&quot;margin-right: 10px;&quot;</span><span class="token operator">&gt;</span>
+                  <span class="token operator">&lt;</span>img <span class="token assign-left variable">src</span><span class="token operator">=</span><span class="token string">&quot;../assets/image/editIcon.png&quot;</span> <span class="token assign-left variable">alt</span><span class="token operator">=</span><span class="token string">&quot;&quot;</span> <span class="token assign-left variable">style</span><span class="token operator">=</span><span class="token string">&quot;vertical-align: middle;&quot;</span><span class="token operator">&gt;</span>
+             <span class="token operator">&lt;</span>/span<span class="token operator">&gt;</span>
+             <span class="token operator">&lt;</span><span class="token operator">!</span>-- 删除 --<span class="token operator">&gt;</span>
+             <span class="token operator">&lt;</span>span  v-if<span class="token operator">=</span><span class="token string">&quot;data.parentId !== 'root' &amp;&amp; data.nodeType == 'DEPARTMENT' &amp;&amp; data.del&quot;</span> <span class="token assign-left variable">type</span><span class="token operator">=</span><span class="token string">&quot;text&quot;</span> <span class="token assign-left variable">size</span><span class="token operator">=</span><span class="token string">&quot;mini&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;deleteDepartment(data,node)&quot;</span><span class="token operator">&gt;</span>
+                  <span class="token operator">&lt;</span>img <span class="token assign-left variable">src</span><span class="token operator">=</span><span class="token string">&quot;../assets/image/deleteIcon.png&quot;</span> <span class="token assign-left variable">alt</span><span class="token operator">=</span><span class="token string">&quot;&quot;</span> <span class="token assign-left variable">style</span><span class="token operator">=</span><span class="token string">&quot;vertical-align: middle;&quot;</span><span class="token operator">&gt;</span>
+             <span class="token operator">&lt;</span>/span<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>/span<span class="token operator">&gt;</span>
+         <span class="token operator">&lt;</span>/span<span class="token operator">&gt;</span>
+       <span class="token operator">&lt;</span>/span<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/el-tree<span class="token operator">&gt;</span>
+
+    mouseenter <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      this.<span class="token variable">$set</span><span class="token punctuation">(</span>data, <span class="token string">'del'</span>, <span class="token boolean">true</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>,
+    mouseleave <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      this.<span class="token variable">$set</span><span class="token punctuation">(</span>data, <span class="token string">'del'</span>, <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>,
+
+</code></pre></div><h2 id="_4-el-tree-树形默认点击第一个node-并高亮"><a href="#_4-el-tree-树形默认点击第一个node-并高亮" class="header-anchor">#</a> 4，el-tree 树形默认点击第一个node，并高亮</h2> <p>实现场景： 见上几个图</p> <p>实现逻辑：</p> <p>通过监听后台返回的树形结构数组，进行默认点击第一个节点</p> <div class="language-sh extra-class"><pre class="language-sh"><code>    
+    watch: <span class="token punctuation">{</span>
+    // 默认点击第一个node 节点
+    treeData <span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          // 设置默认展开的数组
+          this.defaultExpandedkeys.push<span class="token punctuation">(</span>this.treeData<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>.id<span class="token punctuation">)</span>
+          this.<span class="token variable">$nextTick</span><span class="token punctuation">((</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+               const firstNode <span class="token operator">=</span> document.querySelector<span class="token punctuation">(</span><span class="token string">'.el-tree-node'</span><span class="token punctuation">)</span>
+               firstNode.click<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/20/2020, 3:24:39 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/elementui/function/tooltip.html" class="prev">
+        el-tooltip
+      </a></span> <span class="next"><a href="/elementui/function/table.html">
+        elementui表格合并的方法
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e844382c.js" defer></script><script src="/assets/js/2.def6215b.js" defer></script><script src="/assets/js/3.f4d52b8e.js" defer></script><script src="/assets/js/8.a6d73c47.js" defer></script>
+  </body>
+</html>

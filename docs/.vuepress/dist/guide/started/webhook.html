@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>webhook 是什么? | 学习笔记</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/img/test.ico">
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.47543788.css" as="style"><link rel="preload" href="/assets/js/app.e844382c.js" as="script"><link rel="preload" href="/assets/js/2.def6215b.js" as="script"><link rel="preload" href="/assets/js/3.f4d52b8e.js" as="script"><link rel="preload" href="/assets/js/6.8d5a490f.js" as="script"><link rel="prefetch" href="/assets/js/10.50a01628.js"><link rel="prefetch" href="/assets/js/11.42552db5.js"><link rel="prefetch" href="/assets/js/12.cbdb02fa.js"><link rel="prefetch" href="/assets/js/13.a0623ea7.js"><link rel="prefetch" href="/assets/js/14.65b4c7f2.js"><link rel="prefetch" href="/assets/js/15.594a5849.js"><link rel="prefetch" href="/assets/js/16.07d3711d.js"><link rel="prefetch" href="/assets/js/17.b7b18637.js"><link rel="prefetch" href="/assets/js/18.f1a2b96e.js"><link rel="prefetch" href="/assets/js/19.e561fffd.js"><link rel="prefetch" href="/assets/js/20.79457941.js"><link rel="prefetch" href="/assets/js/21.e88381ce.js"><link rel="prefetch" href="/assets/js/22.a54482d5.js"><link rel="prefetch" href="/assets/js/23.1d8ea74f.js"><link rel="prefetch" href="/assets/js/24.b9ba21dd.js"><link rel="prefetch" href="/assets/js/25.89f800d1.js"><link rel="prefetch" href="/assets/js/26.6736e07b.js"><link rel="prefetch" href="/assets/js/27.0905f68d.js"><link rel="prefetch" href="/assets/js/28.c49c2491.js"><link rel="prefetch" href="/assets/js/29.a1efb644.js"><link rel="prefetch" href="/assets/js/30.52ef7b66.js"><link rel="prefetch" href="/assets/js/31.3f7e9119.js"><link rel="prefetch" href="/assets/js/32.10f7af96.js"><link rel="prefetch" href="/assets/js/33.5b18032b.js"><link rel="prefetch" href="/assets/js/34.b6f892e9.js"><link rel="prefetch" href="/assets/js/4.28ef076a.js"><link rel="prefetch" href="/assets/js/5.a197b8e0.js"><link rel="prefetch" href="/assets/js/7.02c09c41.js"><link rel="prefetch" href="/assets/js/8.a6d73c47.js"><link rel="prefetch" href="/assets/js/9.2dcc13a8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.47543788.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">学习笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  home
+</a></div><div class="nav-item"><a href="http://nuxt.yysmile.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人网站
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/cyy1403304786" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github 地址
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  home
+</a></div><div class="nav-item"><a href="http://nuxt.yysmile.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人网站
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/cyy1403304786" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github 地址
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>工具类</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/started/css.html" class="sidebar-link">css 重要知识点</a></li><li><a href="/guide/started/js.html" class="sidebar-link">js 重要知识点</a></li><li><a href="/guide/started/webhook.html" aria-current="page" class="active sidebar-link">webhook自动部署</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/started/webhook.html#为什么要用到-webhook" class="sidebar-link">为什么要用到 webhook?</a></li><li class="sidebar-sub-header"><a href="/guide/started/webhook.html#具体使用方法" class="sidebar-link">具体使用方法</a></li></ul></li><li><a href="/guide/started/snipt.html" class="sidebar-link">自定义代码片段</a></li><li><a href="/guide/started/echarts.html" class="sidebar-link">echarts图表</a></li><li><a href="/guide/started/nginx.html" class="sidebar-link">nginx</a></li><li><a href="/guide/started/pm2.html" class="sidebar-link">pm2的相关使用</a></li><li><a href="/guide/started/nuxt.html" class="sidebar-link">nuxt的相关使用</a></li><li><a href="/guide/started/css3.html" class="sidebar-link">css3的相关介绍</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ES6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>parcels技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>toppgo技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>17feia技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>balidrop技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>elementui 相关功能点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>es6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端性能优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>vue3.0学习</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="webhook-是什么"><a href="#webhook-是什么" class="header-anchor">#</a> webhook 是什么?</h1> <p>简单来讲,webhook就是你放在git仓库的一个通知员，一旦你的仓库里发生了什么事情，这个通知员就会用你留下的对应标记通知你</p> <h2 id="为什么要用到-webhook"><a href="#为什么要用到-webhook" class="header-anchor">#</a> 为什么要用到 webhook?</h2> <p>借助webhook，我们可以实现很多自动化流程。比如部署一个应用到服务器，本地提交代码后，只需要push 到git 仓库，github网站自动触发webhook，然后服务器上将本地提交的
+最新代码用 git pull 抓取并进行重新部署</p> <h2 id="具体使用方法"><a href="#具体使用方法" class="header-anchor">#</a> 具体使用方法</h2> <ul><li><font face="黑体" color="red" size="5">-----在github 上打开对应项目，找到 seetings</font> <img src="/assets/img/webhook.935b2574.png" alt="solar"> <img src="/assets/img/webhook1.cad7f85f.png" alt="solar"></li> <li><font face="黑体" color="red" size="5">-----设置对应的webhook 选项</font> <img src="/assets/img/webhook2.ee90c5e0.png" alt="solar"></li></ul> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>Payload URL : 这里是指定的一个应用的URL，该url对应的应用监听github 网站推送事件(http://自己的域名/path（随便取一个路径）)。
+Content type： application/json会将JSON payload直接放置POST的body中。
+Secret: 设置一个常用密码。
+Events： Events是webhook的核心。只要对存储库执行某项操作，就会触发这些webhook，服务器的有效负载URL会拦截并执行操作。</p></div> <ul><li><font face="黑体" color="red" size="5">-----配置接收和管理负载的服务器</font>
+本地新建一个node项目,安装一个 github-webhook-handler 的中间件，可以使用</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token function">npm</span> <span class="token function">install</span> -g github-webhook-handler //全局安装
+</code></pre></div><p>新建一个index.js 文件，和一个 sh 脚本文件。生成如下项目目录
+<img src="/assets/img/webhook3.f5ce6c21.png" alt="solar">
+其中index.js 文件中配置的内容(参考https://www.npmjs.com/package/github-webhook-handler 网站)</p> <div class="language-sh extra-class"><pre class="language-sh"><code>    var http <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    var spawn <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span>.spawn<span class="token punctuation">;</span>
+    var createHandler <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'github-webhook-handler'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    // 下面填写的myscrect跟github webhooks配置一样，下一步会说；path是我们当时设置的访问路径
+    var handler <span class="token operator">=</span> createHandler<span class="token punctuation">(</span><span class="token punctuation">{</span> path: <span class="token string">'/auto_build'</span>, secret: <span class="token string">'ying4786'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   
+
+    http.createServer<span class="token punctuation">(</span>function <span class="token punctuation">(</span>req, res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      handler<span class="token punctuation">(</span>req, res, <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        res.statusCode <span class="token operator">=</span> <span class="token number">404</span><span class="token punctuation">;</span>
+        res.end<span class="token punctuation">(</span><span class="token string">'no such location'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>.listen<span class="token punctuation">(</span><span class="token number">6666</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    handler.on<span class="token punctuation">(</span><span class="token string">'error'</span>, <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console.error<span class="token punctuation">(</span><span class="token string">'Error:'</span>, err.message<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    // 监听到push事件的时候执行我们的自动化脚本
+    handler.on<span class="token punctuation">(</span><span class="token string">'push'</span>, <span class="token keyword">function</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console.log<span class="token punctuation">(</span><span class="token string">'Received a push event for %s to %s'</span>,
+        event.payload.repository.name,
+        event.payload.ref<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      rumCommand<span class="token punctuation">(</span><span class="token string">'sh'</span>, <span class="token punctuation">[</span><span class="token string">'./auto_build.sh'</span><span class="token punctuation">]</span>, function<span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">{</span>
+        console.log<span class="token punctuation">(</span>txt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">function</span> rumCommand<span class="token punctuation">(</span> cmd, args, callback <span class="token punctuation">)</span><span class="token punctuation">{</span>
+      var child <span class="token operator">=</span> spawn<span class="token punctuation">(</span> cmd, args <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><p>设置 自动部署 脚本(本项目中的./auto_build.sh 文件)</p> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token comment">#! /bin/bash</span>
+  <span class="token builtin class-name">cd</span>  /cyy/docBlog/docBlog  //服务器中放置的对应部署项目的文件夹路径
+  <span class="token function">git</span> reset --hard
+  <span class="token function">git</span> pull
+  <span class="token function">npm</span> run build
+</code></pre></div><p>将这个node服务项目推送到服务器上,通过pm2 启动此服务
+至此。本地blog 项目可以完成在本地提交代码到仓库可以实时更新到线上的效果</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">7/1/2020, 5:40:00 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/guide/started/js.html" class="prev">
+        js 重要知识点
+      </a></span> <span class="next"><a href="/guide/started/snipt.html">
+        自定义代码片段
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e844382c.js" defer></script><script src="/assets/js/2.def6215b.js" defer></script><script src="/assets/js/3.f4d52b8e.js" defer></script><script src="/assets/js/6.8d5a490f.js" defer></script>
+  </body>
+</html>

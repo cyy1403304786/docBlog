@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>parcels 项目说明文档 | 学习笔记</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/img/test.ico">
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.47543788.css" as="style"><link rel="preload" href="/assets/js/app.e844382c.js" as="script"><link rel="preload" href="/assets/js/2.def6215b.js" as="script"><link rel="preload" href="/assets/js/3.f4d52b8e.js" as="script"><link rel="preload" href="/assets/js/4.28ef076a.js" as="script"><link rel="prefetch" href="/assets/js/10.50a01628.js"><link rel="prefetch" href="/assets/js/11.42552db5.js"><link rel="prefetch" href="/assets/js/12.cbdb02fa.js"><link rel="prefetch" href="/assets/js/13.a0623ea7.js"><link rel="prefetch" href="/assets/js/14.65b4c7f2.js"><link rel="prefetch" href="/assets/js/15.594a5849.js"><link rel="prefetch" href="/assets/js/16.07d3711d.js"><link rel="prefetch" href="/assets/js/17.b7b18637.js"><link rel="prefetch" href="/assets/js/18.f1a2b96e.js"><link rel="prefetch" href="/assets/js/19.e561fffd.js"><link rel="prefetch" href="/assets/js/20.79457941.js"><link rel="prefetch" href="/assets/js/21.e88381ce.js"><link rel="prefetch" href="/assets/js/22.a54482d5.js"><link rel="prefetch" href="/assets/js/23.1d8ea74f.js"><link rel="prefetch" href="/assets/js/24.b9ba21dd.js"><link rel="prefetch" href="/assets/js/25.89f800d1.js"><link rel="prefetch" href="/assets/js/26.6736e07b.js"><link rel="prefetch" href="/assets/js/27.0905f68d.js"><link rel="prefetch" href="/assets/js/28.c49c2491.js"><link rel="prefetch" href="/assets/js/29.a1efb644.js"><link rel="prefetch" href="/assets/js/30.52ef7b66.js"><link rel="prefetch" href="/assets/js/31.3f7e9119.js"><link rel="prefetch" href="/assets/js/32.10f7af96.js"><link rel="prefetch" href="/assets/js/33.5b18032b.js"><link rel="prefetch" href="/assets/js/34.b6f892e9.js"><link rel="prefetch" href="/assets/js/5.a197b8e0.js"><link rel="prefetch" href="/assets/js/6.8d5a490f.js"><link rel="prefetch" href="/assets/js/7.02c09c41.js"><link rel="prefetch" href="/assets/js/8.a6d73c47.js"><link rel="prefetch" href="/assets/js/9.2dcc13a8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.47543788.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">学习笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  home
+</a></div><div class="nav-item"><a href="http://nuxt.yysmile.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人网站
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/cyy1403304786" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github 地址
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  home
+</a></div><div class="nav-item"><a href="http://nuxt.yysmile.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人网站
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/cyy1403304786" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github 地址
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>工具类</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ES6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>parcels技术点</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/parcels/function/item.html" aria-current="page" class="active sidebar-link">parcels项目说明文档</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/parcels/function/item.html#前端所用技术框架选型" class="sidebar-link">前端所用技术框架选型</a></li><li class="sidebar-sub-header"><a href="/parcels/function/item.html#parcels-项目结构" class="sidebar-link">parcels 项目结构</a></li><li class="sidebar-sub-header"><a href="/parcels/function/item.html#parcels-重要项目点" class="sidebar-link">parcels 重要项目点</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/parcels/function/item.html#_1-引入公用库-parcels-common" class="sidebar-link">1,引入公用库 parcels-common</a></li><li class="sidebar-sub-header"><a href="/parcels/function/item.html#_2-前端处理国际化-i18n" class="sidebar-link">2,前端处理国际化 i18n</a></li><li class="sidebar-sub-header"><a href="/parcels/function/item.html#_3-前端工程自动化-require-context" class="sidebar-link">3,前端工程自动化 require.context</a></li><li class="sidebar-sub-header"><a href="/parcels/function/item.html#_4-前端共用方法封装库" class="sidebar-link">4,前端共用方法封装库</a></li><li class="sidebar-sub-header"><a href="/parcels/function/item.html#_5-前端实现页面重载但不刷新功能" class="sidebar-link">5,前端实现页面重载但不刷新功能</a></li></ul></li><li class="sidebar-sub-header"><a href="/parcels/function/item.html#parcels-系统打包及部署" class="sidebar-link">parcels 系统打包及部署</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/parcels/function/item.html#使用说明" class="sidebar-link">使用说明</a></li><li class="sidebar-sub-header"><a href="/parcels/function/item.html#操作文档" class="sidebar-link">操作文档</a></li></ul></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>toppgo技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>17feia技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>balidrop技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>elementui 相关功能点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>es6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端性能优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>vue3.0学习</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="parcels-项目说明文档"><a href="#parcels-项目说明文档" class="header-anchor">#</a> parcels 项目说明文档</h1> <h2 id="前端所用技术框架选型"><a href="#前端所用技术框架选型" class="header-anchor">#</a> 前端所用技术框架选型</h2> <p>该项目采用 vue 搭配 vue-cli3.0 脚手架，配合vuex 状态管理器 结合webpack 打包工具，采用 scss 扩展语言构造而成。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>    vue + vue-cli3.0 + vuex + webpack + scss
+</code></pre></div><h2 id="parcels-项目结构"><a href="#parcels-项目结构" class="header-anchor">#</a> parcels 项目结构</h2> <div class="language-sh extra-class"><pre class="language-sh"><code>├── dist                       <span class="token comment"># 项目打包生成文件夹</span>
+├── node_modules               <span class="token comment"># 项目依赖包</span>
+├── parcels-common             <span class="token comment"># 项目公用库(存储统一样式、资源，页面，方法的公用仓库模块)</span>
+├── public                     <span class="token comment"># 静态资源           </span>
+│   │── favicon.ico            <span class="token comment"># favicon图标(进入系统地址栏的小图标)</span>
+│   └── index.html             <span class="token comment"># html模板</span>
+├── src                        <span class="token comment"># 源代码</span>
+│   ├── assets                 <span class="token comment"># 主题,图片等静态资源</span>
+│         └── css              <span class="token comment"># 提取的公共css 文件</span>
+│         └── image            <span class="token comment"># 项目所需的图片文件夹</span>
+│         └── locales          <span class="token comment"># 国际化语言文件</span>
+│   ├── components             <span class="token comment"># 全局公用组件(页面组件和全局共用组件)</span>
+│   ├── lib                    <span class="token comment"># 公用方法</span>
+│         └── api.js           <span class="token comment"># 所有请求接口</span>
+│         └── i18n.js          <span class="token comment"># 国际化处理文件</span>
+│         └── index.js         <span class="token comment"># 版本控制文件</span>
+│   ├── pages                  <span class="token comment"># 所有页面</span>
+│         └── test.vue          
+│   ├── router                 <span class="token comment"># 路由</span>
+│         └── index.js         <span class="token comment"># 定义页面所有路由路径</span>
+│   ├── store                  <span class="token comment"># 全局 store管理</span>
+│         └── modules 
+│                  └── test.js <span class="token comment"># 对应页面的vuex.js 文件</span>
+│         └── index.js         <span class="token comment"># 总控所有js 文件，进行自动化导入</span>
+│   ├── utils                  <span class="token comment"># 该项目所属工具类文件夹</span>
+│   ├── App.vue                <span class="token comment"># 入口页面</span>
+│   ├── main.js                <span class="token comment"># 入口文件 加载组件 初始化等</span>
+├── .eslintignore              <span class="token comment"># eslint 配置项</span>
+├── .gitignore                 <span class="token comment"># git 配置项</span>
+├── .gitmodules                <span class="token comment"># 子模块 配置项(parcels-common)</span>
+└──  package.json              <span class="token comment"># package.json</span>
+├── vue.config.js              <span class="token comment"># vue-cli 配置文件</span>
+
+</code></pre></div><h2 id="parcels-重要项目点"><a href="#parcels-重要项目点" class="header-anchor">#</a> parcels 重要项目点</h2> <h3 id="_1-引入公用库-parcels-common"><a href="#_1-引入公用库-parcels-common" class="header-anchor">#</a> 1,引入公用库 parcels-common</h3> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>背景环境: 由于<font face="黑体" color="red" size="3"> parcels</font> 项目包括五个子系统，各个系统间使用统一样式，存在共用页面，为避免重复页面编写，更改样式问题，
+我们采用公用库方法，统一管理公共资源(如：全局样式，全局方法，全局页面，共用图片资源等)。</p></div> <p>parcels-common 项目结构</p> <div class="language-sh extra-class"><pre class="language-sh"><code>├── assets                        <span class="token comment"># 静态资源           </span>
+│      └── css                    <span class="token comment"># 提取的公共css 文件</span>
+│      └── image                  <span class="token comment"># 项目所需的图片文件夹</span>
+│      └── locales                <span class="token comment"># 国际化语言文件</span>
+├── components                    <span class="token comment"># 全局公用组件(页面组件和全局共用组件)</span>
+├── layout                        <span class="token comment"># 页面布局公用页面文件夹</span>
+├── lib                           <span class="token comment"># 全局公用第三方方法库</span>
+│      └── api.js                 <span class="token comment"># 项目共用接口文件</span>
+│      └── http.js                <span class="token comment"># 接口封装请求</span>
+│      └── index.js               <span class="token comment"># 版本控制文件</span>
+├── pages                         <span class="token comment"># 系统共用页面</span>
+├── store                         <span class="token comment"># 全局 store管理</span>
+│      └── test.js                <span class="token comment"># 对应页面的vuex.js 文件</span>
+├── utils                         <span class="token comment"># 该项目所属工具类文件夹 </span>
+├── permission.js                 <span class="token comment"># 控制项目路由拦截及全局拦截等相关操作              </span>
+
+</code></pre></div><ul><li>Submodule 功能详解</li></ul> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>使用场景:  当一个项目包括多个系统，且多个系统的风格保持统一的情况下，如果风格改动则要同步多个系统，且存在多个系统有公共页面的情况，我们不做复制粘贴
+那么，git submodule  就是一个很好的对于 <font face="黑体" color="red" size="5">公共资源处理方式</font>  的解决办法。</p></div> <ul><li>概念
+git Submodule 是一个很好的多项目使用共同库的工具，他允许项目作为repository,子项目作为一个单独的git项目存在父项目中，
+子项目可以有自己的独立的commit，push，pull。而父项目以Submodule的形式包含子项目。如下图:</li></ul> <p><img src="/assets/img/submodule1.04d17aff.png" alt="solar"></p> <p><img src="/assets/img/submodule2.e7b052a5.png" alt="solar"></p> <ul><li>使用方法?</li> <li><font face="黑体" color="red" size="5">创建 submodule</font>
+使用 git submodule add &lt;submodule_url&gt; 命令可以在项目中创建一个子模块。此时项目仓库中会多出两个文件：.gitmodules 和  submodule</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code> <span class="token function">git</span> submodule <span class="token function">add</span> http://192.168.8.169:8088/wangcong/parcels-common.git //子模块仓库地址
+</code></pre></div><ul><li><font face="黑体" color="red" size="5">获取 submodule</font>
+执行上述方法后，会自动将相关代码克隆到对应路径，但对于后续开发人员而言，对于主项目使用普通的 clone 操作并不会拉取到子模块中的实际代码，
+如果希望获取子模块数据，有两种方式:</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>   //克隆主项目的时候带上参数 --recurse-submodules
+  <span class="token number">1</span>, <span class="token function">git</span> clone https://github.com/username/project-main.git  --recurse-submodules 
+   // 在当前项目中执行,初始化子仓库模块
+  <span class="token number">2</span>, <span class="token function">git</span> submodule update --init --recursive 
+</code></pre></div><ul><li><font face="黑体" color="red" size="5">删除 submodule</font></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token function">git</span> submodule deinit submodule  <span class="token punctuation">(</span>子模块的名称<span class="token punctuation">)</span>
+  <span class="token function">git</span> <span class="token function">rm</span>  submodule 
+</code></pre></div><ul><li>总结
+当项目比较复杂，部分代码希望独立为子模块进行版本控制的时候，可以使用 git submodule 功能。使用 git submodule 功能时，主项目仓库并不会包含子模块的文件，
+只会保留一份子模块的配置信息及版本信息，作为主项目版本管理的一部分。</li></ul> <h3 id="_2-前端处理国际化-i18n"><a href="#_2-前端处理国际化-i18n" class="header-anchor">#</a> 2,前端处理国际化 i18n</h3> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>背景环境: 由于<font face="黑体" color="red" size="3"> parcels</font> 项目需支持多国语言浏览，故需要进行页面的国际化操作。
+该项目主要采用前后端配合处理的形式实现国际化。此处简述前端处理国际化逻辑说明:</p></div> <p><img src="/assets/img/process.8c163308.png" alt="solar"></p> <p>elementui 组件搭配 vue-i18n 实现多语言设置。结合项目需求，需进行三种语言的自由切换，并实现切换语言后在登陆默认有记忆功能，具体操作如下:</p> <ul><li><font face="黑体" color="red" size="5">全局安装i18n 组件</font></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>   cnpm i vue-i18n -s
+</code></pre></div><ul><li><font face="黑体" color="red" size="5">引入i18n国际化插件(新建 i18n.js  文件)</font></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token function">import</span> Element from <span class="token string">'element-ui'</span>
+  <span class="token function">import</span> VueI18n from <span class="token string">'vue-i18n'</span>
+  Vue.use<span class="token punctuation">(</span>VueI18n<span class="token punctuation">)</span>
+</code></pre></div><ul><li><font face="黑体" color="red" size="5">提取项目中所有的中文字段进行国际化操作</font></li></ul> <p>结合vuex 文件管理办法，我们可以新建一个 locales 语言文件夹，包括中文、英文等语言，相应页面对应相应文件js 路径，如下图:</p> <p><img src="/assets/img/i18n1.3499d1a8.png" alt="solar"></p> <ul><li><font face="黑体" color="red" size="5">引入相关字段路径，进行国际化设置</font></li></ul> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>此处采取跟vuex 一样 用require.context 方法导出上下文，获取所有文字对象。</p></div> <div class="language-sh extra-class"><pre class="language-sh"><code>  //引入本地的文字对象
+  <span class="token function">import</span> zhmoduels from <span class="token string">'../assets/locales/zh'</span>
+  <span class="token function">import</span> enmoduels from <span class="token string">'../assets/locales/en'</span>
+
+  //导入elementui 自带组件的语言对象
+  <span class="token function">import</span> enLocale from <span class="token string">'element-ui/lib/locale/lang/en'</span>
+  <span class="token function">import</span> zhLocale from <span class="token string">'element-ui/lib/locale/lang/zh-CN'</span>
+
+  //进行两个对象的合并操作<span class="token punctuation">(</span>因页面上包含element组件文字及自己所定义的文字对象，所以需要进行合并操作<span class="token punctuation">)</span>
+   const locales <span class="token operator">=</span> <span class="token punctuation">{</span>
+    zh: Object.assign<span class="token punctuation">(</span>zhmoduels,zhLocale<span class="token punctuation">)</span>,
+    en: Object.assign<span class="token punctuation">(</span>enmoduels,enLocale<span class="token punctuation">)</span>,
+  <span class="token punctuation">}</span>
+  //实例化i18n 对象
+    const i18n <span class="token operator">=</span> new VueI18n<span class="token punctuation">(</span><span class="token punctuation">{</span>
+    locale: <span class="token string">'zh'</span>, // 此处即为定义的文字对象的key 值（语言名称）
+    messages: locales,  // <span class="token builtin class-name">set</span> locale messages
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    Vue.use<span class="token punctuation">(</span>Element, <span class="token punctuation">{</span>
+      i18n: <span class="token punctuation">(</span>key, value<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> i18n.t<span class="token punctuation">(</span>key, value<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token builtin class-name">export</span> default i18n
+
+</code></pre></div><ul><li><p><font face="黑体" color="red" size="5">入口文件中全局注册 i18n</font></p> <p>在main.js  中引入 i18n.js 文件。</p></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token function">import</span> Vue from <span class="token string">'vue'</span>
+  <span class="token function">import</span> i18n from <span class="token string">'./lib/i18n'</span>
+  new Vue<span class="token punctuation">(</span><span class="token punctuation">{</span>
+      i18n,
+      router,
+      store,
+      render: h <span class="token operator">=</span><span class="token operator">&gt;</span> h<span class="token punctuation">(</span>App<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>.<span class="token variable">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span>
+
+</code></pre></div><ul><li><font face="黑体" color="red" size="5">实现国际化语言切换</font></li></ul> <p>页面引入 i18n  文件，在对应切换语言方法中编码:</p> <div class="language-sh extra-class"><pre class="language-sh"><code>    <span class="token function-name function">languageChe</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        this.reload<span class="token punctuation">(</span><span class="token punctuation">)</span> //页面重载<span class="token punctuation">(</span>见 页面不刷新实现 reload 方法<span class="token punctuation">)</span>
+        i18n.locale <span class="token operator">=</span> <span class="token string">'en'</span>  //更改对应i18n 语言<span class="token punctuation">(</span>此处可结合实际动态设置<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+</code></pre></div><ul><li>vue-i18n 各情形下定义文字的方法</li> <li>vue 页面中渲染</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>    <span class="token operator">&lt;</span>h<span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token variable">$t</span><span class="token punctuation">(</span><span class="token string">'home.最新文章'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>/h<span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span>
+</code></pre></div><ul><li>组件中动态数据渲染</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>    <span class="token operator">&lt;</span>el-tab-pane :label<span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$t</span>('home.问题标签列表')&quot;</span> <span class="token assign-left variable">name</span><span class="token operator">=</span><span class="token string">&quot;1&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>ProblemLabel<span class="token operator">&gt;</span><span class="token operator">&lt;</span>/ProblemLabel<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/el-tab-pane<span class="token operator">&gt;</span>
+</code></pre></div><ul><li>sciprt中data 数据定义处</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>    <span class="token function-name function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token builtin class-name">return</span> <span class="token punctuation">{</span>
+        processName:<span class="token punctuation">[</span>this.<span class="token variable">$t</span><span class="token punctuation">(</span><span class="token string">'home.待称重'</span><span class="token punctuation">)</span>,this.<span class="token variable">$t</span><span class="token punctuation">(</span><span class="token string">'home.待处理'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>,
+        active: <span class="token number">0</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>,
+</code></pre></div><ul><li>js 文件中
+需先引入 i18n 文件</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token function">import</span> i18n from <span class="token string">'../../lib/i18n'</span>
+  Notification<span class="token punctuation">(</span><span class="token punctuation">{</span>type: <span class="token string">'success'</span>, title: i18n.t<span class="token punctuation">(</span><span class="token string">'home.提示'</span><span class="token punctuation">)</span>, message: i18n.t<span class="token punctuation">(</span><span class="token string">'home.成功'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_3-前端工程自动化-require-context"><a href="#_3-前端工程自动化-require-context" class="header-anchor">#</a> 3,前端工程自动化 require.context</h3> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>背景环境: require.context 是 Webpack 的一个 api,通过执行这个函数获取一个特定的上下文,主要实现自动化导入模块,
+在前端工程中,如果遇到从一个文件夹引入很多模块的情况,可以使用这个api,它会遍历文件夹中的指定文件,然后自动导入,使得不需要每次显式的调用import导入模块</p></div> <p>场景分析:</p> <p><img src="/assets/img/context1.3d9bb9c1.png" alt="solar"></p> <p>使用方法:</p> <div class="language-sh extra-class"><pre class="language-sh"><code>  const fileNames <span class="token operator">=</span> require.context<span class="token punctuation">(</span><span class="token string">'./modules'</span>,true,/<span class="token punctuation">\</span>.js$/<span class="token punctuation">)</span>  //第一个参数类型字符串<span class="token punctuation">(</span>读取文件的路径<span class="token punctuation">)</span>  第二个参数布尔类型<span class="token punctuation">(</span>是否遍历文件的子目录<span class="token punctuation">)</span>, 第三个参数正则表达式<span class="token punctuation">(</span>匹配文件的正则<span class="token punctuation">)</span>
+  console.log<span class="token punctuation">(</span>fileNames.keys<span class="token punctuation">(</span><span class="token punctuation">))</span>  //返回匹配模块的数组
+  <span class="token builtin class-name">let</span> moduels <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  fileNames.keys<span class="token punctuation">(</span><span class="token punctuation">)</span>.forEach<span class="token punctuation">((</span>item<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  const moduleName <span class="token operator">=</span> item.replace<span class="token punctuation">(</span>/^<span class="token punctuation">\</span>.<span class="token punctuation">\</span>/<span class="token punctuation">(</span>.*<span class="token punctuation">)</span><span class="token punctuation">\</span>.<span class="token punctuation">\</span>w+$/, <span class="token string">'<span class="token variable">$1</span>'</span><span class="token punctuation">)</span>  //获取路径名称
+  const modeuleCotent <span class="token operator">=</span> fileNames<span class="token punctuation">(</span>item<span class="token punctuation">)</span>.default             //获取每个文件对象导出的内容
+  moduels<span class="token punctuation">[</span>moduleName<span class="token punctuation">]</span> <span class="token operator">=</span> modeuleCotent                       //组装vuex数据结构
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><ul><li>在引入vuex 对应模块的时候用对象结构赋值的方法</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>    const store <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> new Vuex.Store<span class="token punctuation">(</span><span class="token punctuation">{</span>
+      modules: <span class="token punctuation">{</span>
+        <span class="token punctuation">..</span>.moduels
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_4-前端共用方法封装库"><a href="#_4-前端共用方法封装库" class="header-anchor">#</a> 4,前端共用方法封装库</h3> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>背景环境: 在大型系统中，为实现代码可读性和复用性，常见功能,如：正则校验规则，过滤筛选保留位数，时间型转换等都会进行统一封装并统一管理，需要使用
+的情况下，进行全局调用，节约开发时间及优化代码规范。</p></div> <p>详见 项目中 /parcels-common/utils (存放所有公共方法库)，下面以过滤方法举例:</p> <ul><li>全局过滤器</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  // //将数字转为金额，保留两位小数
+  Vue.filter<span class="token punctuation">(</span><span class="token string">'currency'</span>, <span class="token keyword">function</span> <span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  if<span class="token punctuation">(</span>val <span class="token operator">==</span> null <span class="token operator">||</span> val <span class="token operator">==</span> undefined<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token builtin class-name">return</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  val <span class="token operator">=</span> val.toString<span class="token punctuation">(</span><span class="token punctuation">)</span>.replace<span class="token punctuation">(</span>/<span class="token punctuation">\</span>$<span class="token operator">|</span><span class="token punctuation">\</span>,/g,<span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  if<span class="token punctuation">(</span>isNaN<span class="token punctuation">(</span>val<span class="token punctuation">))</span> <span class="token punctuation">{</span>
+  val <span class="token operator">=</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token builtin class-name">let</span> sign <span class="token operator">=</span> <span class="token punctuation">(</span>val <span class="token operator">==</span> <span class="token punctuation">(</span>val <span class="token operator">=</span> Math.abs<span class="token punctuation">(</span>val<span class="token punctuation">))</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  val <span class="token operator">=</span> Math.floor<span class="token punctuation">(</span>val*100+0.50000000001<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token builtin class-name">let</span> cents <span class="token operator">=</span> val%100<span class="token punctuation">;</span>
+  val <span class="token operator">=</span> Math.floor<span class="token punctuation">(</span>val/100<span class="token punctuation">)</span>.toString<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  if<span class="token punctuation">(</span>cents<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  cents <span class="token operator">=</span> <span class="token string">&quot;0&quot;</span> + cents
+  <span class="token punctuation">}</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> Math.floor<span class="token variable"><span class="token punctuation">((</span>val.length<span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">+</span>i<span class="token punctuation">))</span></span>/3<span class="token punctuation">)</span><span class="token punctuation">;</span> i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      val <span class="token operator">=</span> val.substring<span class="token punctuation">(</span><span class="token number">0</span>,val.length-<span class="token punctuation">(</span><span class="token number">4</span>*i+3<span class="token punctuation">))</span>+<span class="token string">','</span> + val.substring<span class="token punctuation">(</span>val.length-<span class="token punctuation">(</span><span class="token number">4</span>*i+3<span class="token punctuation">))</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token builtin class-name">return</span> <span class="token punctuation">((</span><span class="token punctuation">(</span>sign<span class="token punctuation">)</span>?<span class="token string">''</span><span class="token builtin class-name">:</span><span class="token string">'-'</span><span class="token punctuation">)</span> + val + <span class="token string">'.'</span> + cents<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">..</span><span class="token punctuation">..</span>  
+
+
+</code></pre></div><ul><li>在入口文件中引入相关文件</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token function">import</span> <span class="token string">'../parcels-common/utils/filter'</span> // 全局过滤方法
+</code></pre></div><ul><li>页面中直接使用定义好的值 例: currency</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>    <span class="token operator">&lt;</span>el-table-column :label<span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$t</span>('custombill.金额')+'(￥)'&quot;</span> min-width<span class="token operator">=</span><span class="token string">&quot;90&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>template slot-scope<span class="token operator">=</span><span class="token string">&quot;scope&quot;</span><span class="token operator">&gt;</span>
+      <span class="token punctuation">{</span><span class="token punctuation">{</span> scope.row.price <span class="token operator">|</span> currency <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>/template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>/el-table-column<span class="token operator">&gt;</span>
+</code></pre></div><h3 id="_5-前端实现页面重载但不刷新功能"><a href="#_5-前端实现页面重载但不刷新功能" class="header-anchor">#</a> 5,前端实现页面重载但不刷新功能</h3> <p>这里就需要引入一个 provide/inject 功能: 在父组件中通过provider来提供变量，然后在子组件中通过inject来 深层次 注入变量。（无论目标组件里父组件有多少间隔）</p> <p>app.vue(父页面)</p> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token operator">&lt;</span>router-view v-if<span class="token operator">=</span><span class="token string">&quot;isRouterAlive&quot;</span> <span class="token operator">&gt;</span><span class="token operator">&lt;</span>/router-view<span class="token operator">&gt;</span>
+</code></pre></div><div class="language-sh extra-class"><pre class="language-sh"><code>     <span class="token builtin class-name">export</span> default <span class="token punctuation">{</span>
+          name: <span class="token string">''</span>,
+          components: <span class="token punctuation">{</span>
+          <span class="token punctuation">}</span>,
+          props: <span class="token punctuation">{</span><span class="token punctuation">}</span>,
+          <span class="token function-name function">provide</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            return<span class="token punctuation">{</span>
+              reload: this.reload
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>,
+          <span class="token function-name function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token builtin class-name">return</span> <span class="token punctuation">{</span>
+              isRouterAlive:true  
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>,
+          computed: <span class="token punctuation">{</span><span class="token punctuation">}</span>,
+          <span class="token function-name function">created</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token punctuation">}</span>,
+          <span class="token function-name function">mounted</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>,
+          methods: <span class="token punctuation">{</span>
+            <span class="token function-name function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              this.isRouterAlive <span class="token operator">=</span> <span class="token boolean">false</span>
+              <span class="token builtin class-name">let</span> that <span class="token operator">=</span> this
+              this.<span class="token variable">$nextTick</span><span class="token punctuation">((</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+                that.isRouterAlive <span class="token operator">=</span> <span class="token boolean">true</span>
+              <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+</code></pre></div><p>vue页面中(子页面)</p> <div class="language-sh extra-class"><pre class="language-sh"><code>      <span class="token builtin class-name">export</span> default <span class="token punctuation">{</span>
+        inject:<span class="token punctuation">[</span><span class="token string">'reload'</span><span class="token punctuation">]</span>,
+        name: <span class="token string">''</span>,
+        components: <span class="token punctuation">{</span>
+        <span class="token punctuation">}</span>,
+        props: <span class="token punctuation">{</span><span class="token punctuation">}</span>,
+        <span class="token function-name function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            return<span class="token punctuation">{</span>
+              username:<span class="token string">&quot;&quot;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>,
+    <span class="token punctuation">}</span>
+</code></pre></div><p>然后就可以在方法中直接调用  this.reload() 了。</p> <h2 id="parcels-系统打包及部署"><a href="#parcels-系统打包及部署" class="header-anchor">#</a> parcels 系统打包及部署</h2> <h3 id="使用说明"><a href="#使用说明" class="header-anchor">#</a> 使用说明</h3> <p>parcels 项目分为开发环境，测试环境和线上环境。</p> <ul><li>开发环境: 开发人员本地开发的环境。</li> <li>测试环境: 模拟测试的环境(有独立的主机，但是不对外开放)</li> <li>线上环境: 真实线上供客户使用的环境（有独立的主机，对所有人开放，开发人员只读）</li></ul> <p>parcels 项目测试环境下项目所属目录  (167服务器)  <font face="黑体" color="red" size="5"> /eship/code</font></p> <p>通过sh 脚本执行自动化打包(<font face="黑体" color="red" size="5"> 09-vue-pull-and-build.sh</font> )</p> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token comment">#!/bin/bash</span>
+<span class="token assign-left variable">keyword</span><span class="token operator">=</span><span class="token variable">$1</span>
+
+<span class="token comment"># 打包</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token variable">$1</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;vue-customer-center&quot;</span> <span class="token operator">=</span>~ <span class="token variable">$keyword</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+	<span class="token builtin class-name">echo</span> 更新vue-customer-center<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>.
+	<span class="token builtin class-name">cd</span> /eship/code/vue-customer-center
+	<span class="token function">git</span> reset --hard
+	<span class="token function">git</span> pull
+	<span class="token builtin class-name">cd</span> /eship/code/vue-customer-center/parcels-common
+	<span class="token function">git</span> reset --hard
+	<span class="token function">git</span> pull origin master
+
+	<span class="token builtin class-name">echo</span> -e <span class="token string">'<span class="token entity" title="\n">\n</span><span class="token entity" title="\n">\n</span>'</span>
+    <span class="token builtin class-name">echo</span> 开始打包vue-customer-center<span class="token punctuation">..</span>.
+    <span class="token builtin class-name">cd</span> /eship/code/vue-customer-center
+    <span class="token function">rm</span> -rf dist
+    cnpm run build
+<span class="token keyword">fi</span>
+
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token variable">$1</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;vue-finance-center&quot;</span> <span class="token operator">=</span>~ <span class="token variable">$keyword</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+	<span class="token builtin class-name">echo</span> 更新vue-finance-center<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>.
+	<span class="token builtin class-name">cd</span> /eship/code/vue-finance-center
+	<span class="token function">git</span> reset --hard
+	<span class="token function">git</span> pull
+	<span class="token builtin class-name">cd</span> /eship/code/vue-finance-center/parcels-common
+	<span class="token function">git</span> reset --hard
+	<span class="token function">git</span> pull origin master
+
+	<span class="token builtin class-name">echo</span> -e <span class="token string">'<span class="token entity" title="\n">\n</span><span class="token entity" title="\n">\n</span>'</span>
+
+    <span class="token builtin class-name">echo</span> 开始打包vue-finance-center<span class="token punctuation">..</span>.
+    <span class="token builtin class-name">cd</span> /eship/code/vue-finance-center
+    <span class="token function">rm</span> -rf dist
+    cnpm run build
+<span class="token keyword">fi</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token variable">$1</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;vue-operation-center&quot;</span> <span class="token operator">=</span>~ <span class="token variable">$keyword</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+	<span class="token builtin class-name">echo</span> 更新vue-operation-center<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>.
+	<span class="token builtin class-name">cd</span> /eship/code/vue-operation-center
+	<span class="token function">git</span> reset --hard
+	<span class="token function">git</span> pull
+	<span class="token builtin class-name">cd</span> /eship/code/vue-operation-center/parcels-common
+	<span class="token function">git</span> reset --hard
+	<span class="token function">git</span> pull origin master
+
+	<span class="token builtin class-name">echo</span> -e <span class="token string">'<span class="token entity" title="\n">\n</span><span class="token entity" title="\n">\n</span>'</span>
+
+    <span class="token builtin class-name">echo</span> 开始打包vue-operation-center<span class="token punctuation">..</span>.
+    <span class="token builtin class-name">cd</span> /eship/code/vue-operation-center
+    <span class="token function">rm</span> -rf dist
+    cnpm run build
+<span class="token keyword">fi</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token variable">$1</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;vue-product-center&quot;</span> <span class="token operator">=</span>~ <span class="token variable">$keyword</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+	<span class="token builtin class-name">echo</span> 更新vue-product-center<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>.
+	<span class="token builtin class-name">cd</span> /eship/code/vue-product-center
+	<span class="token function">git</span> reset --hard
+	<span class="token function">git</span> pull
+	<span class="token builtin class-name">cd</span> /eship/code/vue-product-center/parcels-common
+	<span class="token function">git</span> reset --hard
+	<span class="token function">git</span> pull origin master
+
+	<span class="token builtin class-name">echo</span> -e <span class="token string">'<span class="token entity" title="\n">\n</span><span class="token entity" title="\n">\n</span>'</span>
+
+    <span class="token builtin class-name">echo</span> 开始打包vue-product-center<span class="token punctuation">..</span>.
+    <span class="token builtin class-name">cd</span> /eship/code/vue-product-center
+    <span class="token function">rm</span> -rf dist
+    cnpm run build
+<span class="token keyword">fi</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token variable">$1</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;vue-service-sales-center&quot;</span> <span class="token operator">=</span>~ <span class="token variable">$keyword</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+	<span class="token builtin class-name">echo</span> 更新vue-service-sales-center<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>.
+	<span class="token builtin class-name">cd</span> /eship/code/vue-service-sales-center
+	<span class="token function">git</span> reset --hard
+	<span class="token function">git</span> pull
+	<span class="token builtin class-name">cd</span> /eship/code/vue-service-sales-center/parcels-common
+	<span class="token function">git</span> reset --hard
+	<span class="token function">git</span> pull origin master
+
+	<span class="token builtin class-name">echo</span> -e <span class="token string">'<span class="token entity" title="\n">\n</span><span class="token entity" title="\n">\n</span>'</span>
+
+    <span class="token builtin class-name">echo</span> 开始打包vue-service-sales-center<span class="token punctuation">..</span>.
+    <span class="token builtin class-name">cd</span> /eship/code/vue-service-sales-center
+    <span class="token function">rm</span> -rf dist
+    cnpm run build
+<span class="token keyword">fi</span>
+
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token variable">$1</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;vue-author-center&quot;</span> <span class="token operator">=</span>~ <span class="token variable">$keyword</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+	<span class="token builtin class-name">echo</span> 更新vue-author-center<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+	<span class="token builtin class-name">cd</span> /eship/code/vue-author-center
+	<span class="token function">git</span> reset --hard
+	<span class="token function">git</span> pull
+	<span class="token builtin class-name">cd</span> /eship/code/vue-finance-center/parcels-common
+	<span class="token function">git</span> reset --hard
+	<span class="token function">git</span> pull origin master
+	
+	<span class="token builtin class-name">echo</span> -e <span class="token string">'<span class="token entity" title="\n">\n</span><span class="token entity" title="\n">\n</span>'</span>
+
+    <span class="token builtin class-name">echo</span> 开始打包vue-author-center<span class="token punctuation">..</span>.
+    <span class="token builtin class-name">cd</span> /eship/code/vue-author-center
+    <span class="token function">rm</span> -rf dist
+    cnpm run build
+<span class="token keyword">fi</span>
+<span class="token comment"># 运行</span>
+
+
+
+<span class="token builtin class-name">echo</span> 打包完成<span class="token punctuation">..</span>.
+
+</code></pre></div><p>parcels 项目线上环境下项目所属目录(211服务器) <font face="黑体" color="red" size="5"> /17feia/nfsOthersFiles/parcels/vue</font></p> <p>通过sh 脚本执行自动化打包( <font face="黑体" color="red" size="5"> 10-vue-pull-and-build.sh</font> )</p> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>为避免重复切换服务器，这里采用ssh 远程连接服务器，配合scp 进行不同主机间的文件复制(parcels 项目线上部署的思想主要是通过复制测试环境的打包文件到线上环境进行部署，故用到此功能)。</p></div> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token assign-left variable">keyword</span><span class="token operator">=</span><span class="token variable">$1</span>
+
+<span class="token comment"># 发布线上</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token variable">$1</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;vue-author-center&quot;</span> <span class="token operator">==</span> *<span class="token variable">$keyword</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+	<span class="token builtin class-name">echo</span> author更新到线上<span class="token punctuation">..</span><span class="token punctuation">..</span>.
+	<span class="token function">ssh</span>  root@index.17feia.com <span class="token function">cp</span> /17feia/nfsOthersFiles/parcels/vue/vue-author-center/index.html /17feia/nfsOthersFiles/parcels/vue/vue-author-center/index.html.back 
+	<span class="token function">scp</span> -r /eship/code/vue-author-center/dist/<span class="token punctuation">{</span>favicon.ico,lib,static,index.html<span class="token punctuation">}</span> root@index.17feia.com:/17feia/nfsOthersFiles/parcels/vue/vue-author-center/
+<span class="token keyword">fi</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token variable">$1</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;vue-customer-center&quot;</span> <span class="token operator">==</span> *<span class="token variable">$keyword</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+	<span class="token builtin class-name">echo</span> vue-customer-center更新到线上<span class="token punctuation">..</span><span class="token punctuation">..</span>.
+	<span class="token function">ssh</span>  root@index.17feia.com <span class="token function">cp</span> /17feia/nfsOthersFiles/parcels/vue/vue-customer-center/index.html /17feia/nfsOthersFiles/parcels/vue/vue-customer-center/index.html.back 
+	<span class="token function">scp</span> -r /eship/code/vue-customer-center/dist/<span class="token punctuation">{</span>favicon.ico,static,index.html<span class="token punctuation">}</span> root@index.17feia.com:/17feia/nfsOthersFiles/parcels/vue/vue-customer-center/
+<span class="token keyword">fi</span>
+
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token variable">$1</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;vue-service-sales-center&quot;</span> <span class="token operator">==</span> *<span class="token variable">$keyword</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+	<span class="token builtin class-name">echo</span> vue-service-sales-center更新到线上<span class="token punctuation">..</span><span class="token punctuation">..</span>.
+	<span class="token function">ssh</span>  root@index.17feia.com <span class="token function">cp</span> /17feia/nfsOthersFiles/parcels/vue/vue-service-sales-center/index.html /17feia/nfsOthersFiles/parcels/vue/vue-service-sales-center/index.html.back 
+	<span class="token function">scp</span> -r /eship/code/vue-service-sales-center/dist/<span class="token punctuation">{</span>favicon.ico,lib,static,index.html<span class="token punctuation">}</span> root@index.17feia.com:/17feia/nfsOthersFiles/parcels/vue/vue-service-sales-center/
+<span class="token keyword">fi</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token variable">$1</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;vue-product-center&quot;</span> <span class="token operator">==</span> *<span class="token variable">$keyword</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+	<span class="token builtin class-name">echo</span> vue-product-center更新到线上<span class="token punctuation">..</span><span class="token punctuation">..</span>.
+	<span class="token function">ssh</span>  root@index.17feia.com <span class="token function">cp</span> /17feia/nfsOthersFiles/parcels/vue/vue-product-center/index.html /17feia/nfsOthersFiles/parcels/vue/vue-product-center/index.html.back 
+	<span class="token function">scp</span> -r /eship/code/vue-product-center/dist/<span class="token punctuation">{</span>favicon.ico,lib,static,index.html<span class="token punctuation">}</span> root@index.17feia.com:/17feia/nfsOthersFiles/parcels/vue/vue-product-center/
+<span class="token keyword">fi</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token variable">$1</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;vue-operation-center&quot;</span> <span class="token operator">==</span> *<span class="token variable">$keyword</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+	<span class="token builtin class-name">echo</span> vue-operation-center更新到线上<span class="token punctuation">..</span><span class="token punctuation">..</span>.
+	<span class="token function">ssh</span>  root@index.17feia.com <span class="token function">cp</span> /17feia/nfsOthersFiles/parcels/vue/vue-operation-center/index.html /17feia/nfsOthersFiles/parcels/vue/vue-operation-center/index.html.back 
+	<span class="token function">scp</span> -r /eship/code/vue-operation-center/dist/<span class="token punctuation">{</span>favicon.ico,lib,static,index.html<span class="token punctuation">}</span> root@index.17feia.com:/17feia/nfsOthersFiles/parcels/vue/vue-operation-center/
+<span class="token keyword">fi</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token variable">$1</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;vue-finance-center&quot;</span> <span class="token operator">==</span> *<span class="token variable">$keyword</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+	<span class="token builtin class-name">echo</span> vue-finance-center更新到线上<span class="token punctuation">..</span><span class="token punctuation">..</span>.
+	<span class="token function">ssh</span>  root@index.17feia.com <span class="token function">cp</span> /17feia/nfsOthersFiles/parcels/vue/vue-finance-center/index.html /17feia/nfsOthersFiles/parcels/vue/vue-finance-center/index.html.back 
+	<span class="token function">scp</span> -r /eship/code/vue-finance-center/dist/<span class="token punctuation">{</span>favicon.ico,lib,static,index.html<span class="token punctuation">}</span> root@index.17feia.com:/17feia/nfsOthersFiles/parcels/vue/vue-finance-center/
+<span class="token keyword">fi</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token variable">$1</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;vue-warning-center&quot;</span> <span class="token operator">==</span> *<span class="token variable">$keyword</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+	<span class="token builtin class-name">echo</span> vue-warning-center更新到线上<span class="token punctuation">..</span><span class="token punctuation">..</span>.
+	<span class="token function">ssh</span>  root@index.17feia.com <span class="token function">cp</span> /17feia/nfsOthersFiles/parcels/vue/vue-warning-center/index.html /17feia/nfsOthersFiles/parcels/vue/vue-warning-center/index.html.back 
+	<span class="token function">scp</span> -r /eship/code/vue-warning-center/dist/<span class="token punctuation">{</span>favicon.ico,static,index.html<span class="token punctuation">}</span> root@index.17feia.com:/17feia/nfsOthersFiles/parcels/vue/vue-warning-center/
+<span class="token keyword">fi</span>
+
+<span class="token builtin class-name">echo</span> 发布到线上完成<span class="token punctuation">..</span>.
+
+
+</code></pre></div><h3 id="操作文档"><a href="#操作文档" class="header-anchor">#</a> 操作文档</h3> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>下述操作均在 167 服务器下执行(部署脚本所在的服务器)</p></div> <ul><li><font face="黑体" color="red" size="5">parcels 打包部署测试环境</font></li></ul> <p>1、进入脚本目录</p> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token builtin class-name">cd</span> /eship
+</code></pre></div><p>2、执行全部更新、打包操作</p> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token function">sh</span> 09-vue-pull-and-build.sh 
+</code></pre></div><p>3、执行对应系统更新</p> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token function">sh</span> 09-vue-pull-and-build.sh author 后缀可用全称也可用模糊
+</code></pre></div><ul><li><font face="黑体" color="red" size="5">parcels 打包部署线上环境</font></li></ul> <p>1、进入脚本目录</p> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token builtin class-name">cd</span> /eship
+</code></pre></div><p>2、执行全部更新、打包操作</p> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token function">sh</span> <span class="token number">10</span>-vue-upload-2-online.sh
+</code></pre></div><p>3、执行对应系统更新</p> <div class="language-sh extra-class"><pre class="language-sh"><code>   <span class="token function">sh</span> <span class="token number">10</span>-vue-upload-2-online.sh author 后缀可用全称也可用模糊
+</code></pre></div><ul><li><font face="黑体" color="red" size="5">17feia 手机端官网及公众号 打包部署测试环境</font></li></ul> <p>1、进入脚本目录</p> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token builtin class-name">cd</span> /eship
+</code></pre></div><p>2、执行全部更新、打包操作</p> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token function">sh</span> <span class="token number">25</span>-nuxt-eship-home.sh
+</code></pre></div><p>3、执行对应系统更新</p> <div class="language-sh extra-class"><pre class="language-sh"><code>   <span class="token function">sh</span> <span class="token number">25</span>-nuxt-eship-home.sh nuxt-eship-home 后缀可用全称也可用模糊
+</code></pre></div><ul><li><font face="黑体" color="red" size="5">17feia 手机端官网及公众号 打包部署线上环境</font></li></ul> <p>1、进入脚本目录</p> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token builtin class-name">cd</span> /eship
+</code></pre></div><p>2、执行全部更新、打包操作</p> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token function">sh</span> <span class="token number">25</span>-nuxt-eship-home.sh
+</code></pre></div><p>3、执行对应系统更新</p> <div class="language-sh extra-class"><pre class="language-sh"><code>   <span class="token function">sh</span> <span class="token number">26</span>-nuxt-eship-home.sh nuxt-eship-home 后缀可用全称也可用模糊
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">12/18/2020, 5:18:38 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/guide/ES6/export.html" class="prev">
+        export 和 export default 的区别
+      </a></span> <span class="next"><a href="/toppgo/produce/introduce.html">
+        toppgo 项目说明文档
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e844382c.js" defer></script><script src="/assets/js/2.def6215b.js" defer></script><script src="/assets/js/3.f4d52b8e.js" defer></script><script src="/assets/js/4.28ef076a.js" defer></script>
+  </body>
+</html>

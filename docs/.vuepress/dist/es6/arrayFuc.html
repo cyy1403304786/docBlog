@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>数组的相关方法 | 学习笔记</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/img/test.ico">
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.47543788.css" as="style"><link rel="preload" href="/assets/js/app.e844382c.js" as="script"><link rel="preload" href="/assets/js/2.def6215b.js" as="script"><link rel="preload" href="/assets/js/3.f4d52b8e.js" as="script"><link rel="preload" href="/assets/js/24.b9ba21dd.js" as="script"><link rel="prefetch" href="/assets/js/10.50a01628.js"><link rel="prefetch" href="/assets/js/11.42552db5.js"><link rel="prefetch" href="/assets/js/12.cbdb02fa.js"><link rel="prefetch" href="/assets/js/13.a0623ea7.js"><link rel="prefetch" href="/assets/js/14.65b4c7f2.js"><link rel="prefetch" href="/assets/js/15.594a5849.js"><link rel="prefetch" href="/assets/js/16.07d3711d.js"><link rel="prefetch" href="/assets/js/17.b7b18637.js"><link rel="prefetch" href="/assets/js/18.f1a2b96e.js"><link rel="prefetch" href="/assets/js/19.e561fffd.js"><link rel="prefetch" href="/assets/js/20.79457941.js"><link rel="prefetch" href="/assets/js/21.e88381ce.js"><link rel="prefetch" href="/assets/js/22.a54482d5.js"><link rel="prefetch" href="/assets/js/23.1d8ea74f.js"><link rel="prefetch" href="/assets/js/25.89f800d1.js"><link rel="prefetch" href="/assets/js/26.6736e07b.js"><link rel="prefetch" href="/assets/js/27.0905f68d.js"><link rel="prefetch" href="/assets/js/28.c49c2491.js"><link rel="prefetch" href="/assets/js/29.a1efb644.js"><link rel="prefetch" href="/assets/js/30.52ef7b66.js"><link rel="prefetch" href="/assets/js/31.3f7e9119.js"><link rel="prefetch" href="/assets/js/32.10f7af96.js"><link rel="prefetch" href="/assets/js/33.5b18032b.js"><link rel="prefetch" href="/assets/js/34.b6f892e9.js"><link rel="prefetch" href="/assets/js/4.28ef076a.js"><link rel="prefetch" href="/assets/js/5.a197b8e0.js"><link rel="prefetch" href="/assets/js/6.8d5a490f.js"><link rel="prefetch" href="/assets/js/7.02c09c41.js"><link rel="prefetch" href="/assets/js/8.a6d73c47.js"><link rel="prefetch" href="/assets/js/9.2dcc13a8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.47543788.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">学习笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  home
+</a></div><div class="nav-item"><a href="http://nuxt.yysmile.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人网站
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/cyy1403304786" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github 地址
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  home
+</a></div><div class="nav-item"><a href="http://nuxt.yysmile.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人网站
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/cyy1403304786" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github 地址
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>工具类</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ES6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>parcels技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>toppgo技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>17feia技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>balidrop技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>elementui 相关功能点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>es6</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/es6/arrayFuc.html" aria-current="page" class="active sidebar-link">es6数组的相关方法</a></li><li><a href="/es6/map.html" class="sidebar-link">es6中关于map集合和set集合</a></li><li><a href="/es6/destructuring.html" class="sidebar-link">es6中的解构赋值</a></li><li><a href="/es6/modules.html" class="sidebar-link">es6中的模块化</a></li><li><a href="/es6/promise.html" class="sidebar-link">es6中的promise</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端性能优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>vue3.0学习</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="数组的相关方法"><a href="#数组的相关方法" class="header-anchor">#</a> 数组的相关方法</h1> <ul><li>Array.Of() 创建数组</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>    //通过es6 中 的 Array.of<span class="token punctuation">(</span><span class="token punctuation">)</span> 方法创建一个新的数组
+    <span class="token builtin class-name">let</span> item1 <span class="token operator">=</span>  Array.of<span class="token punctuation">(</span><span class="token number">1,2</span><span class="token punctuation">)</span>
+    console.log<span class="token punctuation">(</span>item1<span class="token punctuation">)</span>
+    //调用Array 构造函数创造一个数组对象
+    <span class="token builtin class-name">let</span> item2 <span class="token operator">=</span> new Array<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    console.log<span class="token punctuation">(</span>item2<span class="token punctuation">)</span>
+    //通过数组字面量的方法创建一个数组对象
+    <span class="token builtin class-name">let</span> item3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1,2</span><span class="token punctuation">]</span>
+    console.log<span class="token punctuation">(</span>item3<span class="token punctuation">)</span>
+</code></pre></div><ul><li>Array.from() 将类数组对象转换为数组</li></ul> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>类数组对象: 可以通过索引访问元素，并且拥有length 属性；但是没有数组的其他方法，如:push  forEach  indexOf 等。</p></div> <div class="language-sh extra-class"><pre class="language-sh"><code>  //创建一个 类数组对象
+   <span class="token builtin class-name">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token number">0</span>: <span class="token string">'cyy'</span>,
+      <span class="token number">1</span>: <span class="token number">24</span>,
+      length: <span class="token number">2</span>
+    <span class="token punctuation">}</span>
+
+  //通过es5 中的 slice 方法
+
+  console.log<span class="token punctuation">(</span>Array.prototype.slice.call<span class="token punctuation">(</span>obj<span class="token punctuation">))</span>
+
+  //通过es6 中的 Array.from<span class="token punctuation">(</span><span class="token punctuation">)</span> 方法
+
+  console.log<span class="token punctuation">(</span>Array.from<span class="token punctuation">(</span>obj<span class="token punctuation">))</span>
+</code></pre></div><ul><li>find() 搜索数组中指定的值  findIndex()搜索数组中指定元素的索引值</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>      //根据某个条件进行查找匹配的元素，一旦返回为ture 就立即停止执行<span class="token punctuation">(</span>找到符合标准的第一个元素<span class="token punctuation">)</span>
+      <span class="token builtin class-name">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3,4</span>,5,6<span class="token punctuation">]</span>
+       console.log<span class="token punctuation">(</span> arr.find<span class="token punctuation">(</span>n <span class="token operator">=</span><span class="token operator">&gt;</span> n <span class="token operator">&gt;</span> <span class="token number">5</span><span class="token punctuation">))</span>
+      //同理，找出对应的索引
+      <span class="token builtin class-name">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3,4</span>,5,6<span class="token punctuation">]</span>
+       console.log<span class="token punctuation">(</span> arr.findIndex<span class="token punctuation">(</span>n <span class="token operator">=</span><span class="token operator">&gt;</span> n <span class="token operator">&gt;</span> <span class="token number">5</span><span class="token punctuation">))</span>
+
+      // 如果要找出对应的跟某个值匹配的元素，则使用 indexOf<span class="token punctuation">(</span><span class="token punctuation">)</span> 方法
+          <span class="token builtin class-name">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3,4</span>,5,6<span class="token punctuation">]</span>
+          // 返回元素在数组中的对应位置，如果没有查询到则返回为-1
+          console.log<span class="token punctuation">(</span>arr.indexOf<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">))</span>
+     
+
+
+</code></pre></div><ul><li>concat() 用于连接两个或多个数组（如果传空，则复制数组）</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>
+    // 克隆数组
+    // 方法一<span class="token punctuation">(</span>数组的 concat 方法<span class="token punctuation">)</span>
+         <span class="token builtin class-name">let</span> colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'red'</span>,<span class="token string">'blue'</span>,<span class="token string">'black'</span><span class="token punctuation">]</span>
+      // <span class="token builtin class-name">let</span> cloneArrs <span class="token operator">=</span> colors.concat<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    // 方法二<span class="token punctuation">(</span>对象展开运算符<span class="token punctuation">)</span>
+         <span class="token builtin class-name">let</span> <span class="token punctuation">[</span><span class="token punctuation">..</span>.cloneArrs<span class="token punctuation">]</span> <span class="token operator">=</span> colors
+        console.log<span class="token punctuation">(</span>cloneArrs<span class="token punctuation">)</span>
+
+
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/9/2020, 11:41:46 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/elementui/function/table.html" class="prev">
+        elementui表格合并的方法
+      </a></span> <span class="next"><a href="/es6/map.html">
+        es6中关于map集合和set集合
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e844382c.js" defer></script><script src="/assets/js/2.def6215b.js" defer></script><script src="/assets/js/3.f4d52b8e.js" defer></script><script src="/assets/js/24.b9ba21dd.js" defer></script>
+  </body>
+</html>
