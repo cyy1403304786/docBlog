@@ -238,24 +238,211 @@
 
 ## 原型
 ::: details Prototype 
-   给其他对象提供共享属性的对象。prototype 描述的是两个对象之间的关系（其中一个，为另一个提供属性访问权限）。所有对象，都可以作为另一个对象的prototype 来使用。
+   原型对象就是指函数所拥有的prototype属性。
 :::
 
-**<font size= 5> 1，所有的 object 对象都有一个隐式引用 </font>**
+**<font size= 5>  1，prototype</font>**
 
-所有对象，都有一个隐式引用，它被称之为这个对象的 prototype 原型。
+<font color= red> 概念：</font>给其它对象提供共享属性的对象。
+
+prototype 是函数独有的，它的作用就是包含可以给特定类型的所有实例提供共享的属性和方法。任何函数在创建的时候，都会默认给该函数添加 prototype 属性。同时，prototype 也是一个对象，里面有一个默认属性 constructor，默认指向当前函数
+
+**<font size= 5> 2，所有的 object 对象都有一个隐式引用 </font>**
+
+所有对象，都有一个隐式引用，它被称之为这个对象的 prototype 原型。如下图，声明一个 obj 对象，只有 name, age 的属性，打印出来，却有一个__proto__ 属性。这就意味着obj 被一个对象隐式引用。所谓隐式，是指属性不能直接被访问。
 
 <div style="text-align:center;">
     <img src="../../.vuepress/public/img/js/prototype.png"  style="margin:0 auto;">
 </div>
 
+**<font size= 5>  3，__proto__ </font>**
+
+ECMAScript 规范描述 prototype 是一个隐式引用，但之前的一些浏览器，已经私自实现了 __proto__ 这个属性，使得可以通过 obj.__proto__ 这个显式的属性访问
 
 
+- 通过<font color= red>  Object.getPrototypeOf(obj) </font>  间接访问指定对象的 prototype 对象。
+- 通过<font color= red>  Object.setPrototypeOf(obj, anotherObj) </font> 间接设置指定对象的 prototype 对象。
+- 部分浏览器可以直接通过 <font color= red> obj.__proto__ </font> 直接访问原型。
+
+
+**<font size= 5>  4，prototype chain  原型链 </font>**
+
+<font color= red> 概念：</font> prototype 是作为另一个对象的隐式引用的对象，那么prototype 也是一个对象，也有自己的隐式引用，如此便构成了对象的原型的链条，直到某个对象的隐式引用为null,整个链条终止。整个链条就叫原型链。
+
+
+
+**<font size= 5>  5，原型链有什么作用？</font>**
+
+在访问一个对象的属性时，实际上是在查询原型链。这个对象是原型链的第一个元素，先检查它是否包含属性名，如果包含则返回属性值，否则检查原型链上的第二个元素，以此类推。
+
+
+
+**<font size= 5>  6，prototype 和 proto 的关系</font>**
+
+proto 属性是对象所独有的。constructor属性也是对象所独有的（下文），而prototype 是函数独有的。对象的属性 proto ，指向该对象的构造函数（constructor）的原型对象（prototype）。
+
+**<font size= 5>  7，构造函数、原型、实例的关系</font>**
+
+每个构造函数都有一个原型对象，原型对象都有一个指向构造函数的指针（constructor），而实例包含一个指向原型对象的内部指针（__proto__）。
 
 
 
 
 ## 继承
+
+::: warning  
+   继承是为了子类可以使用父类的所有功能，并且对这些功能进行扩展。
+:::
+
+**<font size= 5>  1，原型继承 </font>**
+
+说明：将子类的原型挂载到父类上；
+
+缺点：子类new 出来的实例，父类的属性没有隔离，会相互影响。
+
+```sh
+function Parent2() {
+  this.name = 'parent2'
+  this.arr = [1, 2, 3]
+}
+Parent2.prototype.say = function () {
+	console.log(this.name)
+}
+function Child2() {
+  this.type = 'child2'
+}
+Child2.prototype = new Parent2() //原型继承核心代码
+let child2_1 = new Child2()
+let child2_2 = new Child2()
+
+console.log(child2_1.name) // parent2
+console.log(child2_1.say()) // parent2
+child2_1.arr.push(4)
+console.log(child2_1.arr, child2_2.arr) // [1, 2, 3, 4]  [1, 2, 3, 4]
+
+```
+
+**<font size= 5>  2，构造函数继承 </font>**
+
+说明：直接利用call或者apply方法将父类构造函数的this绑定为子类构造函数的this就可以；
+
+缺点：无法继承原型链上的属性与方法;
+
+```sh
+function Parent1() {
+  this.name = 'parent1'
+}
+Parent1.prototype.say = function () {
+	console.log(this.name)
+}
+function Child1() {
+  Parent1.call(this)  //构造函数继承核心代码
+  this.type = 'child1'
+}
+let child1_1 = new Child1()
+
+console.log(child1_1.name) // parent1
+console.log(child1_1.say()) // child1_1.say is not a function
+
+```
+
+
+**<font size= 5>  3，组合继承 </font>**
+
+说明：组合构造函数与原型继承的功能；
+
+缺点：call()方法已经拿到父类所有的属性 ，后面再使用原型时也会有父类所有属性;
+
+```sh
+function Parent3() {
+  this.name = 'parent3'
+  this.arr = [1, 2, 3]
+}
+Parent3.prototype.say = function () {
+	console.log(this.name)
+}
+function Child3() {
+  Parent3.call(this)
+  this.type = 'child3'
+}
+Child3.prototype = new Parent3()
+
+let child3_1 = new Child3()
+let child3_2 = new Child3()
+
+child3_1.arr.push(4)
+console.log(child3_1.arr, child3_2.arr) //  [1, 2, 3, 4]  [1, 2, 3]
+// 缺点是 Parent3执行了两次,child3中有重复属性
+
+```
+
+
+**<font size= 5>  4，寄生组合继承 </font>**
+
+说明：解决组合继承重复属性的问题，直接将子类的原型等于父类的原型，或者是用Object.create继承原型但不执行父类构造函数；
+
+```sh
+    function Parent4() {
+  this.name = 'parent4'
+  this.arr = [1, 2, 3]
+}
+Parent4.prototype.say = function () {
+	console.log(this.name)
+}
+function Child4() {
+  Parent4.call(this)
+  this.type = 'child4'
+}
+
+//子类的原型等于父类的原型
+Child4.prototype = Parent4.prototype  
+//或 Child4.prototype = Object.create(Parent4.prototype)
+//修复重写子类原型导致子类constructor属性被修改
+Child4.prototype.constructor = Child4
+
+let child4_1 = new Child4()
+let child4_2 = new Child4()
+child4_1.arr.push(4)
+console.log(child4_1.arr, child4_2.arr) // [1, 2, 3, 4]  [1, 2, 3]
+console.log(child4_1.constructor === Child4) // true 
+console.log(child4_1.constructor === Parent4)// false
+
+// 这里的Child4就是一个继承自Function的函数对象
+console.log(Child4.constructor === Parent4) // false
+
+```
+
+**<font size= 5>  5，Class 继承 </font>**
+
+说明：ES6新增，class是一个语法糖，就是基于寄生组合继承来实现的
+
+```sh
+class Parent5{
+	constructor(){
+  	this.name = 'Parent5'
+    this.arr = [1, 2, 3]
+  }
+  say(){
+  	console.log(this.name)
+  }
+}
+class Child5 extends Parent5{
+   constructor(){
+    super() //通过super()调用父类构造函数
+    this.type="Child5"
+  }
+}
+let child5_1 = new Child5()
+let child5_2 = new Child5()
+child5_1.arr.push(4)
+console.log(child5_1.say()) // Parent5
+console.log(child5_1.arr, child5_2.arr) // [1, 2, 3, 4]  [1, 2, 3]
+console.log(child5_1.constructor === Child5) // true 
+console.log(child5_2.constructor === Parent5) // false
+
+```
+
+
 
 ## call/apply/bind
 
