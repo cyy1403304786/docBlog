@@ -283,7 +283,114 @@
 ```
 ## new, this
 ## promise
-## async/await
+
+::: warning Introduction
+是异步编程的一种解决方案，从语法上讲，promise 是一个对象。它有三种状态，pending(等待中)，fulfiled(成功状态)，rejected(失败状态)。它的出现主要是为了解决javascript 中回调地狱的问题，增加代码的可读性、可维护性。
+:::
+
+
+
+
+
+
+## async/await（es7语法）
+
+::: warning Introduction
+是异步编程的一种解决方案，为了解决promise 的不完美。如果promise 的回调中出现嵌套，依旧会出现回调地狱。async/await 提供了一种新的编写异步代码方式，以同步方式编写异步代码，代码简洁，十分友好。
+:::
+
+
+### 调用异步函数时会返回一个 promise 对象
+
+```sh
+      async function test() {
+        return 'ok'
+        throw new Error('error')  //
+     }
+     test().then(console.log, console.log)
+```
+
+- 当这个异步函数返回一个值时，promise 的 resolve 方法将会处理这个返回值
+- 当异步函数抛出异常或者非法值时，promise 的 reject 方法将处理这个异常值
+
+
+### await
+
+await 操作符用于等待一个 Promise 返回结果或者某个直接的值，且 await 必须在异步函数 (async function) 上下文中使用。
+
+```sh
+    function sleep (second) {
+        return new Promise((resolve, reject) => {
+        setTimeout(resolve, second*1000)
+        })
+    }
+    async function test () {
+        console.log(new Date())
+        await sleep(3)
+        console.log(new Date())
+    }
+   test()
+
+    // 输出结果为：
+    Fri Mar 12 2021 10:40:32 GMT+0800 (中国标准时间)
+    Fri Mar 12 2021 10:40:35 GMT+0800 (中国标准时间)
+```
+
+异步函数中执行 await 表达式，这将会使异步函数暂停执行并等待 promise 解析传值后，继续执行异步函数并返回解析值。
+
+### async/await的优势
+
+- 错误处理
+try-catch 处理同步，异步错误。
+```sh
+   function getJSON(res) {
+      return new Promise(function(resolve,reject) {
+        res = {obj: 'cyy'}
+        resolve()
+      })
+    }
+    // 使用 promise
+    function test () { 
+        try {
+            getJSON().then((res) => {
+                var data = JSON.parse(res) // 此处会报错 SyntaxError: Unexpected token u in JSON at position 0
+            })
+        } 
+        catch (e) {
+            console.log(e)   // catch 无法捕捉到异常
+        }
+    }
+    // 使用 async/await
+    async function test () {
+      try {
+        var data = JSON.parse(await getJSON())
+      } catch (e) {
+        console.log(e) // catch 里面会捕捉到异常  SyntaxError: Unexpected token u in JSON at position 0
+      }
+    }
+    test()
+```
+- 解决嵌套问题
+```sh
+    function test () {
+     return promise1()
+            .then(value1 => {
+               return promise2(valu1)
+            .then(value2 => {
+                return promise3(value1, value2)
+            })
+        })
+    }
+
+    async function test () {
+        var value1 = await promise1()
+        var value2 = await promise2(value1)
+        return promise3(value1, value2)
+    }
+```
+- 代码更加简洁，优雅
+
+
 
 ## eventloop(事件循环)
 
@@ -341,9 +448,8 @@
  **7，结束。**
 
 
-## 浏览器缓存机制
 ## 浏览器渲染原理
-## es6
+
 
 
 
