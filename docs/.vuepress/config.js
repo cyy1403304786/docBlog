@@ -12,7 +12,7 @@ module.exports = {
         lastUpdated: true,
         nav : [
             {text: 'home',  link: '/',},
-            { text: '个人网站',  link: 'http://nuxt.yysmile.cn', target:'_blank', rel:''},
+            { text: '个人网站',  link: 'http://www.yysmile.cn', target:'_blank', rel:''},
             { text: 'github 地址', link: 'https://github.com/cyy1403304786', target:'_blank', rel:'' },
         ],
         sidebar: [
@@ -23,6 +23,7 @@ module.exports = {
                     [ 
                       {title:'css 重要知识点', path: './guide/started/css'},
                       {title:'js 重要知识点', path: './guide/started/js'},
+                      {title:'vue 重要知识点', path: './guide/started/vue'},
                       {title:'webhook自动部署', path: './guide/started/webhook'},
                       {title:'自定义代码片段', path: './guide/started/snipt'},
                       {title:'echarts图表', path: './guide/started/echarts'},

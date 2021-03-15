@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>toppgo 项目说明文档 | 学习笔记</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/img/test.ico">
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.47543788.css" as="style"><link rel="preload" href="/assets/js/app.18a9f889.js" as="script"><link rel="preload" href="/assets/js/2.207120b0.js" as="script"><link rel="preload" href="/assets/js/3.5b30a52f.js" as="script"><link rel="preload" href="/assets/js/14.cf805674.js" as="script"><link rel="prefetch" href="/assets/js/10.b1d9c092.js"><link rel="prefetch" href="/assets/js/11.203f3261.js"><link rel="prefetch" href="/assets/js/12.22fdbb13.js"><link rel="prefetch" href="/assets/js/13.0b42ccb3.js"><link rel="prefetch" href="/assets/js/15.dcb3bbcc.js"><link rel="prefetch" href="/assets/js/16.a6826f6d.js"><link rel="prefetch" href="/assets/js/17.7eb0e4ef.js"><link rel="prefetch" href="/assets/js/18.007c0cf1.js"><link rel="prefetch" href="/assets/js/19.a9bb42fe.js"><link rel="prefetch" href="/assets/js/20.4e4ddfb7.js"><link rel="prefetch" href="/assets/js/21.fbab63de.js"><link rel="prefetch" href="/assets/js/22.f4a16f47.js"><link rel="prefetch" href="/assets/js/23.1d8ea74f.js"><link rel="prefetch" href="/assets/js/24.b9ba21dd.js"><link rel="prefetch" href="/assets/js/25.a6effbff.js"><link rel="prefetch" href="/assets/js/26.8f21a72c.js"><link rel="prefetch" href="/assets/js/27.6c8adec7.js"><link rel="prefetch" href="/assets/js/28.fce90ab3.js"><link rel="prefetch" href="/assets/js/29.98bb339e.js"><link rel="prefetch" href="/assets/js/30.52ef7b66.js"><link rel="prefetch" href="/assets/js/31.f8539935.js"><link rel="prefetch" href="/assets/js/32.1839f411.js"><link rel="prefetch" href="/assets/js/33.8324098d.js"><link rel="prefetch" href="/assets/js/34.ba9d4d8e.js"><link rel="prefetch" href="/assets/js/35.253f7df9.js"><link rel="prefetch" href="/assets/js/4.ec3b8a71.js"><link rel="prefetch" href="/assets/js/5.4576d458.js"><link rel="prefetch" href="/assets/js/6.22ed03de.js"><link rel="prefetch" href="/assets/js/7.39473ae2.js"><link rel="prefetch" href="/assets/js/8.9d7c2b1f.js"><link rel="prefetch" href="/assets/js/9.8c046bc2.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.47543788.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">学习笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  home
+</a></div><div class="nav-item"><a href="http://www.yysmile.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人网站
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/cyy1403304786" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github 地址
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  home
+</a></div><div class="nav-item"><a href="http://www.yysmile.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人网站
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/cyy1403304786" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github 地址
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>工具类</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ES6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>parcels技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>toppgo技术点</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/toppgo/produce/introduce.html" aria-current="page" class="active sidebar-link">toppgo 项目说明文档</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/toppgo/produce/introduce.html#项目介绍" class="sidebar-link">项目介绍</a></li><li class="sidebar-sub-header"><a href="/toppgo/produce/introduce.html#前端所用技术框架选型" class="sidebar-link">前端所用技术框架选型</a></li><li class="sidebar-sub-header"><a href="/toppgo/produce/introduce.html#项目结构" class="sidebar-link">项目结构</a></li><li class="sidebar-sub-header"><a href="/toppgo/produce/introduce.html#toppgo-重要项目点" class="sidebar-link">toppgo 重要项目点</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/toppgo/produce/introduce.html#_0-nuxt项目-后台vue项目共用登录登出页面" class="sidebar-link">0,nuxt项目 + 后台vue项目共用登录登出页面</a></li><li class="sidebar-sub-header"><a href="/toppgo/produce/introduce.html#_1-nuxt-中关于引入svg-图标" class="sidebar-link">1,nuxt 中关于引入svg 图标</a></li><li class="sidebar-sub-header"><a href="/toppgo/produce/introduce.html#_2-nuxt-中全局动画过渡效果" class="sidebar-link">2,nuxt 中全局动画过渡效果</a></li><li class="sidebar-sub-header"><a href="/toppgo/produce/introduce.html#_3-实现页面平滑滚动-锚点定位" class="sidebar-link">3,实现页面平滑滚动(锚点定位)</a></li><li class="sidebar-sub-header"><a href="/toppgo/produce/introduce.html#_4-首页登录记住密码" class="sidebar-link">4,首页登录记住密码</a></li><li class="sidebar-sub-header"><a href="/toppgo/produce/introduce.html#_5-解决苹果浏览器windows-open-页面被拦截" class="sidebar-link">5,解决苹果浏览器windows.open()页面被拦截</a></li><li class="sidebar-sub-header"><a href="/toppgo/produce/introduce.html#_6-vue-中关于引入svg-图标" class="sidebar-link">6,vue 中关于引入svg 图标</a></li><li class="sidebar-sub-header"><a href="/toppgo/produce/introduce.html#_7-vuex-模块化用法-跨模块调用方法" class="sidebar-link">7,vuex 模块化用法 跨模块调用方法</a></li></ul></li><li class="sidebar-sub-header"><a href="/toppgo/produce/introduce.html#toppgo-项目部署说明" class="sidebar-link">toppgo 项目部署说明</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/toppgo/produce/introduce.html#_1-关于nuxt-部署脚本编写" class="sidebar-link">1,关于nuxt 部署脚本编写</a></li><li class="sidebar-sub-header"><a href="/toppgo/produce/introduce.html#_2-toppgo-前端部署" class="sidebar-link">2, toppgo 前端部署</a></li></ul></li></ul></li><li><a href="/toppgo/produce/introduceApp.html" class="sidebar-link">toppgo APP项目说明文档</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>17feia技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>balidrop技术点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>elementui 相关功能点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>es6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端性能优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>vue3.0学习</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="toppgo-项目说明文档"><a href="#toppgo-项目说明文档" class="header-anchor">#</a> toppgo 项目说明文档</h1> <h2 id="项目介绍"><a href="#项目介绍" class="header-anchor">#</a> 项目介绍</h2> <p>toppgo 是一个向海外华人、留学生以及国内外采购商等提供国际转运与仓储增值服务的平台。其中包括官网首页(采用nuxt 框架搭建)，后台管理平台(采用vue框架)，手机app等三大工程。</p> <p>相关网站:</p> <div class="language- extra-class"><pre><code>     cn.toppgo.com  (中国服务器)
+
+     us.toppgo.com  (美国服务器)
+
+     www.toppgo.com (欧洲服务器)
+</code></pre></div><h2 id="前端所用技术框架选型"><a href="#前端所用技术框架选型" class="header-anchor">#</a> 前端所用技术框架选型</h2> <p>该项目前台展示页面：采用 nuxt 技术搭建，配合 vue-i18n 进行相关国际化操作，支持三国语言(中文，韩文，英文)。</p> <p>该项目后台管理系统：采用 vue2.0 搭配 vue-cli3.0 脚手架，配合vuex 状态管理器 结合webpack 打包工具，采用 scss 扩展语言构造而成。</p> <p>该项目app端： 为混合APP开发，前端框架采用 mui + js 开发而成。</p> <h2 id="项目结构"><a href="#项目结构" class="header-anchor">#</a> 项目结构</h2> <p>参照 parcels 结构构建而成。</p> <h2 id="toppgo-重要项目点"><a href="#toppgo-重要项目点" class="header-anchor">#</a> toppgo 重要项目点</h2> <h3 id="_0-nuxt项目-后台vue项目共用登录登出页面"><a href="#_0-nuxt项目-后台vue项目共用登录登出页面" class="header-anchor">#</a> 0,nuxt项目 + 后台vue项目共用登录登出页面</h3> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>业务场景:
+公司可能有两套系统，但是分别放在不同的域名下，想要共用一个登入登出功能，实现让用户感觉仿佛在使用同一个系统。
+实现逻辑：cookie下面有个设置域的属性,你把域设置成对应的域名（customer.toppgo.com）,然后只要在这个域名下面的都可以共用你的cookies了（后端操作配置）!</p></div> <ul><li>在项目中区分开发环境和生产环境：</li></ul> <p>1，根目录下创建两个文件。文件名分别为 .env.development （开发环境）和.env.production （生产环境）</p> <p>2，分别编辑这两个文件。在不同的环境下设置不同的环境变量</p> <p>2.1 .env.development，这是开发环境下的URL</p> <div class="language-sh extra-class"><pre class="language-sh"><code>   VUE_APP_DOMAIN_BASE_URL <span class="token operator">=</span> http://pc.toppgo.com:2020
+
+</code></pre></div><p>2.2 .env.production，这是生产环境下的URL</p> <div class="language-sh extra-class"><pre class="language-sh"><code>  VUE_APP_DOMAIN_BASE_URL <span class="token operator">=</span>  /
+
+</code></pre></div><p>3，设置不同环境下的打包指令 （package.json文件）</p> <div class="language-sh extra-class"><pre class="language-sh"><code>      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;vue-toppgo&quot;</span>,
+        <span class="token string">&quot;version&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;0.1.0&quot;</span>,
+        <span class="token string">&quot;private&quot;</span><span class="token builtin class-name">:</span> true,
+        <span class="token string">&quot;scripts&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;dev&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;vue-cli-service serve --mode development&quot;</span>,
+          <span class="token string">&quot;build&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;vue-cli-service build --mode production&quot;</span>
+        <span class="token punctuation">}</span>,
+        <span class="token punctuation">..</span><span class="token punctuation">..</span>
+      <span class="token punctuation">}</span>
+</code></pre></div><p>4， 配置请求基本地址</p> <div class="language-sh extra-class"><pre class="language-sh"><code>   location.href <span class="token operator">=</span> process.env.NODE_ENV <span class="token operator">==</span><span class="token operator">=</span> <span class="token string">'development'</span> ? process.env.VUE_APP_DOMAIN_BASE_URL + <span class="token string">'/login'</span> <span class="token builtin class-name">:</span> <span class="token variable"><span class="token variable">`</span>$<span class="token punctuation">{</span>location.origin<span class="token punctuation">}</span>/login<span class="token variable">`</span></span>
+</code></pre></div><ul><li>A 项目拥有登录页面，进行登录逻辑：</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  // 登录
+  async userLoginA<span class="token punctuation">(</span><span class="token punctuation">{</span> commit, state <span class="token punctuation">}</span>, params<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    state.loginBtnButtonLoading <span class="token operator">=</span> <span class="token boolean">true</span>
+
+    try <span class="token punctuation">{</span>
+      <span class="token builtin class-name">let</span> res <span class="token operator">=</span> await userLogin<span class="token punctuation">(</span>state.loginForm<span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>res.flag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token builtin class-name">let</span> url <span class="token operator">=</span> <span class="token string">'http://'</span> + location.host + <span class="token string">'/toppgo/home'</span>
+        window.location.href <span class="token operator">=</span> process.env.NODE_ENV <span class="token operator">==</span> <span class="token string">'development'</span> ? <span class="token string">'http://customer.toppgo.com:2021/toppgo'</span> <span class="token builtin class-name">:</span> url
+      <span class="token punctuation">}</span>else<span class="token punctuation">{</span>
+        Notification.error<span class="token punctuation">(</span><span class="token punctuation">{</span> title: <span class="token string">'提示'</span>, message: res.msg <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      state.loginBtnButtonLoading <span class="token operator">=</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span> catch<span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      state.loginBtnButtonLoading <span class="token operator">=</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+
+</code></pre></div><ul><li>B 项目公用A项目的登录页面和登出页面，在路由拦截页面进行配置：</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>
+  router.beforeEach<span class="token punctuation">(</span>async<span class="token punctuation">(</span>to, from, next<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+
+    if<span class="token punctuation">(</span>/<span class="token punctuation">(</span><span class="token punctuation">\</span>/login<span class="token operator">|</span><span class="token punctuation">\</span>/regist<span class="token operator">|</span><span class="token punctuation">\</span>/resetPassword<span class="token operator">|</span><span class="token punctuation">\</span>/protocol<span class="token punctuation">)</span>/.test<span class="token punctuation">(</span>to.path<span class="token punctuation">))</span><span class="token punctuation">{</span>
+      next<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> // 未登录,不需拦截
+    <span class="token punctuation">}</span>else<span class="token punctuation">{</span>   // 校验是否登录<span class="token punctuation">(</span>获取用户信息接口<span class="token punctuation">)</span>
+      axios.get<span class="token punctuation">(</span>apiUrlPrefix + <span class="token string">&quot;/subject/isLogin&quot;</span><span class="token punctuation">)</span>.then<span class="token punctuation">(</span>response <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+        if<span class="token punctuation">(</span>response.data.flag<span class="token punctuation">)</span><span class="token punctuation">{</span>
+          store.commit<span class="token punctuation">(</span><span class="token string">'login/isLoginM'</span>, response.data<span class="token punctuation">)</span>
+          if<span class="token punctuation">(</span>to.path <span class="token operator">==</span><span class="token operator">=</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            next<span class="token punctuation">(</span><span class="token punctuation">{</span> path: <span class="token string">&quot;/&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> // 访问根目录，定向到首页
+          <span class="token punctuation">}</span>else<span class="token punctuation">{</span>
+            next<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> // 已登录
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>else<span class="token punctuation">{</span>
+          location.href <span class="token operator">=</span> process.env.NODE_ENV <span class="token operator">==</span> <span class="token string">'development'</span> ? <span class="token variable"><span class="token variable">`</span>$<span class="token punctuation">{</span>store.state.common.VUE_APP_DOMAIN_BASE_URL<span class="token punctuation">}</span>/login<span class="token variable">`</span></span> <span class="token builtin class-name">:</span><span class="token variable"><span class="token variable">`</span>$<span class="token punctuation">{</span>location.origin<span class="token punctuation">}</span>/login<span class="token variable">`</span></span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>.catch<span class="token punctuation">(</span>response <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>
+         location.href <span class="token operator">=</span> process.env.NODE_ENV <span class="token operator">==</span> <span class="token string">'development'</span> ? <span class="token variable"><span class="token variable">`</span>$<span class="token punctuation">{</span>store.state.common.VUE_APP_DOMAIN_BASE_URL<span class="token punctuation">}</span>/login<span class="token variable">`</span></span> <span class="token builtin class-name">:</span><span class="token variable"><span class="token variable">`</span>$<span class="token punctuation">{</span>location.origin<span class="token punctuation">}</span>/login<span class="token variable">`</span></span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre></div><h3 id="_1-nuxt-中关于引入svg-图标"><a href="#_1-nuxt-中关于引入svg-图标" class="header-anchor">#</a> 1,nuxt 中关于引入svg 图标</h3> <ul><li>项目全局安装svg-sprite-loader：</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>    <span class="token function">npm</span> i svg-sprite-loader --save-dev
+</code></pre></div><ul><li>建立 svg 文件目录 (assets/icons/svg/exapmle.svg) ----如下图:</li></ul> <p><img src="data:image/png;base64,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" alt="solar"></p> <ul><li>在components/目录下新建文件svgIcon.vue</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>      <span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>svg :class<span class="token operator">=</span><span class="token string">&quot;svgClass&quot;</span> aria-hidden<span class="token operator">=</span><span class="token string">&quot;true&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>use :xlink:href<span class="token operator">=</span><span class="token string">&quot;iconName&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/use<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>/svg<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/template<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+    <span class="token builtin class-name">export</span> default <span class="token punctuation">{</span>
+      name: <span class="token string">'SvgIcon'</span>,
+      props: <span class="token punctuation">{</span>
+        iconClass: <span class="token punctuation">{</span>
+          type: String,
+          required: true,
+          default: <span class="token string">''</span>
+        <span class="token punctuation">}</span>,
+        className: <span class="token punctuation">{</span>
+          type: String,
+          default: <span class="token string">''</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>,
+      computed: <span class="token punctuation">{</span>
+        <span class="token function-name function">iconName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token builtin class-name">return</span> <span class="token variable"><span class="token variable">`</span><span class="token comment">#icon-${this.iconClass}</span><span class="token variable">`</span></span>
+        <span class="token punctuation">}</span>,
+        <span class="token function-name function">svgClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>this.className<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token builtin class-name">return</span> <span class="token string">'svg-icon '</span> + this.className
+          <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token builtin class-name">return</span> <span class="token string">'svg-icon'</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>/script<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span>style scoped<span class="token operator">&gt;</span>
+    .svg-icon <span class="token punctuation">{</span>
+      width: 156px<span class="token punctuation">;</span>  //自定义宽高
+      height: 56px<span class="token punctuation">;</span>
+      fill: currentColor<span class="token punctuation">;</span>
+      overflow: hidden<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>/style<span class="token operator">&gt;</span>
+</code></pre></div><ul><li>在plugins/目录下新建文件icons.js</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token function">import</span> Vue from <span class="token string">'vue'</span>
+  <span class="token function">import</span> SvgIcon from <span class="token string">'../components/svgIcon'</span>// svg组件
+
+
+  Vue.component<span class="token punctuation">(</span><span class="token string">'svg-icon'</span>, SvgIcon<span class="token punctuation">)</span>
+
+  const requireAll <span class="token operator">=</span> requireContext <span class="token operator">=</span><span class="token operator">&gt;</span> requireContext.keys<span class="token punctuation">(</span><span class="token punctuation">)</span>.map<span class="token punctuation">(</span>requireContext<span class="token punctuation">)</span>
+
+  //require.context 用法参照parcels 技术点中的 前端自动化工程
+
+  const req <span class="token operator">=</span> require.context<span class="token punctuation">(</span><span class="token string">'../assets/icons/svg'</span>, false, /<span class="token punctuation">\</span>.svg$/<span class="token punctuation">)</span>
+  requireAll<span class="token punctuation">(</span>req<span class="token punctuation">)</span>
+
+</code></pre></div><ul><li>修改nuxt.config.js文件</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>const path <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>  //引入path 路径
+module.exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  // <span class="token punctuation">..</span>.
+  plugins: <span class="token punctuation">[</span>
+    // <span class="token punctuation">..</span>.
+    <span class="token punctuation">{</span> src: <span class="token string">'@/plugins/icons'</span>, ssr: <span class="token boolean">true</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+  // <span class="token punctuation">..</span>.
+  build: <span class="token punctuation">{</span>
+    // <span class="token punctuation">..</span>.
+    extend <span class="token punctuation">(</span>config, ctx<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      // <span class="token punctuation">..</span>.
+      const svgRule <span class="token operator">=</span> config.module.rules.find<span class="token punctuation">(</span>rule <span class="token operator">=</span><span class="token operator">&gt;</span> rule.test.test<span class="token punctuation">(</span><span class="token string">'.svg'</span><span class="token punctuation">))</span>
+      svgRule.exclude <span class="token operator">=</span> <span class="token punctuation">[</span>path.resolve<span class="token punctuation">(</span>__dirname, <span class="token string">'assets/icons/svg'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+      // Includes /icons/svg <span class="token keyword">for</span> svg-sprite-loader
+      config.module.rules.push<span class="token punctuation">(</span><span class="token punctuation">{</span>
+        test: /<span class="token punctuation">\</span>.svg$/,
+        include: <span class="token punctuation">[</span>path.resolve<span class="token punctuation">(</span>__dirname, <span class="token string">'assets/icons/svg'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>,
+        loader: <span class="token string">'svg-sprite-loader'</span>,
+        options: <span class="token punctuation">{</span>
+          symbolId: <span class="token string">'icon-[name]'</span>,
+        <span class="token punctuation">}</span>,
+      <span class="token punctuation">}</span><span class="token punctuation">)</span> 
+    <span class="token punctuation">}</span>
+    // <span class="token punctuation">..</span>.
+  <span class="token punctuation">}</span>
+  // <span class="token punctuation">..</span>.
+<span class="token punctuation">}</span>
+
+</code></pre></div><ul><li>vue组件中使用:</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token operator">&lt;</span>svg-icon icon-class<span class="token operator">=</span><span class="token string">&quot;article&quot;</span> /<span class="token operator">&gt;</span> //其中 article 是图标文件的文件名（如本项目中的 toppgo）
+</code></pre></div><h3 id="_2-nuxt-中全局动画过渡效果"><a href="#_2-nuxt-中全局动画过渡效果" class="header-anchor">#</a> 2,nuxt 中全局动画过渡效果</h3> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>Nuxt.js 默认使用的过渡效果名称为 page. 如果想让每一个页面的切换都有淡出 (fade) 效果，我们需要创建一个所有路由共用的 CSS 文件。所以我们可以在 assets/scss 目录下创建全局样式表: reset.scss,
+并添加如下样式即可:</p></div> <div class="language-sh extra-class"><pre class="language-sh"><code>  /*************全局动画过渡*************/
+  .page-enter-active,
+  .page-leave-active <span class="token punctuation">{</span>
+    transition: opacity <span class="token number">0</span>.2s<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  .page-enter,
+  .page-leave-active <span class="token punctuation">{</span>
+    opacity: <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><h3 id="_3-实现页面平滑滚动-锚点定位"><a href="#_3-实现页面平滑滚动-锚点定位" class="header-anchor">#</a> 3,实现页面平滑滚动(锚点定位)</h3> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>锚点定位:简单来讲就是让页面中某段文字在点击的时候快速定位到想要的位置，常用于高度较高的页面。</p></div> <p>效果如图下所示:</p> <p><img src="/assets/img/scroll.6266a2c2.gif" alt="solar"></p> <div class="language-sh extra-class"><pre class="language-sh"><code>    <span class="token operator">&lt;</span>a  @click<span class="token operator">=</span><span class="token string">&quot;scroll&quot;</span> <span class="token assign-left variable">style</span><span class="token operator">=</span><span class="token string">&quot;cursor: pointer;&quot;</span><span class="token operator">&gt;</span>
+         <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>拼邮规范<span class="token operator">&lt;</span>/span<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/a<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span><span class="token operator">!</span>-- 拼邮流程 --<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div <span class="token assign-left variable">class</span><span class="token operator">=</span><span class="token string">&quot;spellmailProcess&quot;</span> <span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token string">&quot;specification&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>div <span class="token assign-left variable">class</span><span class="token operator">=</span><span class="token string">&quot; w&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>spellSubTitle :title<span class="token operator">=</span><span class="token string">&quot;title1&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/spellSubTitle<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div <span class="token assign-left variable">class</span><span class="token operator">=</span><span class="token string">&quot;process_box&quot;</span><span class="token operator">&gt;</span>
+           <span class="token operator">&lt;</span>img <span class="token assign-left variable">src</span><span class="token operator">=</span><span class="token string">&quot;../assets/image/speailMail/process.png&quot;</span> <span class="token assign-left variable">alt</span><span class="token operator">=</span><span class="token string">&quot;&quot;</span> <span class="token assign-left variable">class</span><span class="token operator">=</span><span class="token string">&quot;procee_img&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>/div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>/div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>/div<span class="token operator">&gt;</span>
+
+     <span class="token function-name function">scroll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        document.getElementById<span class="token punctuation">(</span><span class="token string">'specification'</span><span class="token punctuation">)</span>.scrollIntoView<span class="token punctuation">(</span><span class="token punctuation">{</span> block: <span class="token string">'start'</span>, behavior: <span class="token string">'smooth'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+
+</code></pre></div><h3 id="_4-首页登录记住密码"><a href="#_4-首页登录记住密码" class="header-anchor">#</a> 4,首页登录记住密码</h3> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>实现原理: 登录的时候，如果勾选了记住密码，则把账号密码相关信息存储到cookie中，并通过使用crypto-js加密，在登录的时候进行判断是否记住了密码，如果记住密码了
+则从cookie 中读取相关账号信息。</p></div> <ul><li>下载crypto-js 包</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token function">npm</span> <span class="token function">install</span> crypto-js --save-dev
+</code></pre></div><ul><li>在需要的文件中进行引入</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token function">import</span> CryptoJS from <span class="token string">&quot;crypto-js&quot;</span>
+</code></pre></div><ul><li>设置cookie，读取cookie 方法</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>    // 设置cookie
+    setCookie<span class="token punctuation">(</span>state,data<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      var cipherPsw <span class="token operator">=</span> CryptoJS.AES.encrypt<span class="token punctuation">(</span>data.password,<span class="token string">'secretkey'</span><span class="token punctuation">)</span>.toString<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      var exdate <span class="token operator">=</span> new Date<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> //获取时间
+      exdate.setTime<span class="token punctuation">(</span>exdate.getTime<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token number">24</span> * <span class="token number">60</span> * <span class="token number">60</span> * <span class="token number">1000</span> * data.setDate<span class="token punctuation">)</span><span class="token punctuation">;</span> //保存的天数
+      //字符串拼接cookie
+      window.document.cookie <span class="token operator">=</span> <span class="token string">&quot;userName&quot;</span> + <span class="token string">&quot;=&quot;</span> + data.username + <span class="token string">&quot;;path=/;expires=&quot;</span> + exdate.toGMTString<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      window.document.cookie <span class="token operator">=</span> <span class="token string">&quot;userPwd&quot;</span> + <span class="token string">&quot;=&quot;</span> + cipherPsw + <span class="token string">&quot;;path=/;expires=&quot;</span> + exdate.toGMTString<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>,
+
+    //读取cookie
+	  getCookie<span class="token punctuation">(</span>state,data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>document.cookie.length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        var arr <span class="token operator">=</span> document.cookie.split<span class="token punctuation">(</span><span class="token string">'; '</span><span class="token punctuation">)</span><span class="token punctuation">;</span> //这里显示的格式需要切割一下自己可输出看下
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr.length<span class="token punctuation">;</span> i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          var arr2 <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>.split<span class="token punctuation">(</span><span class="token string">'='</span><span class="token punctuation">)</span><span class="token punctuation">;</span> //再次切割
+          //判断查找相对应的值
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>arr2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'userName'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            state.loginForm.username <span class="token operator">=</span> arr2<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> //保存到保存数据的地方
+            state.loginForm.rememberMe<span class="token operator">=</span>true
+          <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>arr2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'userPwd'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            var bytes <span class="token operator">=</span> CryptoJS.AES.decrypt<span class="token punctuation">(</span>arr2<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>,<span class="token string">'secretkey'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            state.loginForm.password <span class="token operator">=</span> bytes.toString<span class="token punctuation">(</span>CryptoJS.enc.Utf8<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+
+    // 清除数据
+    clearUser<span class="token punctuation">(</span>state,data<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      state.loginForm.username<span class="token operator">=</span><span class="token string">''</span>
+      state.loginForm.password <span class="token operator">=</span> <span class="token string">''</span>
+      state.loginForm.captcha <span class="token operator">=</span> <span class="token string">''</span>
+    <span class="token punctuation">}</span>,
+
+</code></pre></div><ul><li>登录的时候处理记住密码的逻辑</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>    async userLoginA<span class="token punctuation">(</span><span class="token punctuation">{</span> commit, state <span class="token punctuation">}</span>, params<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token builtin class-name">let</span> res <span class="token operator">=</span> await userLogin<span class="token punctuation">(</span>state.loginForm<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>res.flag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          // 记住密码逻辑
+          if<span class="token punctuation">(</span>state.loginForm.rememberMe <span class="token operator">==</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            commit<span class="token punctuation">(</span><span class="token string">'setCookie'</span>, state.loginForm<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>else<span class="token punctuation">{</span>
+            commit<span class="token punctuation">(</span><span class="token string">'setCookie'</span>, <span class="token punctuation">{</span>password: <span class="token string">&quot;&quot;</span>,username: <span class="token string">&quot;&quot;</span>,captcha:<span class="token string">&quot;&quot;</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+            commit<span class="token punctuation">(</span><span class="token string">'clearUser'</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>else<span class="token punctuation">{</span>
+          Notification.error<span class="token punctuation">(</span><span class="token punctuation">{</span> title: <span class="token string">'提示'</span>, message: res.msg <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+</code></pre></div><ul><li>登录页面加载获取cookie 方法</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>   <span class="token function-name function">created</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     this.getCookie<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>,
+    
+</code></pre></div><h3 id="_5-解决苹果浏览器windows-open-页面被拦截"><a href="#_5-解决苹果浏览器windows-open-页面被拦截" class="header-anchor">#</a> 5,解决苹果浏览器windows.open()页面被拦截</h3> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>业务需求: 当window.open为用户触发事件内部或者加载时，不会被拦截，比如： 在点击事件里面直接执行则不会被拦截；
+一旦将弹出页面代码（windows.open()）移入ajax或者一段异步代码内部，浏览器就会出现被拦截提示。解决办法: 在异步调用执行前
+声明弹出框事件，再进行命名跳转地址。如下:</p></div> <div class="language-sh extra-class"><pre class="language-sh"><code>
+  //定义一个打开新页面的参数
+  <span class="token function-name function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">return</span> <span class="token punctuation">{</span>
+      newWindow:null
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  //点击事件
+  <span class="token function-name function">payFuc</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    // 先打开新标签
+    this.newWindow <span class="token operator">=</span> window.open<span class="token punctuation">(</span><span class="token string">&quot;_blank&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    this.userRechargePayA<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>,
+
+  async <span class="token function-name function">userRechargePayA</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token builtin class-name">let</span> res <span class="token operator">=</span> await payCostSelectPay<span class="token punctuation">(</span>this.rechargeForm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>res.flag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>this.rechargeForm.payType <span class="token operator">==</span> <span class="token string">&quot;WeChatPal&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token builtin class-name">let</span> routeData <span class="token operator">=</span> router.resolve<span class="token punctuation">(</span><span class="token punctuation">{</span>
+            path: <span class="token string">&quot;/payWechat&quot;</span>,
+            query: <span class="token punctuation">{</span> id: this.rechargeForm.bizId <span class="token punctuation">}</span>,
+          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          // 解决苹果浏览器支付弹框被拦截
+          this.newWindow.location.href <span class="token operator">=</span> routeData.href<span class="token punctuation">;</span>
+          <span class="token builtin class-name">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        // 打开新的支付宝支付界面
+        this.newWindow.document.write<span class="token punctuation">(</span>res.obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        this.<span class="token variable">$notify</span>.error<span class="token punctuation">(</span><span class="token punctuation">{</span> title: <span class="token string">&quot;提示&quot;</span>, message: res.msg <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  
+</code></pre></div><h3 id="_6-vue-中关于引入svg-图标"><a href="#_6-vue-中关于引入svg-图标" class="header-anchor">#</a> 6,vue 中关于引入svg 图标</h3> <ul><li>安装svg-sprite-loader：npm i svg-sprite-loader --save-dev</li> <li>建立 svg 文件目录 (assets/icons/svg/exapmle.svg)</li> <li>在src/components目录下新建文件svgIcon.vue</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>    <span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>svg :class<span class="token operator">=</span><span class="token string">&quot;svgClass&quot;</span> aria-hidden<span class="token operator">=</span><span class="token string">&quot;true&quot;</span> v-on<span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$listeners</span>&quot;</span><span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>use :xlink:href<span class="token operator">=</span><span class="token string">&quot;iconName&quot;</span>/<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>/svg<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>/template<span class="token operator">&gt;</span>
+
+  <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+  <span class="token builtin class-name">export</span> default <span class="token punctuation">{</span>
+      name: <span class="token string">'svgIcon'</span>,
+      props: <span class="token punctuation">{</span>
+          iconClass: <span class="token punctuation">{</span>
+              type: String,
+              required: <span class="token boolean">true</span>
+          <span class="token punctuation">}</span>,
+          className: <span class="token punctuation">{</span>
+              type: String,
+              default: <span class="token string">''</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>,
+      computed: <span class="token punctuation">{</span>
+          <span class="token function-name function">iconName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token builtin class-name">return</span> <span class="token variable"><span class="token variable">`</span><span class="token comment">#icon-${this.iconClass}</span><span class="token variable">`</span></span>
+          <span class="token punctuation">}</span>,
+          <span class="token function-name function">svgClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>this.className<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                  <span class="token builtin class-name">return</span> <span class="token string">'svg-icon '</span> + this.className
+              <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                  <span class="token builtin class-name">return</span> <span class="token string">'svg-icon'</span>
+              <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span>/script<span class="token operator">&gt;</span>
+
+  <span class="token operator">&lt;</span>style scoped<span class="token operator">&gt;</span>
+  .svg-icon <span class="token punctuation">{</span>
+      width: 140px<span class="token punctuation">;</span>
+      height: 56px<span class="token punctuation">;</span>
+      fill: currentColor<span class="token punctuation">;</span>
+      overflow: hidden<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span>/style<span class="token operator">&gt;</span>
+</code></pre></div><ul><li>在src/icons目录下新建文件index.js</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token function">import</span> Vue from <span class="token string">'vue'</span>
+  <span class="token function">import</span> SvgIcon from <span class="token string">'@/components/svgIcon'</span>// svg组件
+
+  Vue.component<span class="token punctuation">(</span><span class="token string">'svg-icon'</span>, SvgIcon<span class="token punctuation">)</span>
+  const req <span class="token operator">=</span> require.context<span class="token punctuation">(</span><span class="token string">'./svg'</span>, false, /<span class="token punctuation">\</span>.svg$/<span class="token punctuation">)</span>
+  const requireAll <span class="token operator">=</span> requireContext <span class="token operator">=</span><span class="token operator">&gt;</span> requireContext.keys<span class="token punctuation">(</span><span class="token punctuation">)</span>.map<span class="token punctuation">(</span>requireContext<span class="token punctuation">)</span>
+  requireAll<span class="token punctuation">(</span>req<span class="token punctuation">)</span>
+
+</code></pre></div><ul><li>在src/main.js文件中引入</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token function">import</span> <span class="token string">'./icons'</span>
+</code></pre></div><ul><li>修改webpack 配置 (vue.config.js)</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  chainWebpack<span class="token punctuation">(</span>config<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    // <span class="token builtin class-name">set</span> svg-sprite-loader
+    config.module
+      .rule<span class="token punctuation">(</span><span class="token string">'svg'</span><span class="token punctuation">)</span>
+      .exclude.add<span class="token punctuation">(</span>resolve<span class="token punctuation">(</span><span class="token string">'src/icons'</span><span class="token punctuation">))</span>
+      .end<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    config.module
+      .rule<span class="token punctuation">(</span><span class="token string">'icons'</span><span class="token punctuation">)</span>
+      .test<span class="token punctuation">(</span>/<span class="token punctuation">\</span>.svg$/<span class="token punctuation">)</span>
+      .include.add<span class="token punctuation">(</span>resolve<span class="token punctuation">(</span><span class="token string">'src/icons'</span><span class="token punctuation">))</span>
+      .end<span class="token punctuation">(</span><span class="token punctuation">)</span>
+      .use<span class="token punctuation">(</span><span class="token string">'svg-sprite-loader'</span><span class="token punctuation">)</span>
+      .loader<span class="token punctuation">(</span><span class="token string">'svg-sprite-loader'</span><span class="token punctuation">)</span>
+      .options<span class="token punctuation">(</span><span class="token punctuation">{</span>
+        symbolId: <span class="token string">'icon-[name]'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      .end<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>,
+</code></pre></div><ul><li>在vue组件中使用</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token operator">&lt;</span>svg-icon icon-class<span class="token operator">=</span><span class="token string">&quot;toppgo&quot;</span> /<span class="token operator">&gt;</span>
+</code></pre></div><h3 id="_7-vuex-模块化用法-跨模块调用方法"><a href="#_7-vuex-模块化用法-跨模块调用方法" class="header-anchor">#</a> 7,vuex 模块化用法 跨模块调用方法</h3> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>使用场景: 当在vuex 的A模块中，需要调用 B模块中的 数据或者方法时，我们可以使用vuex 中的跨模块调用方法。跨模块调用数据使用 rootState,
+跨模块使用方法可以使用  dispatch('moduleB/actionFn',{}, {root: true}。具体如下:</p></div> <div class="language-sh extra-class"><pre class="language-sh"><code>
+  //获取state 里面的数据
+  async unbundlingWechatA<span class="token punctuation">(</span><span class="token punctuation">{</span>commit,state, dispatch, rootState<span class="token punctuation">}</span>, param<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">let</span> res <span class="token operator">=</span> await unbundlingWechat<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console.log<span class="token punctuation">(</span>rootState.moduleA.a<span class="token punctuation">)</span>   //获取模块A中的数据a
+  <span class="token punctuation">}</span>,
+ //获取 actions 里面的方法
+async unbundlingWechatA<span class="token punctuation">(</span><span class="token punctuation">{</span>commit,state, dispatch, rootState<span class="token punctuation">}</span>, param<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">let</span> res <span class="token operator">=</span> await unbundlingWechat<span class="token punctuation">(</span><span class="token punctuation">)</span>
+     dispatch<span class="token punctuation">(</span><span class="token string">'moduleA/testFuc'</span>, <span class="token punctuation">{</span><span class="token punctuation">}</span>, <span class="token punctuation">{</span>root: true<span class="token punctuation">}</span><span class="token punctuation">)</span>  // <span class="token string">'moduleA'</span> 模块A  <span class="token string">'testFuc'</span> 模块A 中的方法
+  <span class="token punctuation">}</span>,
+
+</code></pre></div><h2 id="toppgo-项目部署说明"><a href="#toppgo-项目部署说明" class="header-anchor">#</a> toppgo 项目部署说明</h2> <ul><li>测试环境部署(192.168.8.167):</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token builtin class-name">cd</span> /toppgo 
+  <span class="token function">sh</span> 01-nuxt-web.sh  //更新nuxt 系统页面
+  <span class="token function">sh</span> 02-vue-admin.sh //更新个人中心后台系统
+</code></pre></div><ul><li>线上环境部署(国内服务器 139.224.190.136  美国服务器 47.254.25.116  欧洲服务器  47.254.158.111 )</li></ul> <p>前端更新线上:</p> <p>1,toppgo前台页面</p> <div class="language- extra-class"><pre><code> ---------先本地打包nuxt 项目(npm run build)
+
+ ---------打包完成后复制(.nuxt nuxt.config.js package-lock.json package.json static )到对应项目目录
+
+ ---------pm2 restart mynuxt (在对应服务器上执行)
+</code></pre></div><p>2,toppgo个人中心页面</p> <div class="language- extra-class"><pre><code> ---------本地打包(npm run build)
+
+ ---------将本地生成的dist 文件 丢到对应线上前端项目目录
+</code></pre></div><h3 id="_1-关于nuxt-部署脚本编写"><a href="#_1-关于nuxt-部署脚本编写" class="header-anchor">#</a> 1,关于nuxt 部署脚本编写</h3> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token comment">#!/bin/bash</span>
+  <span class="token assign-left variable">keyword</span><span class="token operator">=</span><span class="token variable">$1</span>
+  <span class="token comment"># 打包</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token variable">$1</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;nuxt-web&quot;</span> <span class="token operator">=</span>~ <span class="token variable">$keyword</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> 更新 nuxt-web<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>.
+    <span class="token builtin class-name">cd</span> /toppgo/nuxt-toppgo-html
+    <span class="token function">git</span> reset --hard
+    <span class="token function">git</span> pull
+    cnpm i
+    <span class="token builtin class-name">echo</span> -e <span class="token string">'<span class="token entity" title="\n">\n</span><span class="token entity" title="\n">\n</span>'</span>
+      <span class="token builtin class-name">echo</span> 开始打包nuxt-web<span class="token punctuation">..</span>.
+      <span class="token builtin class-name">cd</span> /toppgo/nuxt-toppgo-html
+      <span class="token function">rm</span> -rf .nuxt
+      cnpm run build
+      pm2 restart nuxt-toppgo
+  <span class="token keyword">fi</span>
+  <span class="token comment"># 运行</span>
+  <span class="token builtin class-name">echo</span> 打包完成<span class="token punctuation">..</span>.
+</code></pre></div><h3 id="_2-toppgo-前端部署"><a href="#_2-toppgo-前端部署" class="header-anchor">#</a> 2, toppgo 前端部署</h3> <p>** 前端执行(测试环境)更新:  1,toppgo前台页面<br>
+-------- cd  /toppgo<br>
+-------- sh 01-nuxt-web.sh
+2,toppgo个人中心页面
+-------- cd  /toppgo<br>
+-------- sh 02-vue-admin.sh
+** 前端更新线上:   1,toppgo前台页面
+-------- cd  /toppgo<br>
+-------- sh 09-online-cn-toppgo-nuxt.sh（更新 cn 服务器）
+-------- sh 10-online-www-toppgo-nuxt.sh（更新 www服务器）
+-------- sh 11-online-us-toppgo-nuxt.sh（更新 us 服务器）
+2,toppgo个人中心页面
+-------- cd  /toppgo<br>
+-------- sh 08-online-vue-admin.sh (可以根据关键字更新对应服务器 cn,www,us)</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">1/20/2021, 9:33:14 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/parcels/function/item.html" class="prev">
+        parcels项目说明文档
+      </a></span> <span class="next"><a href="/toppgo/produce/introduceApp.html">
+        toppgo APP项目说明文档
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.18a9f889.js" defer></script><script src="/assets/js/2.207120b0.js" defer></script><script src="/assets/js/3.5b30a52f.js" defer></script><script src="/assets/js/14.cf805674.js" defer></script>
+  </body>
+</html>
