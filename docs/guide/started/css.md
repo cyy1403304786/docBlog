@@ -158,4 +158,62 @@
 ## css3动画
 ## 移动端适配
 ## BFC
+
+
 ## CSS 预处理器
+
+::: warning
+  css 预处理器基本思想就是，用一种专门的编程语言，为CSS 增加了一些编程的特性，将CSS 作为目标生成文件，以供项目使用。
+:::
+
+
+**<font  color= red> 1，CSS 预处理器都有哪些？</font>**
+
+ * sass
+ * less
+ * stylus
+
+ **<font  color= red> 2，为什么要使用 CSS 预处理器？</font>**
+
+ * css 语法没办法嵌套书写，导致模块化开发缺乏效率；
+ * 没有变量和合理的样式复用机制，难以维护
+
+ **<font  color= red> 3，less  和 sass  的区别？</font>**
+
+ 下面主要从三个方面进行比较，分别是变量、输出设置、编译环境。
+
+ - 变量的定义（<font  color= red> sass 主要通过$ 来定义变量，而less 主要通过 @ 来定义变量。</font>）
+
+ ```sh
+  // sass
+  $font-size: 10px;
+  $font-family: Helvetica, sans-serif;
+
+  body {
+    font: $font-size $font-family;
+  }
+
+  // less
+  @color: red;
+  content {
+    color: @color;
+  }
+ ```
+
+ - 输出设置
+
+ sass 的输出方式有四种： NESTED, COMPACT, COMPRESSED 和 EXPANDED
+
+ less 没有输出设置。
+
+
+ - 编译环境
+
+ sass 在服务端编译，而less 在浏览器进行编译。
+
+
+
+
+
+
+
