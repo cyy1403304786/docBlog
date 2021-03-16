@@ -153,11 +153,62 @@
     }
 ```
 
-
-## flex
-## css3动画
-## 移动端适配
 ## BFC
+::: details
+  BFC（Block formatting context）块级格式上下文。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。
+:::
+
+
+- <font color= red>1，BFC 的作用：</font>
+
+* 利用BFC避免margin重叠；
+* 自适应两栏布局；
+* 清除浮动；
+
+
+- <font color= red>2，如何创建一个BFC：</font>
+
+* float的值不是none；
+* position的值不是static或者relative；
+* display的值是inline-block、table-cell、flex、table-caption或者inline-flex
+* overflow的值不是visible；
+
+
+
+以下代码为一个上下文环境，会产生margin 外边距重叠问题~
+
+```sh
+<p>这是第一个</p>
+<p>这是第二个</p>
+
+
+p {
+  width: 100px;
+  height: 200px;
+  border: 1px solid #ccc;
+  margin: 30px;
+}
+    
+```
+
+通过加一个 div 包裹，增加一个BFC ，就可以完美解决外边距重叠问题
+
+```sh
+<p>这是第一个</p>
+<div class="bfc">
+    <p>这是第二个</p>
+</div>
+
+.bfc {
+  overflow: hidden;
+}
+p {
+  width: 100px;
+  height: 200px;
+  border: 1px solid #ccc;
+  margin: 30px;
+}
+```
 
 
 ## CSS 预处理器
