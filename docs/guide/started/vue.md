@@ -177,11 +177,106 @@ vue组件可能会有很多个实例，采用函数返回一个全新data形式�
 
 **<font size= 3> 3，组件通信使用场景？</font>**
 
-- 父子组件通信使用
+- 1，父子组件通信使用
+
+1.1，子组件设置 props 属性，定义接收父组件传递过来的参数；
+
+1.2，子组件通过$emit触发自定义事件，$emit第二个参数为子组件向父组件传递的数值；
+
+1.3，父组件在使用子组件的时候设置ref，可以通过ref 属性获取子组件实例从而获取数据；
 
 ```sh
+// 子组件
+ <el-dialog title="测试弹框啊" :visible.sync="isUploadImgDialog" :close-on-click-modal="false" width="600px" @close="handleClose">
+   <p>{{content}}</p>
+   <label>留言：</label> 
+   <el-input v-model="person"  style="margin-top: 10px;"></el-input>
+   
+   <span slot="footer" class="dialog-footer">
+      <el-button @click="saveSub">提交</el-button>
+      <el-button @click="isUploadImgDialog = false">{{ $t('common.关闭') }}</el-button>
+   </span>
+ </el-dialog>
 
+ props: {
+   content: {
+      type: String, 
+      required: true
+   },
+},
+data () {
+   return {
+    isUploadImgDialog: false,
+    person:"",
+  }
+},
+methods: {
+  handleClose() {
+    this.isUploadImgDialog = false
+  },
+  saveSub() {
+    this.$emit('post',this.person)
+  }
+}
+
+
+// 父组件
+<el-button type="primary" @click="$refs.dialog.isUploadImgDialog = true">点击</el-button>
+<Dialog ref="dialog" :content="bodyContent" @post="getData"></Dialog>
+
+
+ getData(data) {
+   console.log(data)
+ },
 ```
+
+- 2，兄弟组件通信使用
+
+    通过EventBus！
+
+
+- 3，祖孙后代组件通信使用
+
+   3.1，在祖先组件定义provide 属性，返回传递的值
+
+   3.2，在后代组件通过inject接收组件传递过来的值
+```sh
+ // App.vue
+  <div id="app">
+    <router-view v-if="isRouterAlive" />
+  </div>
+   provide() {
+    return {
+      reload: this.reload
+    }
+  },
+   data() {
+    return {
+      isRouterAlive: true
+    }
+  },
+   methods: {
+    reload() {
+      this.isRouterAlive = false
+      let that = this
+      this.$nextTick(() => {
+        that.isRouterAlive = true
+      })
+    }
+  }
+
+  // 子孙组件（test.vue）
+  export default {
+     inject: ['reload'],
+     methods: {
+        refresh() {
+          this.reload()
+        }
+     }
+  }
+```
+
+
 
 
 
