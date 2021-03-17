@@ -155,4 +155,34 @@ console.log(componentB.data.count)  // 1
 vue组件可能会有很多个实例，采用函数返回一个全新data形式，使每个实例对象的数据不会受到其他实例对象数据的污染
 
 
+## vue 组件中的通信？
+
+**<font size= 3> 1，组件间通信的分类？</font>**
+
+* 父子组件通信
+* 兄弟组件通信
+* 祖孙与后代组件通信
+* 非关系组件间的通信
+
+**<font size= 3> 2，组件通信方案？</font>**
+
+* 1，通过 props 传递；
+* 2，通过 $emit 触发自定义事件；
+* 3，使用 ref；
+* 4，EventBus；
+* 5，$parent 或$root；
+* 6，attrs 与 listeners；
+* 7，Provide 与 Inject
+* 8，vuex;
+
+**<font size= 3> 3，组件通信使用场景？</font>**
+
+- 父子组件通信使用 1,2
+
+```sh
+
+```
+
+
+
 
