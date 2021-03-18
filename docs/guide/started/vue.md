@@ -232,8 +232,43 @@ methods: {
 
 - 2，兄弟组件通信使用
 
-    通过EventBus！
+  2.1，有father.vue，brother1.vue，brother2.vue三个组件，需要在brother1，brother2 之间进行传值
 
+  2.2，建立一个eventbus 的js 文件
+
+  ```sh
+  import Vue from 'vue';  
+  export default new Vue(); 
+  ```
+
+  2.3，brother1.vue 引入bus.js，通过emit 自定义事件触发传递参数
+
+  ```sh
+  <template>
+   <el-button @click="getData()">eventBUS</el-button>
+  </template>
+  <script>
+   import Bus from '@/utils/bus.js'
+   getData() {
+      Bus.$emit('getData', this.person);   
+    }
+  </script>
+  ```
+
+  2.4，brother2.vue 引入bus.js，通过Bus.$on 接收参数
+
+  ```sh
+  <span>{{content}}</span>
+  <script>
+   import Bus from '@/utils/bus.js'
+   created () {
+      Bus.$on('getData', target => {  
+            console.log(target);  
+        }); 
+    },
+  </script>
+
+  ```
 
 - 3，祖孙后代组件通信使用
 
