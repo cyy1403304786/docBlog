@@ -285,7 +285,24 @@ proto 属性是对象所独有的。constructor属性也是对象所独有的（
 
 每个构造函数都有一个原型对象，原型对象都有一个指向构造函数的指针（constructor），而实例包含一个指向原型对象的内部指针（__proto__）。
 
+## 闭包
+::: warning  
+  闭包：函数和函数内部能访问到的变量的总和（环境），就是一个闭包
+:::
 
+手写一个闭包
+
+```sh
+function foo(){
+  var local = 1
+  function bar(){
+    local++
+    return local
+  }
+  return bar()
+}
+console.log(foo())  //2
+```
 
 
 ## 继承
