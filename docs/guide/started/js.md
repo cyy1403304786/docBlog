@@ -562,15 +562,25 @@ console.log(diguia(arr))
     altwrite.call(document,'hello')
 ```
 ## new, this
+
+## 正则表达式
+
+常用正则表达式：
+
+```sh
+// 邮箱校验的正则表达式
+var reg = /^[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)*@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+if(!reg.test(email)) {
+	return;
+}
+```
+
+
 ## promise
 
 ::: warning Introduction
 是异步编程的一种解决方案，从语法上讲，promise 是一个对象。它有三种状态，pending(等待中)，fulfiled(成功状态)，rejected(失败状态)。它的出现主要是为了解决javascript 中回调地狱的问题，增加代码的可读性、可维护性。
 :::
-
-
-
-
 
 
 ## async/await（es7语法）
@@ -672,6 +682,159 @@ try-catch 处理同步，异步错误。
 
 
 
+ ## js事件机制
+
+ - <font size= 5 color= red> 事件绑定</font> 
+
+  **1，在DOM中直接绑定事件**
+  ```sh
+  <input type="button" value="click me" onclick="hello()">
+  <script>
+  function hello(){
+    alert("hello world!");
+  }
+</script>
+  ```
+
+  **2，在JavaScript代码中绑定事件**
+  ```sh
+  <input type="button" value="click me" id="btn">
+  <script>
+  document.getElementById("btn").onclick = function(){
+    alert("hello world!");
+  }
+  </script>
+  ```
+
+  **3，使用事件监听绑定事件**
+  ```sh
+  绑定事件的另一种方法是用 addEventListener() 或 attachEvent() 来绑定事件监听函数。
+  ```
+
+
+ - <font size= 5 color= red> 事件监听</font> 
+
+ ::: warning 事件监听:
+    W3C 规范定义了事件监听有三个阶段： 捕获阶段、目标阶段、冒泡阶段
+    语法： element.addEventListener(event, function, useCapture)
+    event： 事件名，支持所有 DOM事件（必需）
+    function：指定要事件触发时执行的函数（必需）
+    useCapture：true，捕获。false，冒泡。默认false （可选）
+:::
+
+ **1，事件捕获**
+ ```sh
+  <div style="width: 100px; height: 100px; border: 1px solid #ccc; cursor: pointer;" id="father">
+    <div style="width: 50px; height: 50px; border: 1px solid #ccc; margin-left: 10px; margin-top: 10px;" id="son"></div>
+  </div>
+  <script>
+
+  var fatherDom = document.getElementById('father')
+  var sonDom = document.getElementById('son')
+  fatherDom.addEventListener('click',function () {
+    console.log(111)
+  },true)
+  sonDom.addEventListener('click',function() {
+    console.log(222)
+  })
+  
+</script>
+ ```
+
+ 通过 addEventListener 的第三个参数设置事件捕获和事件冒泡
+
+ 点击父盒子（里面的子盒子）时，执行结果为111，222，从外到内的过程我们称为 事件捕获 
+
+ **2，事件冒泡**
+
+  ```sh
+  <div style="width: 100px; height: 100px; border: 1px solid #ccc; cursor: pointer;" id="father">
+    <div style="width: 50px; height: 50px; border: 1px solid #ccc; margin-left: 10px; margin-top: 10px;" id="son"></div>
+  </div>
+  <script>
+
+  var fatherDom = document.getElementById('father')
+  var sonDom = document.getElementById('son')
+  fatherDom.addEventListener('click',function () {
+    console.log(111)
+  }，false)
+  sonDom.addEventListener('click',function() {
+    console.log(222)
+  })
+</script>
+ ```
+ 
+ 点击父盒子（里面的子盒子）时，执行结果为222，111，从内到外的过程我们称为 事件冒泡 
+
+
+ **3，阻止事件冒泡的方法**
+
+  3.1，<font color= red> event.stopPropagation() </font> 
+
+  ```sh
+    var fatherDom = document.getElementById('father')
+    var sonDom = document.getElementById('son')
+    fatherDom.addEventListener('click',function () {
+      console.log(111)
+    })
+    sonDom.addEventListener('click',function(event) {
+      console.log(222)
+      event.stopPropagation()
+    })
+
+    //输出结果为 222
+  ```
+
+  3.2，<font color= red>  return false </font> 
+
+  ```sh
+    var fatherDom = document.getElementById('father')
+    var sonDom = document.getElementById('son')
+    fatherDom.addEventListener('click',function () {
+      console.log(111)
+    })
+    sonDom.addEventListener('click',function(event) {
+      return false
+      
+    })
+  ```
+
+  3.3，两者间的区别：
+
+  return false 不仅阻止了事件往上冒泡，而且阻止了事件本身。
+
+  event.stopPropagation() 则只阻止事件往上冒泡，不阻止事件本身。
+
+- <font size= 5 color= red> 事件委托</font> 
+
+::: warning 
+    事件委托就是利用冒泡的原理，把事件加到父元素或祖先元素上，触发执行效果。只指定一个事件处理程序，就可以管理某一类型的所有事件
+:::
+
+事件委托的优点主要是提高JavaScript性能。事件委托可以显著的提高事件的处理速度，减少内存的占用，实例：
+
+```sh
+<div style="width: 100px; height: 100px; border: 1px solid #ccc; cursor: pointer;" id="father">
+  <div style="width: 50px; height: 50px; border: 1px solid #ccc; margin-left: 10px; margin-top: 10px;" id="son1"></div>
+  <div style="width: 30px; height: 50px; border: 1px solid #ccc; margin-top: 10px;" id="son2"></div>
+</div>
+<script>
+  var fatherDom = document.getElementById('father')
+  var sonDom1 = document.getElementById('son1')
+  var sonDom2 = document.getElementById('son2')
+  document.addEventListener("click",function(event){
+    var target = event.target;
+    if(target == sonDom1){
+      alert("hello item1");
+    }else if(target == sonDom2){
+      alert("hello item2");
+    }
+  })
+</script>
+```
+
+
+
 ## eventloop(事件循环)
 
 ::: details 热门小贴士:
@@ -711,7 +874,6 @@ try-catch 处理同步，异步错误。
 
     // 输出结果为：promise  console  then  setTimeout
  ```
-
 
  **1，这段代码作为宏任务，进入主线程**
 
