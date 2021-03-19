@@ -461,6 +461,64 @@ function foo(){
 console.log(foo())  //2
 ```
 
+
+## 递归
+
+递归循环数组
+```sh
+// 递归改变数组的key值
+var arr = [
+  {name: 'zxx',children:[{name: 'xj'}]},
+  {name:'zj'},
+  {name: 'cyy',children:[{name:'wc',children:[{name: 'cyy'}]}]}
+]
+
+function digui(data) {
+  return data ? data.map(item => {
+          return {
+            age: item.name,
+            children: digui(item.children)
+          }
+      }): null
+}
+// console.log(digui(arr))
+
+// 递归改变数组的 value 值
+function diguia(data) {
+  return data ? data.map(item => {
+          if(item.name == 'cyy') {
+            item.name = 'cww'
+          }
+          return {
+            name: item.name,
+            children: diguia(item.children)
+          }
+      }): null
+}
+console.log(diguia(arr))
+```
+
+## 数组操作的一些方法
+
+**<font size= 5>  1，数组去重 </font>**
+
+```sh
+  // 数组去重
+  let arr = [1,2,2,3,4,5,5,8]
+  let newArr = arr.reduce((pre,cur)=>{
+      if(!pre.includes(cur)){
+        return pre.concat(cur)
+      }else{
+        return pre
+      }
+  },[])
+  // console.log(newArr)
+  // set 方法
+  let arr1=[...new Set(arr)]
+  console.log(arr1)
+```
+
+
 ## call/apply/bind
 
 ::: warning
